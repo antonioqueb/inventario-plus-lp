@@ -2,7 +2,7 @@
     "hero": {
       "title": "InventarioPlus",
       "description": "Optimiza tu inventario con soluciones precisas y personalizadas, diseñadas para controlar cada aspecto de tus operaciones.",
-      "button": "Obtén tu Consultoría Gratuita Ahora"
+      "button": "Obtén tu Consultoría Gratuita"
     },
     "whoWeAre": {
       "title": "Socios Estratégicos",
@@ -58,7 +58,7 @@
     "cta": {
       "title": "Transforma Tu Negocio",
       "description": "Aumenta tu rentabilidad y toma el control total de tu inventario con nuestras soluciones personalizadas. Lleva tu negocio al siguiente nivel de eficiencia.",
-      "button": "Obtén tu Consultoría Gratuita Ahora"
+      "button": "Obtén tu Consultoría Gratuita"
     }
   }
   

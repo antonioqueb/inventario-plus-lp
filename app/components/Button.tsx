@@ -15,7 +15,7 @@ interface ButtonProps {
     return (
       <a href={href} className="mt-4">
         <button
-          className={`${buttonClass} px-10 py-4 rounded-full text-lg font-extrabold hover:scale-105 transition-all duration-300 ease-in-out shadow-lg`}
+          className={`${buttonClass} px-10 py-4 rounded-xl text-lg font-extrabold hover:scale-105 transition-all duration-300 ease-in-out shadow-lg`}
         >
           {text}
         </button>
