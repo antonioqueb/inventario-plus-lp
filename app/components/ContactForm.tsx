@@ -91,7 +91,9 @@ const ConsolidatedForm: React.FC = () => {
       probability: formData.probability,
       company_id: 2,
       start_time: start,
-      end_time: end
+      end_time: end,
+      user_id: 2,
+      stage_id: 1
     });
 
     fetch("https://crm.gestpro.cloud/create_opportunity", {
