@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from "react";
+import { DateTime } from 'luxon';  // Importamos luxon
 
 // Definimos el tipo de los slots recibidos de la API
 interface Slot {
@@ -51,8 +52,8 @@ const ConsolidatedForm: React.FC = () => {
 
       // Filtrar los slots disponibles en el formato de availableTimes
       const filteredSlots = data.available_slots.map((slot: Slot) => {
-        const startHour = new Date(slot.start).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-        const endHour = new Date(slot.end).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        const startHour = DateTime.fromISO(slot.start, { zone: 'America/Mexico_City' }).toLocaleString(DateTime.TIME_SIMPLE);
+        const endHour = DateTime.fromISO(slot.end, { zone: 'America/Mexico_City' }).toLocaleString(DateTime.TIME_SIMPLE);
         console.log(`Slot transformed: ${startHour} - ${endHour}`);
         return `${startHour} - ${endHour}`;
       });
@@ -76,10 +77,9 @@ const ConsolidatedForm: React.FC = () => {
     }
   };
 
-  // Función para obtener la fecha actual
+  // Función para obtener la fecha actual en formato YYYY-MM-DD
   function getTodayDate() {
-    const today = new Date();
-    return today.toISOString().split("T")[0]; // Retorna la fecha en formato YYYY-MM-DD
+    return DateTime.now().setZone('America/Mexico_City').toISODate();
   }
 
   // Función para convertir tiempo en formato 12 horas a formato 24 horas
@@ -106,10 +106,10 @@ const ConsolidatedForm: React.FC = () => {
 
   // Función para comparar la hora actual con los slots y filtrar los pasados
   function isFutureSlot(slot: string, selectedDate: string) {
-    const now = new Date();
+    const now = DateTime.now().setZone('America/Mexico_City');
     const [startTime] = slot.split(" - "); // Solo tomar la hora de inicio
-    const slotTime = new Date(`${selectedDate} ${convertTo24Hour(startTime)}`);
-    const isFuture = slotTime.getTime() > now.getTime(); // Comparar utilizando getTime para asegurar precisión
+    const slotTime = DateTime.fromFormat(`${selectedDate} ${convertTo24Hour(startTime)}`, 'yyyy-MM-dd HH:mm:ss', { zone: 'America/Mexico_City' });
+    const isFuture = slotTime > now;  // Comparar fechas con luxon
     console.log(`Checking if slot is future: ${slotTime}, now: ${now}, isFuture: ${isFuture}`);
     return isFuture;  // Solo permite mostrar slots en el futuro
   }
