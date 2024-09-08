@@ -1,6 +1,12 @@
 'use client';
 import React, { useState, useEffect } from "react";
 
+// Definimos el tipo de los slots recibidos de la API
+interface Slot {
+  start: string;
+  end: string;
+}
+
 // Definimos los slots de tiempo manualmente (fijos)
 const defaultAvailableTimes = [
   "10:00 AM - 11:00 AM",
@@ -43,7 +49,7 @@ const ConsolidatedForm: React.FC = () => {
       console.log("API Available slots:", data.available_slots);
 
       // Filtrar los slots disponibles en el formato de availableTimes
-      const filteredSlots = data.available_slots.map((slot: any) => {
+      const filteredSlots = data.available_slots.map((slot: Slot) => {
         const startHour = new Date(slot.start).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         const endHour = new Date(slot.end).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         return `${startHour} - ${endHour}`;
@@ -52,16 +58,16 @@ const ConsolidatedForm: React.FC = () => {
       // Si la API devuelve datos, sobrescribimos los slots predefinidos
       if (filteredSlots.length > 0) {
         // Aplicar filtro de slots futuros
-        const futureSlots = filteredSlots.filter(isFutureSlot);
+        const futureSlots = filteredSlots.filter(slot => isFutureSlot(slot, selectedDate));
         setAvailableSlots(futureSlots);
       } else {
         // Si la API no devuelve slots, usar los predefinidos
-        setAvailableSlots(defaultAvailableTimes.filter(isFutureSlot));
+        setAvailableSlots(defaultAvailableTimes.filter(slot => isFutureSlot(slot, selectedDate)));
       }
     } catch (error) {
       console.error("Error fetching available slots:", error);
       // En caso de error, mostramos solo los slots por defecto
-      setAvailableSlots(defaultAvailableTimes.filter(isFutureSlot));
+      setAvailableSlots(defaultAvailableTimes.filter(slot => isFutureSlot(slot, selectedDate)));
     }
   };
 
@@ -94,9 +100,10 @@ const ConsolidatedForm: React.FC = () => {
   }
 
   // Función para comparar la hora actual con los slots y filtrar los pasados
-  function isFutureSlot(slot: string) {
+  function isFutureSlot(slot: string, selectedDate: string) {
     const now = new Date();
-    const slotTime = new Date(`${selectedDate} ${convertTo24Hour(slot.split(" - ")[0])}`);
+    const [startTime] = slot.split(" - "); // Solo tomar la hora de inicio
+    const slotTime = new Date(`${selectedDate} ${convertTo24Hour(startTime)}`);
     return slotTime > now;  // Solo permite mostrar slots en el futuro
   }
 
