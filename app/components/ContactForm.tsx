@@ -111,10 +111,15 @@ const ConsolidatedForm: React.FC = () => {
 
     const { start, end } = getStartEndTime(selectedSlot);
 
+    // Verificar el formato de tiempo antes de enviar
+    console.log("Verificando formato de tiempo:");
+    console.log("Fecha seleccionada:", selectedDate);
+    console.log("Hora de inicio en formato 24 horas:", start);
+    console.log("Hora de fin en formato 24 horas:", end);
+
     // Log de los datos que se van a enviar
     console.log("Datos del formulario:", formData);
     console.log("Slot seleccionado:", selectedSlot);
-    console.log("Tiempo de inicio y fin:", start, end);
 
     fetch("https://crm.gestpro.cloud/create_opportunity", {
       method: "POST",
@@ -129,8 +134,8 @@ const ConsolidatedForm: React.FC = () => {
         expected_revenue: formData.expected_revenue,
         probability: formData.probability,
         company_id: 2,
-        start_time: start,
-        end_time: end,
+        start_time: start,  // Formato corregido en 24 horas
+        end_time: end,      // Formato corregido en 24 horas
         user_id: 2,
         stage_id: 1
       }),
