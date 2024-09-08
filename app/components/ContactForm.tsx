@@ -47,14 +47,20 @@ const ConsolidatedForm: React.FC = () => {
         const startHour = new Date(slot.start).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         const endHour = new Date(slot.end).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         return `${startHour} - ${endHour}`;
-      }).filter(isFutureSlot); // Solo mantener los slots en el futuro
+      });
 
-      // Si no hay slots de la API, dejamos los valores por defecto
-      setAvailableSlots(filteredSlots.length > 0 ? filteredSlots : defaultAvailableTimes);
+      // Combinar los horarios predefinidos con los obtenidos de la API
+      const combinedSlots = [...defaultAvailableTimes, ...filteredSlots];
+
+      // Aplicar filtro de slots futuros
+      const futureSlots = combinedSlots.filter(isFutureSlot);
+
+      // Actualizar los slots disponibles
+      setAvailableSlots(futureSlots);
     } catch (error) {
       console.error("Error fetching available slots:", error);
-      // En caso de error, mostramos los slots por defecto
-      setAvailableSlots(defaultAvailableTimes);
+      // En caso de error, mostramos solo los slots por defecto
+      setAvailableSlots(defaultAvailableTimes.filter(isFutureSlot));
     }
   };
 
@@ -218,7 +224,6 @@ const ConsolidatedForm: React.FC = () => {
           <h3 className="text-white text-xl xl:text-2xl font-medium mb-4">Selecciona un Horario Disponible</h3>
           <div className="grid grid-cols-2 gap-4">
             {availableSlots
-              .filter(isFutureSlot)  // Filtrar los slots que ya pasaron
               .map((slot, index) => (
                 <div
                   key={index}
@@ -251,4 +256,3 @@ const ConsolidatedForm: React.FC = () => {
 };
 
 export default ConsolidatedForm;
-
