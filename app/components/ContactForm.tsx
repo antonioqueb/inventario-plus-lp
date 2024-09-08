@@ -16,6 +16,7 @@ const ConsolidatedForm: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",  // Nuevo campo de teléfono
     expected_revenue: 10000, // Valor fijo
     probability: 33, // Valor fijo
   });
@@ -94,6 +95,7 @@ const ConsolidatedForm: React.FC = () => {
     console.log("Sending data to API...", {
       name: formData.name,
       email: formData.email,
+      phone: formData.phone,  // Enviamos el teléfono a la API
       expected_revenue: formData.expected_revenue,
       probability: formData.probability,
       company_id: 2,
@@ -112,6 +114,7 @@ const ConsolidatedForm: React.FC = () => {
         name: "Oportunidad Consultoría",
         partner_name: formData.name,
         partner_email: formData.email,
+        phone: formData.phone,  // Enviar teléfono en la solicitud
         expected_revenue: formData.expected_revenue,
         probability: formData.probability,
         company_id: 2,  // Se ha fijado el ID de la empresa a 2
@@ -161,6 +164,19 @@ const ConsolidatedForm: React.FC = () => {
             type="email"
             name="email"
             value={formData.email}
+            onChange={handleChange}
+            className="w-full px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+          />
+        </div>
+
+        {/* Nuevo campo de teléfono */}
+        <div className="mb-6">
+          <label className="block text-white text-xl xl:text-2xl font-medium mb-2">Teléfono</label>
+          <input
+            type="tel"
+            name="phone"
+            value={formData.phone}
             onChange={handleChange}
             className="w-full px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
