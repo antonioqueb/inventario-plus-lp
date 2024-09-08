@@ -19,7 +19,7 @@ const defaultAvailableTimes = [
 
 const ConsolidatedForm: React.FC = () => {
   const [selectedSlot, setSelectedSlot] = useState<string>("");
-  const [selectedDate, setSelectedDate] = useState<string>(getTodayDate());
+  const [selectedDate, setSelectedDate] = useState<string | null>(getTodayDate());
   const [availableSlots, setAvailableSlots] = useState<string[]>(defaultAvailableTimes);  // Inicializamos con los slots por defecto
   const [formData, setFormData] = useState({
     name: "",
@@ -32,13 +32,15 @@ const ConsolidatedForm: React.FC = () => {
 
   // Efecto para cargar slots desde la API cuando cambia la fecha
   useEffect(() => {
-    fetchAvailableSlots();
+    if (selectedDate) {
+      fetchAvailableSlots();
+    }
   }, [selectedDate]);
 
   // Función para obtener los slots disponibles de la API
   const fetchAvailableSlots = async () => {
-    const start_time = `${selectedDate}T00:00:00`;
-    const end_time = `${selectedDate}T23:59:59`;
+    const start_time = `${selectedDate ?? ''}T00:00:00`;  // Aplicamos coalescencia nula
+    const end_time = `${selectedDate ?? ''}T23:59:59`;    // Aplicamos coalescencia nula
 
     try {
       console.log(`Fetching slots for date: ${selectedDate}`);
@@ -62,24 +64,25 @@ const ConsolidatedForm: React.FC = () => {
       if (filteredSlots.length > 0) {
         console.log(`Filtered slots: ${filteredSlots}`);
         // Aplicar filtro de slots futuros
-        const futureSlots = filteredSlots.filter((slot: string) => isFutureSlot(slot, selectedDate));
+        const futureSlots = filteredSlots.filter((slot: string) => isFutureSlot(slot, selectedDate ?? ''));
         console.log(`Future slots: ${futureSlots}`);
         setAvailableSlots(futureSlots);
       } else {
         // Si la API no devuelve slots, usar los predefinidos
         console.log("No future slots found, using default slots.");
-        setAvailableSlots(defaultAvailableTimes.filter((slot: string) => isFutureSlot(slot, selectedDate)));
+        setAvailableSlots(defaultAvailableTimes.filter((slot: string) => isFutureSlot(slot, selectedDate ?? '')));
       }
     } catch (error) {
       console.error("Error fetching available slots:", error);
       // En caso de error, mostramos solo los slots por defecto
-      setAvailableSlots(defaultAvailableTimes.filter((slot: string) => isFutureSlot(slot, selectedDate)));
+      setAvailableSlots(defaultAvailableTimes.filter((slot: string) => isFutureSlot(slot, selectedDate ?? '')));
     }
   };
 
   // Función para obtener la fecha actual en formato YYYY-MM-DD
-  function getTodayDate() {
-    return DateTime.now().setZone('America/Mexico_City').toISODate();
+  function getTodayDate(): string | null {
+    const now = DateTime.now().setZone('America/Mexico_City');
+    return now ? now.toISODate() : null;
   }
 
   // Función para convertir tiempo en formato 12 horas a formato 24 horas
@@ -99,8 +102,8 @@ const ConsolidatedForm: React.FC = () => {
   function getStartEndTime(slot: string) {
     const [start, end] = slot.split(" - ");
     return {
-      start: `${selectedDate} ${convertTo24Hour(start)}`,  // Convierte el tiempo a formato 24 horas
-      end: `${selectedDate} ${convertTo24Hour(end)}`
+      start: `${selectedDate ?? ''} ${convertTo24Hour(start)}`,  // Aplicamos coalescencia nula
+      end: `${selectedDate ?? ''} ${convertTo24Hour(end)}`      // Aplicamos coalescencia nula
     };
   }
 
@@ -229,10 +232,10 @@ const ConsolidatedForm: React.FC = () => {
           <input
             type="date"
             name="date"
-            value={selectedDate}
+            value={selectedDate ?? ''}  // Aseguramos que no sea null
             onChange={handleDateChange}
             className="w-full px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
-            min={getTodayDate()}
+            min={getTodayDate() ?? ''}  // Aseguramos que no sea null
             required
           />
         </div>
