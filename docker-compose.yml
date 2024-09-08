@@ -1,8 +1,8 @@
 version: '3.9'
 
 services:
-  InventarioPlus:
-    container_name: InventarioPlus
+  inventarioplus:
+    container_name: inventarioplus
     build: .
     ports:
       - "3000:3000"
