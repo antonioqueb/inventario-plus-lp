@@ -27,6 +27,28 @@ const ConsolidatedForm: React.FC = () => {
     return today.toISOString().split("T")[0]; // Retorna la fecha en formato YYYY-MM-DD
   }
 
+  // Función para separar el rango de horas de "selectedSlot"
+  function getStartEndTime(slot: string) {
+    const [start, end] = slot.split(" - ");  // Divide el slot en tiempo de inicio y fin
+    return {
+      start: `${selectedDate} ${convertTo24Hour(start)}`,  // Convierte el tiempo a formato 24 horas
+      end: `${selectedDate} ${convertTo24Hour(end)}`
+    };
+  }
+
+  // Función para convertir tiempo en formato 12 horas a formato 24 horas
+  function convertTo24Hour(time: string) {
+    const [hours, modifier] = time.split(" ");
+    let [hour, minute] = hours.split(":");
+    if (modifier === "PM" && hour !== "12") {
+      hour = String(Number(hour) + 12);
+    }
+    if (modifier === "AM" && hour === "12") {
+      hour = "00";
+    }
+    return `${hour}:${minute}:00`;
+  }
+
   // Manejar la selección de un horario
   const handleSlotClick = (slot: string) => {
     setSelectedSlot(slot);
@@ -54,6 +76,9 @@ const ConsolidatedForm: React.FC = () => {
       return;
     }
 
+    // Obtener start_time y end_time del slot seleccionado
+    const { start, end } = getStartEndTime(selectedSlot);
+
     // Aquí se envían los datos capturados a la API
     fetch("https://crm.gestpro.cloud/create_opportunity", {
       method: "POST",
@@ -67,8 +92,8 @@ const ConsolidatedForm: React.FC = () => {
         expected_revenue: formData.expected_revenue,
         probability: formData.probability,
         company_id: 2,  // Se ha fijado el ID de la empresa a 2
-        start_time: selectedSlot,  // Solo se envía el horario seleccionado
-        end_time: selectedSlot,  // Ajustar según el bloque de tiempo seleccionado
+        start_time: start,  // Solo se envía el horario seleccionado con la fecha
+        end_time: end,  // Ajustar según el bloque de tiempo seleccionado
       }),
     })
       .then((response) => response.json())
@@ -123,7 +148,6 @@ const ConsolidatedForm: React.FC = () => {
             required
           />
         </div>
-
 
         {/* Mostrar los bloques de tiempo disponibles */}
         <div className="mb-6 mt-6">
