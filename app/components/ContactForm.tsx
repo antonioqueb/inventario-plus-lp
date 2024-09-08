@@ -27,16 +27,6 @@ const ConsolidatedForm: React.FC = () => {
     return today.toISOString().split("T")[0]; // Retorna la fecha en formato YYYY-MM-DD
   }
 
-  // Función para separar el rango de horas de "selectedSlot"
-  function getStartEndTime(slot: string) {
-    const [start, end] = slot.split(" - ");  // Divide el slot en tiempo de inicio y fin
-    console.log("Selected time range:", start, end);
-    return {
-      start: `${selectedDate} ${convertTo24Hour(start)}`,  // Convierte el tiempo a formato 24 horas
-      end: `${selectedDate} ${convertTo24Hour(end)}`
-    };
-  }
-
   // Función para convertir tiempo en formato 12 horas a formato 24 horas
   function convertTo24Hour(time: string) {
     const [hours, modifier] = time.split(" ");
@@ -48,6 +38,23 @@ const ConsolidatedForm: React.FC = () => {
       hour = "00";
     }
     return `${hour}:${minute}:00`;
+  }
+
+  // Función para separar el rango de horas de "selectedSlot"
+  function getStartEndTime(slot: string) {
+    const [start, end] = slot.split(" - ");  // Divide el slot en tiempo de inicio y fin
+    console.log("Selected time range:", start, end);
+    return {
+      start: `${selectedDate} ${convertTo24Hour(start)}`,  // Convierte el tiempo a formato 24 horas
+      end: `${selectedDate} ${convertTo24Hour(end)}`
+    };
+  }
+
+  // Función para comparar la hora actual con los slots y filtrar los pasados
+  function isFutureSlot(slot: string) {
+    const now = new Date();
+    const slotTime = new Date(`${selectedDate} ${convertTo24Hour(slot.split(" - ")[0])}`);
+    return slotTime > now;  // Solo permite mostrar slots en el futuro
   }
 
   // Manejar la selección de un horario
@@ -82,7 +89,6 @@ const ConsolidatedForm: React.FC = () => {
     // Obtener start_time y end_time del slot seleccionado
     const { start, end } = getStartEndTime(selectedSlot);
     console.log("Start time:", start, "End time:", end);
-    console.log("Start time:", start, "End time:", end);  // Revisa el 
 
     // Aquí se envían los datos capturados a la API
     console.log("Sending data to API...", {
@@ -109,8 +115,8 @@ const ConsolidatedForm: React.FC = () => {
         expected_revenue: formData.expected_revenue,
         probability: formData.probability,
         company_id: 2,  // Se ha fijado el ID de la empresa a 2
-        start_time: start,  
-        end_time: end, 
+        start_time: start,
+        end_time: end,
         user_id: 2,
         stage_id: 1
       }),
@@ -179,15 +185,17 @@ const ConsolidatedForm: React.FC = () => {
         <div className="mb-6 mt-6">
           <h3 className="text-white text-xl xl:text-2xl font-medium mb-4">Selecciona un Horario Disponible</h3>
           <div className="grid grid-cols-2 gap-4">
-            {availableTimes.map((slot, index) => (
-              <div
-                key={index}
-                className={`p-4 border rounded-lg text-white ${selectedSlot === slot ? "bg-blue-600" : "bg-gray-600"} cursor-pointer hover:bg-blue-500`}
-                onClick={() => handleSlotClick(slot)}
-              >
-                {slot}
-              </div>
-            ))}
+            {availableTimes
+              .filter(isFutureSlot)  // Filtrar los slots que ya pasaron
+              .map((slot, index) => (
+                <div
+                  key={index}
+                  className={`p-4 border rounded-lg text-white ${selectedSlot === slot ? "bg-blue-600" : "bg-gray-600"} cursor-pointer hover:bg-blue-500`}
+                  onClick={() => handleSlotClick(slot)}
+                >
+                  {slot}
+                </div>
+              ))}
           </div>
         </div>
 
