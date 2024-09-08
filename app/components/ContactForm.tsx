@@ -46,8 +46,8 @@ const ConsolidatedForm: React.FC = () => {
 
       const data = await response.json();
       const filteredSlots = data.available_slots.map((slot: Slot) => {
-        const startHour = DateTime.fromFormat(slot.start, 'yyyy-MM-dd HH:mm:ss', { zone: 'America/Mexico_City' }).toLocaleString(DateTime.TIME_SIMPLE);
-        const endHour = DateTime.fromFormat(slot.end, 'yyyy-MM-dd HH:mm:ss', { zone: 'America/Mexico_City' }).toLocaleString(DateTime.TIME_SIMPLE);
+        const startHour = DateTime.fromFormat(slot.start, 'yyyy-MM-dd HH:mm:ss', { zone: 'America/Mexico_City' }).toFormat('HH:mm');
+        const endHour = DateTime.fromFormat(slot.end, 'yyyy-MM-dd HH:mm:ss', { zone: 'America/Mexico_City' }).toFormat('HH:mm');
         return `${startHour} - ${endHour}`;
       });
 
