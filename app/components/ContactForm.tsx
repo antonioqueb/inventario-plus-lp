@@ -1,14 +1,12 @@
 'use client';
 import React, { useState, useEffect } from "react";
-import { DateTime } from 'luxon';  // Importamos luxon
+import { DateTime } from 'luxon';
 
-// Definimos el tipo de los slots recibidos de la API
 interface Slot {
   start: string;
   end: string;
 }
 
-// Definimos los slots de tiempo manualmente (fijos)
 const defaultAvailableTimes = [
   "10:00 AM - 11:00 AM",
   "1:00 PM - 2:00 PM",
@@ -20,71 +18,54 @@ const defaultAvailableTimes = [
 const ConsolidatedForm: React.FC = () => {
   const [selectedSlot, setSelectedSlot] = useState<string>("");
   const [selectedDate, setSelectedDate] = useState<string | null>(getTodayDate());
-  const [availableSlots, setAvailableSlots] = useState<string[]>(defaultAvailableTimes);  // Inicializamos con los slots por defecto
+  const [availableSlots, setAvailableSlots] = useState<string[]>(defaultAvailableTimes);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",  // Nuevo campo de teléfono
-    expected_revenue: 10000, // Valor fijo
-    probability: 33, // Valor fijo
+    phone: "",
+    expected_revenue: 10000,
+    probability: 33,
   });
   const [apiMessage, setApiMessage] = useState<string | null>(null);
 
-  // Efecto para cargar slots desde la API cuando cambia la fecha
   useEffect(() => {
     if (selectedDate) {
       fetchAvailableSlots();
     }
   }, [selectedDate]);
 
-  // Función para obtener los slots disponibles de la API
   const fetchAvailableSlots = async () => {
-    const start_time = `${selectedDate ?? ''}T00:00:00`;  // Aplicamos coalescencia nula
-    const end_time = `${selectedDate ?? ''}T23:59:59`;    // Aplicamos coalescencia nula
+    const start_time = `${selectedDate ?? ''}T00:00:00`;
+    const end_time = `${selectedDate ?? ''}T23:59:59`;
 
     try {
-      console.log(`Fetching slots for date: ${selectedDate}`);
       const response = await fetch(`https://crm.gestpro.cloud/available_slots?start_time=${start_time}&end_time=${end_time}&company_id=2&user_id=2`);
       if (!response.ok) {
         throw new Error(`Error al obtener slots: ${response.status}`);
       }
 
       const data = await response.json();
-      console.log("API Available slots:", data.available_slots);
-
-      // Filtrar los slots disponibles en el formato de availableTimes
       const filteredSlots = data.available_slots.map((slot: Slot) => {
-        // Usamos fromFormat para parsear las fechas que vienen en el formato "YYYY-MM-DD HH:mm:ss"
         const startHour = DateTime.fromFormat(slot.start, 'yyyy-MM-dd HH:mm:ss', { zone: 'America/Mexico_City' }).toLocaleString(DateTime.TIME_SIMPLE);
         const endHour = DateTime.fromFormat(slot.end, 'yyyy-MM-dd HH:mm:ss', { zone: 'America/Mexico_City' }).toLocaleString(DateTime.TIME_SIMPLE);
-        console.log(`Slot transformed: ${startHour} - ${endHour}`);
         return `${startHour} - ${endHour}`;
       });
 
-      // Si la API devuelve datos, sobrescribimos los slots predefinidos
       if (filteredSlots.length > 0) {
-        console.log(`Filtered slots: ${filteredSlots}`);
-        // Deshabilitar temporalmente la validación de slots futuros
         setAvailableSlots(filteredSlots);
       } else {
-        // Si la API no devuelve slots, usar los predefinidos
-        console.log("No future slots found, using default slots.");
         setAvailableSlots(defaultAvailableTimes);
       }
     } catch (error) {
-      console.error("Error fetching available slots:", error);
-      // En caso de error, mostramos solo los slots por defecto
       setAvailableSlots(defaultAvailableTimes);
     }
   };
 
-  // Función para obtener la fecha actual en formato YYYY-MM-DD
   function getTodayDate(): string | null {
     const now = DateTime.now().setZone('America/Mexico_City');
     return now ? now.toISODate() : null;
   }
 
-  // Función para convertir tiempo en formato 12 horas a formato 24 horas
   function convertTo24Hour(time: string) {
     const [hours, modifier] = time.split(" ");
     let [hour, minute] = hours.split(":");
@@ -97,28 +78,22 @@ const ConsolidatedForm: React.FC = () => {
     return `${hour}:${minute}:00`;
   }
 
-  // Función para separar el rango de horas de "selectedSlot"
   function getStartEndTime(slot: string) {
     const [start, end] = slot.split(" - ");
     return {
-      start: `${selectedDate ?? ''} ${convertTo24Hour(start)}`,  // Aplicamos coalescencia nula
-      end: `${selectedDate ?? ''} ${convertTo24Hour(end)}`      // Aplicamos coalescencia nula
+      start: `${selectedDate ?? ''} ${convertTo24Hour(start)}`,
+      end: `${selectedDate ?? ''} ${convertTo24Hour(end)}`
     };
   }
 
-  // Manejar la selección de un horario
   const handleSlotClick = (slot: string) => {
-    console.log(`Selected slot: ${slot}`);
     setSelectedSlot(slot);
   };
 
-  // Manejar el cambio de la fecha
   const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(`Date changed: ${e.target.value}`);
-    setSelectedDate(e.target.value); // Se actualiza la fecha seleccionada
+    setSelectedDate(e.target.value);
   };
 
-  // Manejar el cambio de los campos del formulario
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
       ...formData,
@@ -126,7 +101,6 @@ const ConsolidatedForm: React.FC = () => {
     });
   };
 
-  // Enviar el formulario
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -135,9 +109,12 @@ const ConsolidatedForm: React.FC = () => {
       return;
     }
 
-    // Obtener start_time y end_time del slot seleccionado
     const { start, end } = getStartEndTime(selectedSlot);
-    console.log(`Submitting form with slot: start - ${start}, end - ${end}`);
+
+    // Log de los datos que se van a enviar
+    console.log("Datos del formulario:", formData);
+    console.log("Slot seleccionado:", selectedSlot);
+    console.log("Tiempo de inicio y fin:", start, end);
 
     fetch("https://crm.gestpro.cloud/create_opportunity", {
       method: "POST",
@@ -148,10 +125,10 @@ const ConsolidatedForm: React.FC = () => {
         name: "Oportunidad Consultoría",
         partner_name: formData.name,
         partner_email: formData.email,
-        phone: formData.phone,  // Enviar teléfono en la solicitud
+        phone: formData.phone,
         expected_revenue: formData.expected_revenue,
         probability: formData.probability,
-        company_id: 2,  // Se ha fijado el ID de la empresa a 2
+        company_id: 2,
         start_time: start,
         end_time: end,
         user_id: 2,
@@ -159,12 +136,15 @@ const ConsolidatedForm: React.FC = () => {
       }),
     })
       .then((response) => {
+        console.log("Respuesta de la API:", response);
+
         if (!response.ok) {
           throw new Error(`API returned status ${response.status}`);
         }
         return response.json();
       })
       .then((data) => {
+        console.log("Respuesta JSON de la API:", data);
         setApiMessage("Oportunidad creada exitosamente.");
       })
       .catch((error) => {
@@ -202,7 +182,6 @@ const ConsolidatedForm: React.FC = () => {
           />
         </div>
 
-        {/* Nuevo campo de teléfono */}
         <div className="mb-6">
           <label className="block text-white text-xl xl:text-2xl font-medium mb-2">Teléfono</label>
           <input
@@ -215,21 +194,19 @@ const ConsolidatedForm: React.FC = () => {
           />
         </div>
 
-        {/* Selector de fecha */}
         <div className="mb-6">
           <label className="block text-white text-xl xl:text-2xl font-medium mb-2">Selecciona una Fecha</label>
           <input
             type="date"
             name="date"
-            value={selectedDate ?? ''}  // Aseguramos que no sea null
+            value={selectedDate ?? ''}
             onChange={handleDateChange}
             className="w-full px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
-            min={getTodayDate() ?? ''}  // Aseguramos que no sea null
+            min={getTodayDate() ?? ''}
             required
           />
         </div>
 
-        {/* Mostrar los bloques de tiempo disponibles */}
         <div className="mb-6 mt-6">
           <h3 className="text-white text-xl xl:text-2xl font-medium mb-4">Selecciona un Horario Disponible</h3>
           <div className="grid grid-cols-2 gap-4">
@@ -249,14 +226,12 @@ const ConsolidatedForm: React.FC = () => {
           </div>
         </div>
 
-        {/* Mensaje de la API */}
         {apiMessage && (
           <div className={`mt-4 p-4 rounded-lg ${apiMessage.includes("exitosamente") ? "bg-green-500" : "bg-red-500"} text-white`}>
             {apiMessage}
           </div>
         )}
 
-        {/* Botón para confirmar la reunión */}
         <button
           type="submit"
           className="w-full bg-blue-700 text-white px-6 py-3 rounded-full text-lg font-extrabold hover:bg-blue-600 transition-all duration-300 ease-in-out shadow-lg"
