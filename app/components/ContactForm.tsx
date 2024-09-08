@@ -8,9 +8,9 @@ interface Slot {
 }
 
 const ConsolidatedForm: React.FC = () => {
-  const [slots, setSlots] = useState<Slot[]>([]);
-  const [selectedSlot, setSelectedSlot] = useState("");
-  const [selectedDate, setSelectedDate] = useState("");
+  const [slots, setSlots] = useState<string[]>([]);
+  const [selectedSlot, setSelectedSlot] = useState<string>("");
+  const [selectedDate, setSelectedDate] = useState<string>("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -23,33 +23,27 @@ const ConsolidatedForm: React.FC = () => {
   // Función para manejar la selección de la fecha
   const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedDate(e.target.value);
+    setShowSlots(false);  // Ocultamos los slots hasta que se haga clic en el botón
   };
 
-  // Cargar bloques de tiempo disponibles desde la API para la fecha seleccionada
-  useEffect(() => {
+  // Definir horarios disponibles de 10:00 AM a 11:00 AM y de 1:00 PM a 5:00 PM
+  const availableTimes = [
+    "10:00 AM - 11:00 AM",
+    "1:00 PM - 2:00 PM",
+    "2:00 PM - 3:00 PM",
+    "3:00 PM - 4:00 PM",
+    "4:00 PM - 5:00 PM",
+  ];
+
+  // Cargar bloques de tiempo disponibles (en este caso horarios fijos)
+  const loadAvailableSlots = () => {
     if (selectedDate) {
-      const startDate = new Date(`${selectedDate}T00:00:00`);
-      const endDate = new Date(`${selectedDate}T23:59:59`);
-
-      const startTimeString = startDate.toISOString().slice(0, 19); // Mantiene el formato con "T"
-      const endTimeString = endDate.toISOString().slice(0, 19);   // Mantiene el formato con "T"
-
-      fetch(
-        `https://crm.gestpro.cloud/available_slots?start_time=${startTimeString}&end_time=${endTimeString}&company_id=1&user_id=2`
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          setSlots(data.available_slots.slice(0, 7)); // Limitando a 7 días
-          setShowSlots(true);
-        })
-        .catch((error) => {
-          console.error("Error fetching slots:", error);
-          setApiMessage("Error cargando los bloques de tiempo.");
-        });
+      setSlots(availableTimes); // Solo los horarios permitidos
+      setShowSlots(true);  // Mostrar slots después de que se hace clic en el botón
     }
-  }, [selectedDate]);
+  };
 
-  // Manejar la selección de un bloque de tiempo
+  // Manejar la selección de un horario
   const handleSlotClick = (slot: string) => {
     setSelectedSlot(slot);
   };
@@ -96,8 +90,8 @@ const ConsolidatedForm: React.FC = () => {
         expected_revenue: formData.expected_revenue,
         probability: formData.probability,
         company_id: 1,
-        start_time: selectedSlot,
-        end_time: selectedSlot, // Ajustar según el bloque de tiempo seleccionado
+        start_time: selectedSlot,  // Solo se envía el horario seleccionado
+        end_time: selectedSlot,  // Ajustar según el bloque de tiempo seleccionado
       }),
     })
       .then((response) => response.json())
@@ -154,18 +148,26 @@ const ConsolidatedForm: React.FC = () => {
           />
         </div>
 
-        {/* Mostrar los bloques de tiempo disponibles después de seleccionar la fecha */}
+        <button
+          type="button"
+          onClick={loadAvailableSlots}
+          className="w-full bg-blue-700 text-white px-6 py-3 rounded-full text-lg font-extrabold hover:bg-blue-600 transition-all duration-300 ease-in-out shadow-lg"
+        >
+          Cargar Horarios Disponibles
+        </button>
+
+        {/* Mostrar los bloques de tiempo disponibles después de cargar */}
         {showSlots && slots.length > 0 && (
-          <div className="mb-6">
+          <div className="mb-6 mt-6">
             <h3 className="text-white text-xl xl:text-2xl font-medium mb-4">Selecciona un Horario Disponible</h3>
             <div className="grid grid-cols-2 gap-4">
               {slots.map((slot, index) => (
                 <div
                   key={index}
-                  className={`p-4 border rounded-lg text-white ${selectedSlot === slot.start ? "bg-blue-600" : "bg-gray-600"} cursor-pointer hover:bg-blue-500`}
-                  onClick={() => handleSlotClick(slot.start)}
+                  className={`p-4 border rounded-lg text-white ${selectedSlot === slot ? "bg-blue-600" : "bg-gray-600"} cursor-pointer hover:bg-blue-500`}
+                  onClick={() => handleSlotClick(slot)}
                 >
-                  {slot.start} - {slot.end}
+                  {slot}
                 </div>
               ))}
             </div>
