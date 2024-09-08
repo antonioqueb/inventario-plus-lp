@@ -40,6 +40,7 @@ const ConsolidatedForm: React.FC = () => {
     const end_time = `${selectedDate}T23:59:59`;
 
     try {
+      console.log(`Fetching slots for date: ${selectedDate}`);
       const response = await fetch(`https://crm.gestpro.cloud/available_slots?start_time=${start_time}&end_time=${end_time}&company_id=2&user_id=2`);
       if (!response.ok) {
         throw new Error(`Error al obtener slots: ${response.status}`);
@@ -52,16 +53,20 @@ const ConsolidatedForm: React.FC = () => {
       const filteredSlots = data.available_slots.map((slot: Slot) => {
         const startHour = new Date(slot.start).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         const endHour = new Date(slot.end).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        console.log(`Slot transformed: ${startHour} - ${endHour}`);
         return `${startHour} - ${endHour}`;
       });
 
       // Si la API devuelve datos, sobrescribimos los slots predefinidos
       if (filteredSlots.length > 0) {
+        console.log(`Filtered slots: ${filteredSlots}`);
         // Aplicar filtro de slots futuros
         const futureSlots = filteredSlots.filter((slot: string) => isFutureSlot(slot, selectedDate));
+        console.log(`Future slots: ${futureSlots}`);
         setAvailableSlots(futureSlots);
       } else {
         // Si la API no devuelve slots, usar los predefinidos
+        console.log("No future slots found, using default slots.");
         setAvailableSlots(defaultAvailableTimes.filter((slot: string) => isFutureSlot(slot, selectedDate)));
       }
     } catch (error) {
@@ -104,16 +109,20 @@ const ConsolidatedForm: React.FC = () => {
     const now = new Date();
     const [startTime] = slot.split(" - "); // Solo tomar la hora de inicio
     const slotTime = new Date(`${selectedDate} ${convertTo24Hour(startTime)}`);
-    return slotTime > now;  // Solo permite mostrar slots en el futuro
+    const isFuture = slotTime > now;
+    console.log(`Checking if slot is future: ${slotTime}, now: ${now}, isFuture: ${isFuture}`);
+    return isFuture;  // Solo permite mostrar slots en el futuro
   }
 
   // Manejar la selección de un horario
   const handleSlotClick = (slot: string) => {
+    console.log(`Selected slot: ${slot}`);
     setSelectedSlot(slot);
   };
 
   // Manejar el cambio de la fecha
   const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(`Date changed: ${e.target.value}`);
     setSelectedDate(e.target.value); // Se actualiza la fecha seleccionada
   };
 
@@ -136,6 +145,7 @@ const ConsolidatedForm: React.FC = () => {
 
     // Obtener start_time y end_time del slot seleccionado
     const { start, end } = getStartEndTime(selectedSlot);
+    console.log(`Submitting form with slot: start - ${start}, end - ${end}`);
 
     fetch("https://crm.gestpro.cloud/create_opportunity", {
       method: "POST",
