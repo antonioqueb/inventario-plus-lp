@@ -49,14 +49,15 @@ const ConsolidatedForm: React.FC = () => {
         return `${startHour} - ${endHour}`;
       });
 
-      // Combinar los horarios predefinidos con los obtenidos de la API
-      const combinedSlots = [...defaultAvailableTimes, ...filteredSlots];
-
-      // Aplicar filtro de slots futuros
-      const futureSlots = combinedSlots.filter(isFutureSlot);
-
-      // Actualizar los slots disponibles
-      setAvailableSlots(futureSlots);
+      // Si la API devuelve datos, sobrescribimos los slots predefinidos
+      if (filteredSlots.length > 0) {
+        // Aplicar filtro de slots futuros
+        const futureSlots = filteredSlots.filter(isFutureSlot);
+        setAvailableSlots(futureSlots);
+      } else {
+        // Si la API no devuelve slots, usar los predefinidos
+        setAvailableSlots(defaultAvailableTimes.filter(isFutureSlot));
+      }
     } catch (error) {
       console.error("Error fetching available slots:", error);
       // En caso de error, mostramos solo los slots por defecto
@@ -223,8 +224,10 @@ const ConsolidatedForm: React.FC = () => {
         <div className="mb-6 mt-6">
           <h3 className="text-white text-xl xl:text-2xl font-medium mb-4">Selecciona un Horario Disponible</h3>
           <div className="grid grid-cols-2 gap-4">
-            {availableSlots
-              .map((slot, index) => (
+            {availableSlots.length === 0 ? (
+              <p className="text-white">No hay horarios disponibles.</p>
+            ) : (
+              availableSlots.map((slot, index) => (
                 <div
                   key={index}
                   className={`p-4 border rounded-lg text-white ${selectedSlot === slot ? "bg-blue-600" : "bg-gray-600"} cursor-pointer hover:bg-blue-500`}
@@ -232,7 +235,8 @@ const ConsolidatedForm: React.FC = () => {
                 >
                   {slot}
                 </div>
-              ))}
+              ))
+            )}
           </div>
         </div>
 
