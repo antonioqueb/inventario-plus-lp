@@ -30,6 +30,7 @@ const ConsolidatedForm: React.FC = () => {
   // Función para separar el rango de horas de "selectedSlot"
   function getStartEndTime(slot: string) {
     const [start, end] = slot.split(" - ");  // Divide el slot en tiempo de inicio y fin
+    console.log("Selected time range:", start, end);
     return {
       start: `${selectedDate} ${convertTo24Hour(start)}`,  // Convierte el tiempo a formato 24 horas
       end: `${selectedDate} ${convertTo24Hour(end)}`
@@ -51,11 +52,13 @@ const ConsolidatedForm: React.FC = () => {
 
   // Manejar la selección de un horario
   const handleSlotClick = (slot: string) => {
+    console.log("Selected slot:", slot);
     setSelectedSlot(slot);
   };
 
   // Manejar el cambio de la fecha
   const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log("Selected date:", e.target.value);
     setSelectedDate(e.target.value); // Se actualiza la fecha seleccionada
   };
 
@@ -78,8 +81,19 @@ const ConsolidatedForm: React.FC = () => {
 
     // Obtener start_time y end_time del slot seleccionado
     const { start, end } = getStartEndTime(selectedSlot);
+    console.log("Start time:", start, "End time:", end);
 
     // Aquí se envían los datos capturados a la API
+    console.log("Sending data to API...", {
+      name: formData.name,
+      email: formData.email,
+      expected_revenue: formData.expected_revenue,
+      probability: formData.probability,
+      company_id: 2,
+      start_time: start,
+      end_time: end
+    });
+
     fetch("https://crm.gestpro.cloud/create_opportunity", {
       method: "POST",
       headers: {
@@ -96,8 +110,15 @@ const ConsolidatedForm: React.FC = () => {
         end_time: end,  // Ajustar según el bloque de tiempo seleccionado
       }),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        console.log("Response status:", response.status);
+        if (!response.ok) {
+          throw new Error(`API returned status ${response.status}`);
+        }
+        return response.json();
+      })
       .then((data) => {
+        console.log("API Response data:", data);
         setApiMessage("Oportunidad creada exitosamente.");
       })
       .catch((error) => {
