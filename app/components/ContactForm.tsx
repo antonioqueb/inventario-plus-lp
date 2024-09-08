@@ -58,16 +58,16 @@ const ConsolidatedForm: React.FC = () => {
       // Si la API devuelve datos, sobrescribimos los slots predefinidos
       if (filteredSlots.length > 0) {
         // Aplicar filtro de slots futuros
-        const futureSlots = filteredSlots.filter((slot: Slot) => isFutureSlot(slot, selectedDate));
+        const futureSlots = filteredSlots.filter((slot: string) => isFutureSlot(slot, selectedDate));
         setAvailableSlots(futureSlots);
       } else {
         // Si la API no devuelve slots, usar los predefinidos
-        setAvailableSlots(defaultAvailableTimes.filter(slot => isFutureSlot(slot, selectedDate)));
+        setAvailableSlots(defaultAvailableTimes.filter((slot: string) => isFutureSlot(slot, selectedDate)));
       }
     } catch (error) {
       console.error("Error fetching available slots:", error);
       // En caso de error, mostramos solo los slots por defecto
-      setAvailableSlots(defaultAvailableTimes.filter(slot => isFutureSlot(slot, selectedDate)));
+      setAvailableSlots(defaultAvailableTimes.filter((slot: string) => isFutureSlot(slot, selectedDate)));
     }
   };
 
