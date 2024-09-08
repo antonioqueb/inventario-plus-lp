@@ -1,5 +1,4 @@
 'use client';
-
 import React, { useState, useEffect } from "react";
 
 // Define el tipo de los slots
@@ -11,20 +10,31 @@ interface Slot {
 const ConsolidatedForm: React.FC = () => {
   const [slots, setSlots] = useState<Slot[]>([]);
   const [selectedSlot, setSelectedSlot] = useState("");
+  const [showSlots, setShowSlots] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    expected_revenue: 0,
-    probability: 70,
+    expected_revenue: 10000, // Valor fijo
+    probability: 33, // Valor fijo
   });
+  const [apiMessage, setApiMessage] = useState<string | null>(null); // Nuevo estado para manejar el mensaje de la API
 
   // Cargar bloques de tiempo disponibles desde la API
   useEffect(() => {
-    fetch("https://crm.gestpro.cloud/available_slots?start_time=2024-09-01T00:00:00&end_time=2024-09-30T23:59:59&company_id=1&user_id=2")
-      .then((response) => response.json())
-      .then((data) => setSlots(data.available_slots))
-      .catch((error) => console.error("Error fetching slots:", error));
-  }, []);
+    if (showSlots) {
+      const startDate = new Date();
+      const endDate = new Date();
+      endDate.setDate(startDate.getDate() + 7); // Rango de 1 semana
+
+      const startTimeString = startDate.toISOString().slice(0, 19).replace("T", " ");
+      const endTimeString = endDate.toISOString().slice(0, 19).replace("T", " ");
+
+      fetch(`https://crm.gestpro.cloud/available_slots?start_time=${startTimeString}&end_time=${endTimeString}&company_id=1&user_id=2`)
+        .then((response) => response.json())
+        .then((data) => setSlots(data.available_slots))
+        .catch((error) => console.error("Error fetching slots:", error));
+    }
+  }, [showSlots]);
 
   // Manejar la selección de un bloque de tiempo
   const handleSlotClick = (slot: string) => {
@@ -39,10 +49,19 @@ const ConsolidatedForm: React.FC = () => {
     });
   };
 
+  // Manejar el botón de mostrar los slots
+  const handleShowSlots = () => {
+    if (formData.name && formData.email) {
+      setShowSlots(true);
+    } else {
+      alert("Por favor, rellena los campos de Nombre y Correo.");
+    }
+  };
+
   // Enviar el formulario
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!selectedSlot) {
       alert("Por favor, selecciona un horario disponible.");
       return;
@@ -55,19 +74,24 @@ const ConsolidatedForm: React.FC = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name: "Consultoría de Inventarios",
+        name: "Oportunidad Consultoría",
         partner_name: formData.name,
         partner_email: formData.email,
         expected_revenue: formData.expected_revenue,
         probability: formData.probability,
-        company_id: 2, // ID de la empresa
+        company_id: 1,
         start_time: selectedSlot,
-        end_time: "2024-09-10 11:00:00", // Ajustar según el bloque de tiempo seleccionado
+        end_time: selectedSlot, // Ajustar según el bloque de tiempo seleccionado
       }),
     })
-    .then((response) => response.json())
-    .then((data) => console.log("Oportunidad creada:", data))
-    .catch((error) => console.error("Error creando oportunidad:", error));
+      .then((response) => response.json())
+      .then((data) => {
+        setApiMessage("Oportunidad creada exitosamente."); // Actualiza el mensaje con la respuesta
+      })
+      .catch((error) => {
+        console.error("Error creando oportunidad:", error);
+        setApiMessage("Error creando oportunidad. Inténtalo de nuevo."); // Actualiza el mensaje con el error
+      });
   };
 
   return (
@@ -99,52 +123,51 @@ const ConsolidatedForm: React.FC = () => {
           />
         </div>
 
-        <div className="mb-6">
-          <label className="block text-white text-xl xl:text-2xl font-medium mb-2">Ingresos Esperados</label>
-          <input
-            type="number"
-            name="expected_revenue"
-            value={formData.expected_revenue}
-            onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
-          />
-        </div>
-
-        <div className="mb-6">
-          <label className="block text-white text-xl xl:text-2xl font-medium mb-2">Probabilidad de Éxito (%)</label>
-          <input
-            type="number"
-            name="probability"
-            value={formData.probability}
-            onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
-          />
-        </div>
+        {/* Botón para mostrar los slots */}
+        {!showSlots && (
+          <button
+            type="button"
+            className="w-full bg-blue-700 text-white px-6 py-3 rounded-full text-lg font-extrabold hover:bg-blue-600 transition-all duration-300 ease-in-out shadow-lg"
+            onClick={handleShowSlots}
+          >
+            Programar Reunión
+          </button>
+        )}
 
         {/* Selector de bloque de tiempo */}
-        <div className="mb-6">
-          <h3 className="text-white text-xl xl:text-2xl font-medium mb-4">Selecciona un Horario Disponible</h3>
-          <ul className="slot-list">
-            {slots.map((slot, index) => (
-              <li
-                key={index}
-                className={`slot-item text-white ${selectedSlot === slot.start ? "bg-blue-600" : ""} cursor-pointer py-2 px-4 rounded-lg hover:bg-blue-500`}
-                onClick={() => handleSlotClick(slot.start)}
-              >
-                {slot.start} - {slot.end}
-              </li>
-            ))}
-          </ul>
-        </div>
+        {showSlots && (
+          <>
+            <div className="mb-6">
+              <h3 className="text-white text-xl xl:text-2xl font-medium mb-4">Selecciona un Horario Disponible</h3>
+              <ul className="slot-list">
+                {slots.map((slot, index) => (
+                  <li
+                    key={index}
+                    className={`slot-item text-white ${selectedSlot === slot.start ? "bg-blue-600" : ""} cursor-pointer py-2 px-4 rounded-lg hover:bg-blue-500`}
+                    onClick={() => handleSlotClick(slot.start)}
+                  >
+                    {slot.start} - {slot.end}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-        <button
-          type="submit"
-          className="w-full bg-blue-700 text-white px-6 py-3 rounded-full text-lg font-extrabold hover:bg-blue-600 transition-all duration-300 ease-in-out shadow-lg"
-        >
-          Enviar
-        </button>
+            {/* Botón para confirmar la reunión */}
+            <button
+              type="submit"
+              className="w-full bg-blue-700 text-white px-6 py-3 rounded-full text-lg font-extrabold hover:bg-blue-600 transition-all duration-300 ease-in-out shadow-lg"
+            >
+              Confirmar Reunión
+            </button>
+          </>
+        )}
+
+        {/* Mensaje de la API */}
+        {apiMessage && (
+          <div className={`mt-4 p-4 rounded-lg ${apiMessage.includes("exitosamente") ? "bg-green-500" : "bg-red-500"} text-white`}>
+            {apiMessage}
+          </div>
+        )}
       </form>
     </section>
   );
