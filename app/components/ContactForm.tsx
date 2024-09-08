@@ -54,8 +54,9 @@ const ConsolidatedForm: React.FC = () => {
 
       // Filtrar los slots disponibles en el formato de availableTimes
       const filteredSlots = data.available_slots.map((slot: Slot) => {
-        const startHour = DateTime.fromISO(slot.start, { zone: 'America/Mexico_City' }).toLocaleString(DateTime.TIME_SIMPLE);
-        const endHour = DateTime.fromISO(slot.end, { zone: 'America/Mexico_City' }).toLocaleString(DateTime.TIME_SIMPLE);
+        // Usamos fromFormat para parsear las fechas que vienen en el formato "YYYY-MM-DD HH:mm:ss"
+        const startHour = DateTime.fromFormat(slot.start, 'yyyy-MM-dd HH:mm:ss', { zone: 'America/Mexico_City' }).toLocaleString(DateTime.TIME_SIMPLE);
+        const endHour = DateTime.fromFormat(slot.end, 'yyyy-MM-dd HH:mm:ss', { zone: 'America/Mexico_City' }).toLocaleString(DateTime.TIME_SIMPLE);
         console.log(`Slot transformed: ${startHour} - ${endHour}`);
         return `${startHour} - ${endHour}`;
       });
