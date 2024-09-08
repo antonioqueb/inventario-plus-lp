@@ -58,7 +58,7 @@ const ConsolidatedForm: React.FC = () => {
       // Si la API devuelve datos, sobrescribimos los slots predefinidos
       if (filteredSlots.length > 0) {
         // Aplicar filtro de slots futuros
-        const futureSlots = filteredSlots.filter(slot => isFutureSlot(slot, selectedDate));
+        const futureSlots = filteredSlots.filter((slot: Slot) => isFutureSlot(slot, selectedDate));
         setAvailableSlots(futureSlots);
       } else {
         // Si la API no devuelve slots, usar los predefinidos
