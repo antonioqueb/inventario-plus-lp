@@ -10,35 +10,60 @@ interface Slot {
 const ConsolidatedForm: React.FC = () => {
   const [slots, setSlots] = useState<Slot[]>([]);
   const [selectedSlot, setSelectedSlot] = useState("");
-  const [showSlots, setShowSlots] = useState(false);
+  const [selectedDate, setSelectedDate] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     expected_revenue: 10000, // Valor fijo
     probability: 33, // Valor fijo
   });
-  const [apiMessage, setApiMessage] = useState<string | null>(null); // Nuevo estado para manejar el mensaje de la API
+  const [apiMessage, setApiMessage] = useState<string | null>(null);
+  const [showSlots, setShowSlots] = useState(false);
 
-  // Cargar bloques de tiempo disponibles desde la API
+  // Función para manejar la selección de la fecha
+  const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedDate(e.target.value);
+  };
+
+  // Cargar bloques de tiempo disponibles desde la API para la fecha seleccionada
   useEffect(() => {
-    if (showSlots) {
-      const startDate = new Date();
-      const endDate = new Date();
-      endDate.setDate(startDate.getDate() + 7); // Rango de 1 semana
+    if (selectedDate) {
+      const startDate = new Date(`${selectedDate}T00:00:00`);
+      const endDate = new Date(`${selectedDate}T23:59:59`);
 
-      const startTimeString = startDate.toISOString().slice(0, 19).replace("T", " ");
-      const endTimeString = endDate.toISOString().slice(0, 19).replace("T", " ");
+      const startTimeString = startDate.toISOString().slice(0, 19); // Mantiene el formato con "T"
+      const endTimeString = endDate.toISOString().slice(0, 19);   // Mantiene el formato con "T"
 
-      fetch(`https://crm.gestpro.cloud/available_slots?start_time=${startTimeString}&end_time=${endTimeString}&company_id=1&user_id=2`)
+      fetch(
+        `https://crm.gestpro.cloud/available_slots?start_time=${startTimeString}&end_time=${endTimeString}&company_id=1&user_id=2`
+      )
         .then((response) => response.json())
-        .then((data) => setSlots(data.available_slots))
-        .catch((error) => console.error("Error fetching slots:", error));
+        .then((data) => {
+          setSlots(data.available_slots);
+          setShowSlots(true);
+        })
+        .catch((error) => {
+          console.error("Error fetching slots:", error);
+          setApiMessage("Error cargando los bloques de tiempo.");
+        });
     }
-  }, [showSlots]);
+  }, [selectedDate]);
 
   // Manejar la selección de un bloque de tiempo
   const handleSlotClick = (slot: string) => {
     setSelectedSlot(slot);
+  };
+
+  // Obtener la fecha mínima y máxima permitidas (hoy y dentro de 15 días)
+  const getMinDate = () => {
+    const today = new Date();
+    return today.toISOString().split("T")[0]; // Fecha mínima es hoy
+  };
+
+  const getMaxDate = () => {
+    const today = new Date();
+    today.setDate(today.getDate() + 15); // Fecha máxima es dentro de 15 días
+    return today.toISOString().split("T")[0];
   };
 
   // Manejar el cambio de los campos del formulario
@@ -47,15 +72,6 @@ const ConsolidatedForm: React.FC = () => {
       ...formData,
       [e.target.name]: e.target.value,
     });
-  };
-
-  // Manejar el botón de mostrar los slots
-  const handleShowSlots = () => {
-    if (formData.name && formData.email) {
-      setShowSlots(true);
-    } else {
-      alert("Por favor, rellena los campos de Nombre y Correo.");
-    }
   };
 
   // Enviar el formulario
@@ -86,11 +102,11 @@ const ConsolidatedForm: React.FC = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        setApiMessage("Oportunidad creada exitosamente."); // Actualiza el mensaje con la respuesta
+        setApiMessage("Oportunidad creada exitosamente.");
       })
       .catch((error) => {
         console.error("Error creando oportunidad:", error);
-        setApiMessage("Error creando oportunidad. Inténtalo de nuevo."); // Actualiza el mensaje con el error
+        setApiMessage("Error creando oportunidad. Inténtalo de nuevo.");
       });
   };
 
@@ -123,43 +139,37 @@ const ConsolidatedForm: React.FC = () => {
           />
         </div>
 
-        {/* Botón para mostrar los slots */}
-        {!showSlots && (
-          <button
-            type="button"
-            className="w-full bg-blue-700 text-white px-6 py-3 rounded-full text-lg font-extrabold hover:bg-blue-600 transition-all duration-300 ease-in-out shadow-lg"
-            onClick={handleShowSlots}
-          >
-            Programar Reunión
-          </button>
-        )}
+        {/* Selector de fecha */}
+        <div className="mb-6">
+          <label className="block text-white text-xl xl:text-2xl font-medium mb-2">Selecciona una Fecha</label>
+          <input
+            type="date"
+            name="date"
+            value={selectedDate}
+            onChange={handleDateChange}
+            className="w-full px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            min={getMinDate()}
+            max={getMaxDate()}
+            required
+          />
+        </div>
 
-        {/* Selector de bloque de tiempo */}
-        {showSlots && (
-          <>
-            <div className="mb-6">
-              <h3 className="text-white text-xl xl:text-2xl font-medium mb-4">Selecciona un Horario Disponible</h3>
-              <ul className="slot-list">
-                {slots.map((slot, index) => (
-                  <li
-                    key={index}
-                    className={`slot-item text-white ${selectedSlot === slot.start ? "bg-blue-600" : ""} cursor-pointer py-2 px-4 rounded-lg hover:bg-blue-500`}
-                    onClick={() => handleSlotClick(slot.start)}
-                  >
-                    {slot.start} - {slot.end}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Botón para confirmar la reunión */}
-            <button
-              type="submit"
-              className="w-full bg-blue-700 text-white px-6 py-3 rounded-full text-lg font-extrabold hover:bg-blue-600 transition-all duration-300 ease-in-out shadow-lg"
-            >
-              Confirmar Reunión
-            </button>
-          </>
+        {/* Mostrar los bloques de tiempo disponibles después de seleccionar la fecha */}
+        {showSlots && slots.length > 0 && (
+          <div className="mb-6">
+            <h3 className="text-white text-xl xl:text-2xl font-medium mb-4">Selecciona un Horario Disponible</h3>
+            <ul className="slot-list">
+              {slots.map((slot, index) => (
+                <li
+                  key={index}
+                  className={`slot-item text-white ${selectedSlot === slot.start ? "bg-blue-600" : ""} cursor-pointer py-2 px-4 rounded-lg hover:bg-blue-500`}
+                  onClick={() => handleSlotClick(slot.start)}
+                >
+                  {slot.start} - {slot.end}
+                </li>
+              ))}
+            </ul>
+          </div>
         )}
 
         {/* Mensaje de la API */}
@@ -167,6 +177,16 @@ const ConsolidatedForm: React.FC = () => {
           <div className={`mt-4 p-4 rounded-lg ${apiMessage.includes("exitosamente") ? "bg-green-500" : "bg-red-500"} text-white`}>
             {apiMessage}
           </div>
+        )}
+
+        {/* Botón para confirmar la reunión */}
+        {showSlots && slots.length > 0 && (
+          <button
+            type="submit"
+            className="w-full bg-blue-700 text-white px-6 py-3 rounded-full text-lg font-extrabold hover:bg-blue-600 transition-all duration-300 ease-in-out shadow-lg"
+          >
+            Confirmar Reunión
+          </button>
         )}
       </form>
     </section>
