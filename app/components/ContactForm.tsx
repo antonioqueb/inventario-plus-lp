@@ -118,11 +118,12 @@ const ConsolidatedForm: React.FC = () => {
             name="date"
             value={selectedDate}
             onChange={handleDateChange}
-            className="w-full px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
             min={getTodayDate()}
             required
           />
         </div>
+
 
         {/* Mostrar los bloques de tiempo disponibles */}
         <div className="mb-6 mt-6">
