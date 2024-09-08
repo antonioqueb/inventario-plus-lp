@@ -39,7 +39,7 @@ const ConsolidatedForm: React.FC = () => {
       )
         .then((response) => response.json())
         .then((data) => {
-          setSlots(data.available_slots);
+          setSlots(data.available_slots.slice(0, 7)); // Limitando a 7 días
           setShowSlots(true);
         })
         .catch((error) => {
@@ -54,7 +54,7 @@ const ConsolidatedForm: React.FC = () => {
     setSelectedSlot(slot);
   };
 
-  // Obtener la fecha mínima y máxima permitidas (hoy y dentro de 15 días)
+  // Obtener la fecha mínima y máxima permitidas (hoy y dentro de 7 días)
   const getMinDate = () => {
     const today = new Date();
     return today.toISOString().split("T")[0]; // Fecha mínima es hoy
@@ -62,7 +62,7 @@ const ConsolidatedForm: React.FC = () => {
 
   const getMaxDate = () => {
     const today = new Date();
-    today.setDate(today.getDate() + 15); // Fecha máxima es dentro de 15 días
+    today.setDate(today.getDate() + 7); // Fecha máxima es dentro de 7 días
     return today.toISOString().split("T")[0];
   };
 
@@ -158,17 +158,17 @@ const ConsolidatedForm: React.FC = () => {
         {showSlots && slots.length > 0 && (
           <div className="mb-6">
             <h3 className="text-white text-xl xl:text-2xl font-medium mb-4">Selecciona un Horario Disponible</h3>
-            <ul className="slot-list">
+            <div className="grid grid-cols-2 gap-4">
               {slots.map((slot, index) => (
-                <li
+                <div
                   key={index}
-                  className={`slot-item text-white ${selectedSlot === slot.start ? "bg-blue-600" : ""} cursor-pointer py-2 px-4 rounded-lg hover:bg-blue-500`}
+                  className={`p-4 border rounded-lg text-white ${selectedSlot === slot.start ? "bg-blue-600" : "bg-gray-600"} cursor-pointer hover:bg-blue-500`}
                   onClick={() => handleSlotClick(slot.start)}
                 >
                   {slot.start} - {slot.end}
-                </li>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         )}
 
