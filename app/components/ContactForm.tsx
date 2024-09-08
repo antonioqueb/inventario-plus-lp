@@ -1,8 +1,8 @@
 'use client';
 import React, { useState, useEffect } from "react";
 
-// Horarios fijos en los que estás interesado
-const availableTimes = [
+// Definimos los slots de tiempo manualmente (fijos)
+const defaultAvailableTimes = [
   "10:00 AM - 11:00 AM",
   "1:00 PM - 2:00 PM",
   "2:00 PM - 3:00 PM",
@@ -13,16 +13,17 @@ const availableTimes = [
 const ConsolidatedForm: React.FC = () => {
   const [selectedSlot, setSelectedSlot] = useState<string>("");
   const [selectedDate, setSelectedDate] = useState<string>(getTodayDate());
-  const [availableSlots, setAvailableSlots] = useState<string[]>([]);  // Almacenará los slots disponibles de la API
+  const [availableSlots, setAvailableSlots] = useState<string[]>(defaultAvailableTimes);  // Inicializamos con los slots por defecto
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
-    expected_revenue: 10000,
-    probability: 33,
+    phone: "",  // Nuevo campo de teléfono
+    expected_revenue: 10000, // Valor fijo
+    probability: 33, // Valor fijo
   });
   const [apiMessage, setApiMessage] = useState<string | null>(null);
 
+  // Efecto para cargar slots desde la API cuando cambia la fecha
   useEffect(() => {
     fetchAvailableSlots();
   }, [selectedDate]);
@@ -48,12 +49,12 @@ const ConsolidatedForm: React.FC = () => {
         return `${startHour} - ${endHour}`;
       }).filter(isFutureSlot); // Solo mantener los slots en el futuro
 
-      // Filtrar solo los horarios que coincidan con los que te interesan
-      const validSlots = availableTimes.filter(time => filteredSlots.includes(time));
-
-      setAvailableSlots(validSlots);
+      // Si no hay slots de la API, dejamos los valores por defecto
+      setAvailableSlots(filteredSlots.length > 0 ? filteredSlots : defaultAvailableTimes);
     } catch (error) {
       console.error("Error fetching available slots:", error);
+      // En caso de error, mostramos los slots por defecto
+      setAvailableSlots(defaultAvailableTimes);
     }
   };
 
@@ -78,7 +79,7 @@ const ConsolidatedForm: React.FC = () => {
 
   // Función para separar el rango de horas de "selectedSlot"
   function getStartEndTime(slot: string) {
-    const [start, end] = slot.split(" - ");  // Divide el slot en tiempo de inicio y fin
+    const [start, end] = slot.split(" - ");
     return {
       start: `${selectedDate} ${convertTo24Hour(start)}`,  // Convierte el tiempo a formato 24 horas
       end: `${selectedDate} ${convertTo24Hour(end)}`
@@ -131,10 +132,10 @@ const ConsolidatedForm: React.FC = () => {
         name: "Oportunidad Consultoría",
         partner_name: formData.name,
         partner_email: formData.email,
-        phone: formData.phone,
+        phone: formData.phone,  // Enviar teléfono en la solicitud
         expected_revenue: formData.expected_revenue,
         probability: formData.probability,
-        company_id: 2,  // ID de la empresa
+        company_id: 2,  // Se ha fijado el ID de la empresa a 2
         start_time: start,
         end_time: end,
         user_id: 2,
@@ -185,6 +186,7 @@ const ConsolidatedForm: React.FC = () => {
           />
         </div>
 
+        {/* Nuevo campo de teléfono */}
         <div className="mb-6">
           <label className="block text-white text-xl xl:text-2xl font-medium mb-2">Teléfono</label>
           <input
@@ -197,6 +199,7 @@ const ConsolidatedForm: React.FC = () => {
           />
         </div>
 
+        {/* Selector de fecha */}
         <div className="mb-6">
           <label className="block text-white text-xl xl:text-2xl font-medium mb-2">Selecciona una Fecha</label>
           <input
@@ -210,27 +213,32 @@ const ConsolidatedForm: React.FC = () => {
           />
         </div>
 
+        {/* Mostrar los bloques de tiempo disponibles */}
         <div className="mb-6 mt-6">
           <h3 className="text-white text-xl xl:text-2xl font-medium mb-4">Selecciona un Horario Disponible</h3>
           <div className="grid grid-cols-2 gap-4">
-            {availableSlots.map((slot, index) => (
-              <div
-                key={index}
-                className={`p-4 border rounded-lg text-white ${selectedSlot === slot ? "bg-blue-600" : "bg-gray-600"} cursor-pointer hover:bg-blue-500`}
-                onClick={() => handleSlotClick(slot)}
-              >
-                {slot}
-              </div>
-            ))}
+            {availableSlots
+              .filter(isFutureSlot)  // Filtrar los slots que ya pasaron
+              .map((slot, index) => (
+                <div
+                  key={index}
+                  className={`p-4 border rounded-lg text-white ${selectedSlot === slot ? "bg-blue-600" : "bg-gray-600"} cursor-pointer hover:bg-blue-500`}
+                  onClick={() => handleSlotClick(slot)}
+                >
+                  {slot}
+                </div>
+              ))}
           </div>
         </div>
 
+        {/* Mensaje de la API */}
         {apiMessage && (
           <div className={`mt-4 p-4 rounded-lg ${apiMessage.includes("exitosamente") ? "bg-green-500" : "bg-red-500"} text-white`}>
             {apiMessage}
           </div>
         )}
 
+        {/* Botón para confirmar la reunión */}
         <button
           type="submit"
           className="w-full bg-blue-700 text-white px-6 py-3 rounded-full text-lg font-extrabold hover:bg-blue-600 transition-all duration-300 ease-in-out shadow-lg"
@@ -243,3 +251,4 @@ const ConsolidatedForm: React.FC = () => {
 };
 
 export default ConsolidatedForm;
+
