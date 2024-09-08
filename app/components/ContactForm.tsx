@@ -64,19 +64,17 @@ const ConsolidatedForm: React.FC = () => {
       // Si la API devuelve datos, sobrescribimos los slots predefinidos
       if (filteredSlots.length > 0) {
         console.log(`Filtered slots: ${filteredSlots}`);
-        // Aplicar filtro de slots futuros
-        const futureSlots = filteredSlots.filter((slot: string) => isFutureSlot(slot, selectedDate ?? ''));
-        console.log(`Future slots: ${futureSlots}`);
-        setAvailableSlots(futureSlots);
+        // Deshabilitar temporalmente la validación de slots futuros
+        setAvailableSlots(filteredSlots);
       } else {
         // Si la API no devuelve slots, usar los predefinidos
         console.log("No future slots found, using default slots.");
-        setAvailableSlots(defaultAvailableTimes.filter((slot: string) => isFutureSlot(slot, selectedDate ?? '')));
+        setAvailableSlots(defaultAvailableTimes);
       }
     } catch (error) {
       console.error("Error fetching available slots:", error);
       // En caso de error, mostramos solo los slots por defecto
-      setAvailableSlots(defaultAvailableTimes.filter((slot: string) => isFutureSlot(slot, selectedDate ?? '')));
+      setAvailableSlots(defaultAvailableTimes);
     }
   };
 
@@ -106,16 +104,6 @@ const ConsolidatedForm: React.FC = () => {
       start: `${selectedDate ?? ''} ${convertTo24Hour(start)}`,  // Aplicamos coalescencia nula
       end: `${selectedDate ?? ''} ${convertTo24Hour(end)}`      // Aplicamos coalescencia nula
     };
-  }
-
-  // Función para comparar la hora actual con los slots y filtrar los pasados
-  function isFutureSlot(slot: string, selectedDate: string) {
-    const now = DateTime.now().setZone('America/Mexico_City');
-    const [startTime] = slot.split(" - "); // Solo tomar la hora de inicio
-    const slotTime = DateTime.fromFormat(`${selectedDate} ${convertTo24Hour(startTime)}`, 'yyyy-MM-dd HH:mm:ss', { zone: 'America/Mexico_City' });
-    const isFuture = slotTime > now;  // Comparar fechas con luxon
-    console.log(`Checking if slot is future: ${slotTime}, now: ${now}, isFuture: ${isFuture}`);
-    return isFuture;  // Solo permite mostrar slots en el futuro
   }
 
   // Manejar la selección de un horario
