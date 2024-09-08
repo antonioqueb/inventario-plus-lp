@@ -82,6 +82,7 @@ const ConsolidatedForm: React.FC = () => {
     // Obtener start_time y end_time del slot seleccionado
     const { start, end } = getStartEndTime(selectedSlot);
     console.log("Start time:", start, "End time:", end);
+    console.log("Start time:", start, "End time:", end);  // Revisa el 
 
     // Aquí se envían los datos capturados a la API
     console.log("Sending data to API...", {
@@ -108,8 +109,10 @@ const ConsolidatedForm: React.FC = () => {
         expected_revenue: formData.expected_revenue,
         probability: formData.probability,
         company_id: 2,  // Se ha fijado el ID de la empresa a 2
-        start_time: start,  // Solo se envía el horario seleccionado con la fecha
-        end_time: end,  // Ajustar según el bloque de tiempo seleccionado
+        start_time: start,  
+        end_time: end, 
+        user_id: 2,
+        stage_id: 1
       }),
     })
       .then((response) => {
