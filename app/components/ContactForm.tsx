@@ -109,7 +109,7 @@ const ConsolidatedForm: React.FC = () => {
     const now = new Date();
     const [startTime] = slot.split(" - "); // Solo tomar la hora de inicio
     const slotTime = new Date(`${selectedDate} ${convertTo24Hour(startTime)}`);
-    const isFuture = slotTime > now;
+    const isFuture = slotTime.getTime() > now.getTime(); // Comparar utilizando getTime para asegurar precisión
     console.log(`Checking if slot is future: ${slotTime}, now: ${now}, isFuture: ${isFuture}`);
     return isFuture;  // Solo permite mostrar slots en el futuro
   }
