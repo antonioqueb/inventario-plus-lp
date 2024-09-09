@@ -7,18 +7,10 @@ interface Slot {
   end: string;
 }
 
-const defaultAvailableTimes = [
-  "10:00 AM - 11:00 AM",
-  "1:00 PM - 2:00 PM",
-  "2:00 PM - 3:00 PM",
-  "3:00 PM - 4:00 PM",
-  "4:00 PM - 5:00 PM"
-];
-
 const ConsolidatedForm: React.FC = () => {
   const [selectedSlot, setSelectedSlot] = useState<string>("");
   const [selectedDate, setSelectedDate] = useState<string | null>(getTodayDate());
-  const [availableSlots, setAvailableSlots] = useState<string[]>(defaultAvailableTimes);
+  const [availableSlots, setAvailableSlots] = useState<string[]>([]);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -45,19 +37,25 @@ const ConsolidatedForm: React.FC = () => {
       }
 
       const data = await response.json();
-      const filteredSlots = data.available_slots.map((slot: Slot) => {
-        const startHour = DateTime.fromFormat(slot.start, 'yyyy-MM-dd HH:mm:ss', { zone: 'America/Mexico_City' }).toFormat('HH:mm');
-        const endHour = DateTime.fromFormat(slot.end, 'yyyy-MM-dd HH:mm:ss', { zone: 'America/Mexico_City' }).toFormat('HH:mm');
-        return `${startHour} - ${endHour}`;
-      });
 
-      if (filteredSlots.length > 0) {
-        setAvailableSlots(filteredSlots);
+      // Si no hay slots disponibles, mostrar mensaje de no disponibilidad
+      if (data.available_slots.length === 0) {
+        setApiMessage("No hay horarios disponibles para esta fecha.");
+        setAvailableSlots([]);  // Vaciar los slots
       } else {
-        setAvailableSlots(defaultAvailableTimes);
+        // Si hay slots disponibles, los mostramos
+        const filteredSlots = data.available_slots.map((slot: Slot) => {
+          const startHour = DateTime.fromFormat(slot.start, 'yyyy-MM-dd HH:mm:ss', { zone: 'America/Mexico_City' }).toFormat('HH:mm');
+          const endHour = DateTime.fromFormat(slot.end, 'yyyy-MM-dd HH:mm:ss', { zone: 'America/Mexico_City' }).toFormat('HH:mm');
+          return `${startHour} - ${endHour}`;
+        });
+
+        setApiMessage(null);  // Limpiar cualquier mensaje anterior
+        setAvailableSlots(filteredSlots);
       }
     } catch (error) {
-      setAvailableSlots(defaultAvailableTimes);
+      setAvailableSlots([]);  // Limpiar los slots si hay error
+      setApiMessage("Error al obtener los horarios disponibles.");
     }
   };
 
@@ -216,7 +214,7 @@ const ConsolidatedForm: React.FC = () => {
           <h3 className="text-white text-xl xl:text-2xl font-medium mb-4">Selecciona un Horario Disponible</h3>
           <div className="grid grid-cols-2 gap-4">
             {availableSlots.length === 0 ? (
-              <p className="text-white">No hay horarios disponibles.</p>
+              <p className="text-white">{apiMessage || "No hay horarios disponibles."}</p>
             ) : (
               availableSlots.map((slot, index) => (
                 <div
