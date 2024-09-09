@@ -109,6 +109,21 @@ const ConsolidatedForm: React.FC = () => {
 
     const { start, end } = getStartEndTime(selectedSlot);
 
+      // Agregar console.log para ver los datos que se envían
+    console.log("Datos enviados al servidor:", {
+      name: "Oportunidad Consultoría",
+      partner_name: formData.name,
+      partner_email: formData.email,
+      phone: formData.phone,
+      expected_revenue: formData.expected_revenue,
+      probability: formData.probability,
+      company_id: 2,
+      start_time: start,
+      end_time: end,
+      user_id: 2,
+      stage_id: 1
+    });
+
     fetch("https://crm.gestpro.cloud/create_opportunity", {
       method: "POST",
       headers: {
