@@ -75,15 +75,14 @@ const ConsolidatedForm: React.FC = () => {
     }
     return `${hour}:${minute}:00`;
   }
-
   function getStartEndTime(slot: string) {
     const [start, end] = slot.split(" - ");
     return {
-      start: `${selectedDate ?? ''} ${convertTo24Hour(start)}`,
-      end: `${selectedDate ?? ''} ${convertTo24Hour(end)}`
+      start: DateTime.fromISO(`${selectedDate}T${convertTo24Hour(start)}`, { zone: 'America/Mexico_City' }).toUTC().toISO(),
+      end: DateTime.fromISO(`${selectedDate}T${convertTo24Hour(end)}`, { zone: 'America/Mexico_City' }).toUTC().toISO(),
     };
   }
-
+  
   const handleSlotClick = (slot: string) => {
     setSelectedSlot(slot);
   };
