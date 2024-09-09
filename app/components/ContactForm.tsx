@@ -18,7 +18,7 @@ const ConsolidatedForm: React.FC = () => {
     expected_revenue: 10000,
     probability: 33,
   });
-  const [apiMessage, setApiMessage] = useState<string | null>(null);
+  const [apiMessage, setApiMessage] = useState<string | null>(null); // Mensaje de error general
 
   useEffect(() => {
     if (selectedDate) {
@@ -40,8 +40,8 @@ const ConsolidatedForm: React.FC = () => {
 
       // Si no hay slots disponibles, mostrar mensaje de no disponibilidad
       if (data.available_slots.length === 0) {
-        setApiMessage("No hay horarios disponibles para esta fecha.");
         setAvailableSlots([]);  // Vaciar los slots
+        setApiMessage("No hay horarios disponibles para esta fecha."); // Mostrar solo en la zona de slots
       } else {
         // Si hay slots disponibles, los mostramos
         const filteredSlots = data.available_slots.map((slot: Slot) => {
@@ -50,7 +50,7 @@ const ConsolidatedForm: React.FC = () => {
           return `${startHour} - ${endHour}`;
         });
 
-        setApiMessage(null);  // Limpiar cualquier mensaje anterior
+        setApiMessage(null);  // Limpiar cualquier mensaje de error anterior
         setAvailableSlots(filteredSlots);
       }
     } catch (error) {
@@ -108,16 +108,6 @@ const ConsolidatedForm: React.FC = () => {
     }
 
     const { start, end } = getStartEndTime(selectedSlot);
-
-    // Verificar el formato de tiempo antes de enviar
-    console.log("Verificando formato de tiempo:");
-    console.log("Fecha seleccionada:", selectedDate);
-    console.log("Hora de inicio en formato 24 horas:", start);
-    console.log("Hora de fin en formato 24 horas:", end);
-
-    // Log de los datos que se van a enviar
-    console.log("Datos del formulario:", formData);
-    console.log("Slot seleccionado:", selectedSlot);
 
     fetch("https://crm.gestpro.cloud/create_opportunity", {
       method: "POST",
@@ -229,8 +219,9 @@ const ConsolidatedForm: React.FC = () => {
           </div>
         </div>
 
-        {apiMessage && (
-          <div className={`mt-4 p-4 rounded-lg ${apiMessage.includes("exitosamente") ? "bg-green-500" : "bg-red-500"} text-white`}>
+        {/* Si hay un mensaje importante de éxito o error, lo mostramos */}
+        {apiMessage && apiMessage.includes("exitosamente") && (
+          <div className="mt-4 p-4 rounded-lg bg-green-500 text-white">
             {apiMessage}
           </div>
         )}
