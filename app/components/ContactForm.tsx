@@ -31,7 +31,7 @@ const ConsolidatedForm: React.FC = () => {
     const end_time = `${selectedDate ?? ''}T23:59:59`;
 
     try {
-      const response = await fetch(`https://crm.gestpro.cloud/available_slots?start_time=${start_time}&end_time=${end_time}&company_id=2&user_id=2`);
+      const response = await fetch(`https://crm.gestpro.cloud/free_slots?start_time=${start_time}&end_time=${end_time}&company_id=2&user_id=2`);
       if (!response.ok) {
         throw new Error(`Error al obtener slots: ${response.status}`);
       }
