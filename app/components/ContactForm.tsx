@@ -4,7 +4,7 @@ import { DateTime } from 'luxon';
 
 interface Slot {
   start: string;
-  end: string;
+  stop: string; 
 }
 
 const ConsolidatedForm: React.FC = () => {
@@ -46,9 +46,10 @@ const ConsolidatedForm: React.FC = () => {
         // Si hay slots disponibles, los mostramos
         const filteredSlots = data.available_slots.map((slot: Slot) => {
           const startHour = DateTime.fromFormat(slot.start, 'yyyy-MM-dd HH:mm:ss', { zone: 'America/Mexico_City' }).toFormat('HH:mm');
-          const endHour = DateTime.fromFormat(slot.end, 'yyyy-MM-dd HH:mm:ss', { zone: 'America/Mexico_City' }).toFormat('HH:mm');
+          const endHour = DateTime.fromFormat(slot.stop, 'yyyy-MM-dd HH:mm:ss', { zone: 'America/Mexico_City' }).toFormat('HH:mm');
           return `${startHour} - ${endHour}`;
         });
+        
 
         setApiMessage(null);  // Limpiar cualquier mensaje de error anterior
         setAvailableSlots(filteredSlots);
