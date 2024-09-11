@@ -18,7 +18,7 @@ const ConsolidatedForm: React.FC = () => {
     expected_revenue: 10000,
     probability: 33,
   });
-  const [apiMessage, setApiMessage] = useState<string | null>(null); // Mensaje de error general
+  const [apiMessage, setApiMessage] = useState<string | null>(null);
 
   useEffect(() => {
     if (selectedDate) {
@@ -38,24 +38,21 @@ const ConsolidatedForm: React.FC = () => {
 
       const data = await response.json();
 
-      // Si no hay slots disponibles, mostrar mensaje de no disponibilidad
-      if (data.available_slots.length === 0) {
-        setAvailableSlots([]);  // Vaciar los slots
-        setApiMessage("No hay horarios disponibles para esta fecha."); // Mostrar solo en la zona de slots
+      if (data.free_slots.length === 0) {
+        setAvailableSlots([]);
+        setApiMessage("No hay horarios disponibles para esta fecha.");
       } else {
-        // Si hay slots disponibles, los mostramos
-        const filteredSlots = data.available_slots.map((slot: Slot) => {
-          const startHour = DateTime.fromFormat(slot.start, 'yyyy-MM-dd HH:mm:ss', { zone: 'America/Mexico_City' }).toFormat('HH:mm');
-          const endHour = DateTime.fromFormat(slot.stop, 'yyyy-MM-dd HH:mm:ss', { zone: 'America/Mexico_City' }).toFormat('HH:mm');
+        const filteredSlots = data.free_slots.map((slot: Slot) => {
+          const startHour = DateTime.fromSQL(slot.start, { zone: 'America/Mexico_City' }).toFormat('HH:mm');
+          const endHour = DateTime.fromSQL(slot.stop, { zone: 'America/Mexico_City' }).toFormat('HH:mm');
           return `${startHour} - ${endHour}`;
         });
-        
 
-        setApiMessage(null);  // Limpiar cualquier mensaje de error anterior
+        setApiMessage(null);
         setAvailableSlots(filteredSlots);
       }
     } catch (error) {
-      setAvailableSlots([]);  // Limpiar los slots si hay error
+      setAvailableSlots([]);
       setApiMessage("Error al obtener los horarios disponibles.");
     }
   };
@@ -63,26 +60,6 @@ const ConsolidatedForm: React.FC = () => {
   function getTodayDate(): string | null {
     const now = DateTime.now().setZone('America/Mexico_City');
     return now ? now.toISODate() : null;
-  }
-
-  function convertTo24Hour(time: string) {
-    const [hours, modifier] = time.split(" ");
-    let [hour, minute] = hours.split(":");
-    if (modifier === "PM" && hour !== "12") {
-      hour = String(Number(hour) + 12);
-    }
-    if (modifier === "AM" && hour === "12") {
-      hour = "00";
-    }
-    return `${hour}:${minute}:00`;
-  }
-
-  function getStartEndTime(slot: string) {
-    const [start, end] = slot.split(" - ");
-    return {
-      start: `${selectedDate ?? ''} ${convertTo24Hour(start)}`,
-      end: `${selectedDate ?? ''} ${convertTo24Hour(end)}`
-    };
   }
 
   const handleSlotClick = (slot: string) => {
@@ -108,9 +85,10 @@ const ConsolidatedForm: React.FC = () => {
       return;
     }
 
-    const { start, end } = getStartEndTime(selectedSlot);
+    const [start, end] = selectedSlot.split(" - ");
+    const startDateTime = `${selectedDate}T${start}:00`;
+    const endDateTime = `${selectedDate}T${end}:00`;
 
-      // Agregar console.log para ver los datos que se envían
     console.log("Datos enviados al servidor:", {
       name: "Oportunidad Consultoría",
       partner_name: formData.name,
@@ -119,8 +97,8 @@ const ConsolidatedForm: React.FC = () => {
       expected_revenue: formData.expected_revenue,
       probability: formData.probability,
       company_id: 2,
-      start_time: start,
-      end_time: end,
+      start_time: startDateTime,
+      end_time: endDateTime,
       user_id: 2,
       stage_id: 1
     });
@@ -138,8 +116,8 @@ const ConsolidatedForm: React.FC = () => {
         expected_revenue: formData.expected_revenue,
         probability: formData.probability,
         company_id: 2,
-        start_time: start,  // Formato corregido en 24 horas
-        end_time: end,      // Formato corregido en 24 horas
+        start_time: startDateTime,
+        end_time: endDateTime,
         user_id: 2,
         stage_id: 1
       }),
@@ -235,7 +213,6 @@ const ConsolidatedForm: React.FC = () => {
           </div>
         </div>
 
-        {/* Si hay un mensaje importante de éxito o error, lo mostramos */}
         {apiMessage && apiMessage.includes("exitosamente") && (
           <div className="mt-4 p-4 rounded-lg bg-green-500 text-white">
             {apiMessage}
