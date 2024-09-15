@@ -124,11 +124,12 @@ const ConsolidatedForm: React.FC = () => {
         stage_id: 1
       }),
     })
-      .then((response) => {
+      .then(async (response) => {
         console.log("Respuesta de la API:", response);
 
         if (!response.ok) {
-          throw new Error(`API returned status ${response.status}`);
+          const errorText = await response.text(); // Leer el cuerpo del error para más detalles
+          throw new Error(`API returned status ${response.status}: ${errorText}`);
         }
         return response.json();
       })
