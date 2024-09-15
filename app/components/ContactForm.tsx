@@ -43,7 +43,6 @@ const ConsolidatedForm: React.FC = () => {
         setApiMessage("No hay horarios disponibles para esta fecha.");
       } else {
         const filteredSlots = data.free_slots.map((slot: Slot) => {
-          // Usar DateTime.fromISO en lugar de DateTime.fromSQL
           const startHour = DateTime.fromISO(slot.start, { zone: 'America/Mexico_City' }).toFormat('HH:mm');
           const endHour = DateTime.fromISO(slot.stop, { zone: 'America/Mexico_City' }).toFormat('HH:mm');
           return `${startHour} - ${endHour}`;
@@ -57,7 +56,6 @@ const ConsolidatedForm: React.FC = () => {
       setApiMessage("Error al obtener los horarios disponibles.");
     }
   };
-  
 
   function getTodayDate(): string | null {
     const now = DateTime.now().setZone('America/Mexico_City');
@@ -88,8 +86,12 @@ const ConsolidatedForm: React.FC = () => {
     }
 
     const [start, end] = selectedSlot.split(" - ");
-    const startDateTime = `${selectedDate}T${start}:00`;
-    const endDateTime = `${selectedDate}T${end}:00`;
+
+    // Convertir las fechas al formato que Odoo espera: 'YYYY-MM-DD HH:MM:SS'
+    const startDateTime = DateTime.fromISO(`${selectedDate}T${start}:00`, { zone: 'America/Mexico_City' })
+      .toFormat('yyyy-LL-dd HH:mm:ss');
+    const endDateTime = DateTime.fromISO(`${selectedDate}T${end}:00`, { zone: 'America/Mexico_City' })
+      .toFormat('yyyy-LL-dd HH:mm:ss');
 
     console.log("Datos enviados al servidor:", {
       name: "Oportunidad Consultoría",
@@ -128,7 +130,7 @@ const ConsolidatedForm: React.FC = () => {
         console.log("Respuesta de la API:", response);
 
         if (!response.ok) {
-          const errorText = await response.text(); // Leer el cuerpo del error para más detalles
+          const errorText = await response.text();
           throw new Error(`API returned status ${response.status}: ${errorText}`);
         }
         return response.json();
