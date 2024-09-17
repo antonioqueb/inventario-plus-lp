@@ -212,6 +212,7 @@ const ConsolidatedForm: React.FC = () => {
 
         <div className="mb-6 mt-6">
           <h3 className="text-white text-xl xl:text-2xl font-medium mb-4">Selecciona un Horario Disponible</h3>
+          <p className="text-white text-sm mb-2">* Los horarios se muestran en hora centro de México (CDMX).</p>
           <div className="grid grid-cols-2 gap-4">
             {availableSlots.length === 0 ? (
               <p className="text-white">{apiMessage || "No hay horarios disponibles."}</p>
