@@ -211,25 +211,29 @@ const ConsolidatedForm: React.FC = () => {
         </div>
 
         <div className="mb-6 mt-6">
-          <h3 className="text-white text-xl xl:text-2xl font-medium mb-4">Selecciona un Horario Disponible</h3>
-          <p className="text-white text-sm mb-2">* Los horarios se muestran en hora centro de México (CDMX).</p>
-          <div className="grid grid-cols-2 gap-4">
-            {availableSlots.length === 0 && apiMessage === "No hay horarios disponibles para esta fecha" ? (
-              <p className="text-white">{apiMessage}</p>
-            ) : (
-              availableSlots.map((slot, index) => (
-                <div
-                  key={index}
-                  className={`p-4 border rounded-lg text-white ${selectedSlot === slot ? "bg-blue-600" : "bg-gray-600"} cursor-pointer hover:bg-blue-500`}
-                  onClick={() => handleSlotClick(slot)}
-                >
-                  {slot}
-                </div>
-              ))
-            )}
-          </div>
+        <h3 className="text-white text-xl xl:text-2xl font-medium mb-4">Selecciona un Horario Disponible</h3>
 
+        {availableSlots.length > 0 && (
+          <p className="text-white text-sm mb-2">* Los horarios se muestran en hora centro de México (CDMX).</p>
+        )}
+
+        <div className="grid grid-cols-2 gap-4">
+          {availableSlots.length === 0 ? (
+            <p className="text-white">{apiMessage || "No hay horarios disponibles."}</p>
+          ) : (
+            availableSlots.map((slot, index) => (
+              <div
+                key={index}
+                className={`p-4 border rounded-lg text-white ${selectedSlot === slot ? "bg-blue-600" : "bg-gray-600"} cursor-pointer hover:bg-blue-500`}
+                onClick={() => handleSlotClick(slot)}
+              >
+                {slot}
+              </div>
+            ))
+          )}
         </div>
+      </div>
+
 
         {apiMessage && apiMessage.includes("exitosamente") && (
           <div className="mt-4 p-4 rounded-lg bg-green-500 text-white">
