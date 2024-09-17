@@ -11,7 +11,7 @@ const ThankYouPageContent: React.FC = () => {
   const searchParams = useSearchParams();
   const name = searchParams.get('name') || 'Cliente';
   const date = searchParams.get('date');
-  const slot = searchParams.get('slot');
+  const slot = searchParams.get('slot') || 'Horario no especificado';
 
   const formatDate = (dateString: string | null) => {
     if (!dateString) return '';
@@ -19,17 +19,7 @@ const ThankYouPageContent: React.FC = () => {
     return isValid(parsedDate) ? format(parsedDate, "d 'de' MMMM 'de' yyyy", { locale: es }) : '';
   };
 
-  const formatTime = (timeString: string) => {
-    if (!timeString) return '';
-    const [hours, minutes] = timeString.split(':');
-    const parsedTime = parse(`${hours}:${minutes}`, 'HH:mm', new Date());
-    return isValid(parsedTime) ? format(parsedTime, 'h:mm a') : '';
-  };
-
   const formattedDate = formatDate(date);
-  const [startTime, endTime] = slot ? slot.split('-') : ['', ''];
-  const formattedStartTime = formatTime(startTime);
-  const formattedEndTime = formatTime(endTime);
 
   return (
     <section className="min-h-screen bg-gradient-to-b from-blue-900 to-gray-900 py-20 px-4 sm:px-6 lg:px-8">
@@ -50,13 +40,11 @@ const ThankYouPageContent: React.FC = () => {
             <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 mb-8">
               <div className="flex items-center space-x-2">
                 <CalendarIcon className="h-6 w-6 text-blue-400" />
-                <span className="text-lg font-medium text-gray-200">{formattedDate}</span>
+                <span className="text-lg font-medium text-gray-200">{formattedDate || 'Fecha no especificada'}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <ClockIcon className="h-6 w-6 text-blue-400" />
-                <span className="text-lg font-medium text-gray-200">
-                  {formattedStartTime && formattedEndTime ? `${formattedStartTime} - ${formattedEndTime}` : 'Horario no especificado'}
-                </span>
+                <span className="text-lg font-medium text-gray-200">{slot}</span>
               </div>
             </div>
             <div className="space-y-6">
