@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from "react";
+import { useRouter } from 'next/navigation';  // Importar el hook useRouter de Next.js 14
 import { DateTime } from 'luxon';
 
 interface Slot {
@@ -8,6 +9,7 @@ interface Slot {
 }
 
 const ConsolidatedForm: React.FC = () => {
+  const router = useRouter();  // Inicializar el router
   const [selectedSlot, setSelectedSlot] = useState<string>("");
   const [selectedDate, setSelectedDate] = useState<string | null>(getTodayDate());
   const [availableSlots, setAvailableSlots] = useState<string[]>([]);
@@ -27,7 +29,6 @@ const ConsolidatedForm: React.FC = () => {
   }, [selectedDate]);
 
   const fetchAvailableSlots = async () => {
-    // Establecemos el rango fijo de 09:00 a 17:00 para la búsqueda
     const start_time = `${selectedDate ?? ''}T09:00:00`;
     const end_time = `${selectedDate ?? ''}T17:00:00`;
 
@@ -43,11 +44,9 @@ const ConsolidatedForm: React.FC = () => {
         setAvailableSlots([]);
         setApiMessage("No hay horarios disponibles para esta fecha.");
       } else {
-        // Obtenemos la fecha y hora actual
         const now = DateTime.now().setZone('America/Mexico_City');
         const currentDate = now.toISODate();
         
-        // Filtrar slots si la fecha seleccionada es hoy y el slot es en el pasado
         const filteredSlots = data.free_slots
           .filter((slot: Slot) => {
             const slotStart = DateTime.fromISO(slot.start, { zone: 'America/Mexico_City' });
@@ -98,7 +97,6 @@ const ConsolidatedForm: React.FC = () => {
 
     const [start, end] = selectedSlot.split(" - ");
 
-    // Convertir las fechas al formato que Odoo espera: 'YYYY-MM-DD HH:MM:SS'
     const startDateTime = DateTime.fromISO(`${selectedDate}T${start}:00`, { zone: 'America/Mexico_City' })
       .toFormat('yyyy-LL-dd HH:mm:ss');
     const endDateTime = DateTime.fromISO(`${selectedDate}T${end}:00`, { zone: 'America/Mexico_City' })
@@ -149,6 +147,9 @@ const ConsolidatedForm: React.FC = () => {
       .then((data) => {
         console.log("Respuesta JSON de la API:", data);
         setApiMessage("Oportunidad creada exitosamente.");
+
+        // Redirigir a la página de agradecimiento con los datos
+        router.push(`/thank-you?name=${encodeURIComponent(formData.name)}&date=${encodeURIComponent(selectedDate ?? '')}&slot=${encodeURIComponent(selectedSlot)}`);
       })
       .catch((error) => {
         console.error("Error creando oportunidad:", error);
@@ -211,32 +212,31 @@ const ConsolidatedForm: React.FC = () => {
         </div>
 
         <div className="mb-6 mt-6">
-        <h3 className="text-white text-xl xl:text-2xl font-medium mb-4">Selecciona un Horario Disponible</h3>
+          <h3 className="text-white text-xl xl:text-2xl font-medium mb-4">Selecciona un Horario Disponible</h3>
 
-        {availableSlots.length > 0 && (
-          <p className="text-white text-sm mb-2">* Los horarios se muestran en hora centro de México (CDMX).</p>
-        )}
-
-        <div className="grid grid-cols-2 gap-4">
-          {availableSlots.length === 0 ? (
-            <p className="text-white">{apiMessage || "No hay horarios disponibles."}</p>
-          ) : (
-            availableSlots.map((slot, index) => (
-              <div
-                key={index}
-                className={`p-4 border rounded-lg text-white ${selectedSlot === slot ? "bg-blue-600" : "bg-gray-600"} cursor-pointer hover:bg-blue-500`}
-                onClick={() => handleSlotClick(slot)}
-              >
-                {slot}
-              </div>
-            ))
+          {availableSlots.length > 0 && (
+            <p className="text-white text-sm mb-2">* Los horarios se muestran en hora centro de México (CDMX).</p>
           )}
+
+          <div className="grid grid-cols-2 gap-4">
+            {availableSlots.length === 0 ? (
+              <p className="text-white">{apiMessage || "No hay horarios disponibles."}</p>
+            ) : (
+              availableSlots.map((slot, index) => (
+                <div
+                  key={index}
+                  className={`p-4 border rounded-lg text-white ${selectedSlot === slot ? "bg-blue-600" : "bg-gray-600"} cursor-pointer hover:bg-blue-500`}
+                  onClick={() => handleSlotClick(slot)}
+                >
+                  {slot}
+                </div>
+              ))
+            )}
+          </div>
         </div>
-      </div>
 
-
-        {apiMessage && apiMessage.includes("exitosamente") && (
-          <div className="mt-4 p-4 rounded-lg bg-green-500 text-white">
+        {apiMessage && !apiMessage.includes("exitosamente") && (
+          <div className="mt-4 p-4 rounded-lg bg-red-500 text-white">
             {apiMessage}
           </div>
         )}
