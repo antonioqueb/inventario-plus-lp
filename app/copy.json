@@ -1,64 +1,62 @@
 {
-    "hero": {
-      "title": "InventarioPlus",
-      "description": "Optimiza tu inventario con soluciones precisas y personalizadas, diseñadas para controlar cada aspecto de tus operaciones.",
-      "button": "Obtén tu Consultoría Gratuita"
-    },
-    "whoWeAre": {
-      "title": "Socios Estratégicos",
-      "description": "Impulsa tu crecimiento con herramientas personalizadas que mejoran la eficiencia y te dan control y visibilidad total sobre tus operaciones."
-    },
-    "whatWeDo": {
-      "title": "Soluciones Personalizadas",
-      "services": [
-        {
-            "title": "Optimización",
-            "description": "Identificamos oportunidades clave para optimizar costos y aumentar la eficiencia operativa, respetando tus procesos actuales."
-          },
-          {
-            "title": "Inmediato",
-            "description": "Obtén visibilidad continua y en tiempo real de tu inventario para tomar decisiones estratégicas con confianza."
-          },
-          {
-            "title": "Exclusivo",
-            "description": "Ajustamos Odoo a tus necesidades exclusivas, optimizando cada flujo de trabajo para que obtengas el máximo rendimiento y eficiencia."
-          },
-          {
-            "title": "Monitoreo",
-            "description": "Supervisamos tus operaciones continuamente para garantizar el cumplimiento de los objetivos y la mejora constante en los procesos."
-          }
-          
-      ]
-    },
-    "ourMission": {
-      "title": "Compromiso Total",
-      "description": "Vamos más allá del software. Diseñamos soluciones alineadas a tus procesos y objetivos, asegurando un control total para tu éxito."
-    },
-    "features": {
-      "title": "Características",
-      "items": [
-        {
-            "title": "Informes",
-            "description": "Accede a informes detallados en tiempo real para reducir costos y optimizar la eficiencia."
-          },
-          {
-            "title": "Personalización",
-            "description": "Nuestras soluciones se adaptan a las necesidades específicas de tu negocio."
-          },
-          {
-            "title": "Automatización",
-            "description": "Automatizamos procesos clave para mejorar la eficiencia y productividad de tu empresa."
-          },
-          {
-            "title": "Integración",
-            "description": "Conectamos múltiples sistemas para que trabajen de manera conjunta, optimizando tu flujo de trabajo."
-          }
-      ]
-    },
-    "cta": {
-      "title": "Transforma Tu Negocio",
-      "description": "Aumenta tu rentabilidad y toma el control total de tu inventario con nuestras soluciones personalizadas. Lleva tu negocio al siguiente nivel de eficiencia.",
-      "button": "Obtén tu Consultoría Gratuita"
-    }
+  "hero": {
+    "title": "InventarioPlus: Domina tu Inventario",
+    "description": "Controla cada aspecto de tu inventario con soluciones precisas y personalizadas que impulsan la eficiencia de tus operaciones.",
+    "button": "¡Obtén ahora tu Consultoría Gratuita!"
+  },
+  "whoWeAre": {
+    "title": "Tus Socios Estratégicos en Gestión de Inventarios",
+    "description": "Impulsa tu crecimiento con soluciones a medida que aumentan la eficiencia y te brindan control y visibilidad total sobre tus operaciones."
+  },
+  "whatWeDo": {
+    "title": "Soluciones Personalizadas que Transforman tu Gestión de Inventario",
+    "services": [
+      {
+        "title": "Optimización de Procesos",
+        "description": "Identificamos oportunidades clave para reducir costos y mejorar la eficiencia operativa, adaptándonos a tus procesos actuales sin interrupciones."
+      },
+      {
+        "title": "Visibilidad en Tiempo Real",
+        "description": "Accede instantáneamente a información actualizada de tu inventario, permitiéndote tomar decisiones estratégicas con confianza."
+      },
+      {
+        "title": "Personalización de Odoo",
+        "description": "Adaptamos Odoo a tus necesidades específicas, optimizando cada flujo de trabajo para maximizar rendimiento y eficiencia."
+      },
+      {
+        "title": "Monitoreo y Mejora Continua",
+        "description": "Monitoreamos tus operaciones constantemente para asegurar el cumplimiento de objetivos y promover la mejora continua de tus procesos."
+      }
+    ]
+  },
+  "ourMission": {
+    "title": "Comprometidos al 100% con tu Éxito",
+    "description": "No solo ofrecemos software; creamos soluciones que se alinean con tus procesos y objetivos, garantizando el control total y el éxito de tu negocio."
+  },
+  "features": {
+    "title": "Nuestras Características Destacadas",
+    "items": [
+      {
+        "title": "Informes Detallados",
+        "description": "Obtén informes en tiempo real que te ayudan a reducir costos y optimizar la eficiencia."
+      },
+      {
+        "title": "Personalización a Medida",
+        "description": "Adaptamos nuestras soluciones a las necesidades únicas de tu negocio."
+      },
+      {
+        "title": "Automatización Eficiente",
+        "description": "Automatizamos procesos clave, incrementando la eficiencia y productividad de tu empresa."
+      },
+      {
+        "title": "Integración Total",
+        "description": "Integramos tus sistemas para que funcionen en armonía, optimizando todos tus procesos."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Transforma Tu Negocio Hoy",
+    "description": "Aumenta tu rentabilidad y domina tu inventario con nuestras soluciones personalizadas. Lleva tu negocio al próximo nivel de eficiencia.",
+    "button": "¡Solicita tu Consultoría Gratuita Ahora!"
   }
-  
+}
