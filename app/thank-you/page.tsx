@@ -1,9 +1,9 @@
 'use client';
-import React from 'react';
-import { useSearchParams } from 'next/navigation';  // Importar useSearchParams para obtener los parámetros de la URL
+import React, { Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 
-const ThankYouPage: React.FC = () => {
+const ThankYouPageContent: React.FC = () => {
   const searchParams = useSearchParams();
   const name = searchParams.get('name') || 'Cliente';
   const date = searchParams.get('date');
@@ -47,6 +47,14 @@ const ThankYouPage: React.FC = () => {
         </Link>
       </div>
     </section>
+  );
+};
+
+const ThankYouPage: React.FC = () => {
+  return (
+    <Suspense fallback={<div>Cargando...</div>}>
+      <ThankYouPageContent />
+    </Suspense>
   );
 };
 
