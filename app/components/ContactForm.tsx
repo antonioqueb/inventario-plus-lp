@@ -214,8 +214,8 @@ const ConsolidatedForm: React.FC = () => {
           <h3 className="text-white text-xl xl:text-2xl font-medium mb-4">Selecciona un Horario Disponible</h3>
           <p className="text-white text-sm mb-2">* Los horarios se muestran en hora centro de México (CDMX).</p>
           <div className="grid grid-cols-2 gap-4">
-            {availableSlots.length === 0 ? (
-              <p className="text-white">{apiMessage || "No hay horarios disponibles."}</p>
+            {availableSlots.length === 0 && apiMessage === "No hay horarios disponibles para esta fecha" ? (
+              <p className="text-white">{apiMessage}</p>
             ) : (
               availableSlots.map((slot, index) => (
                 <div
@@ -228,6 +228,7 @@ const ConsolidatedForm: React.FC = () => {
               ))
             )}
           </div>
+
         </div>
 
         {apiMessage && apiMessage.includes("exitosamente") && (
