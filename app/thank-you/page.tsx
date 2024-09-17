@@ -72,7 +72,7 @@ const ThankYouPageContent: React.FC = () => {
                 </ul>
               </div>
               <p className="text-gray-300">
-                Si tienes alguna pregunta o necesitas ajustar tu cita, no dudes en contactarnos.
+                Si tienes alguna pregunta o necesitas ajustar tu cita, no dudes en contactarnos soporte@gestpro.cloud.
               </p>
               <div className="mt-8">
                 <Link href="/" className="block w-full bg-blue-600 text-white text-center px-5 py-3 rounded-lg text-base font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
