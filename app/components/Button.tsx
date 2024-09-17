@@ -1,27 +1,29 @@
-// Button.tsx
+import React from 'react';
+
 interface ButtonProps {
-    text: string;
-    href: string;
-    variant?: 'default' | 'white'; // Añadimos la variante
-  }
+  text: string;
+  href: string;
+  variant?: 'default' | 'white';
+}
+
+const Button: React.FC<ButtonProps> = ({ text, href, variant = 'default' }) => {
+  const baseClasses = "inline-block px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-bold transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 shadow-md";
   
-  const Button = ({ text, href, variant = 'default' }: ButtonProps) => {
-    // Definimos las clases dependiendo de la variante
-    const buttonClass =
-      variant === 'white'
-        ? 'bg-white text-blue-700 border-blue-700 border-2 hover:bg-blue-50'
-        : 'bg-blue-700 text-white hover:bg-blue-600';
-  
-    return (
-      <a href={href} className="mt-4">
-        <button
-          className={`${buttonClass} px-10 py-4 rounded-xl text-lg font-extrabold hover:scale-105 transition-all duration-300 ease-in-out shadow-lg`}
-        >
-          {text}
-        </button>
-      </a>
-    );
+  const variantClasses = {
+    default: "bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 focus:ring-blue-500",
+    white: "bg-white text-blue-700 border-2 border-blue-700 hover:bg-blue-50 focus:ring-blue-700"
   };
-  
-  export default Button;
-  
+
+  return (
+    <a 
+      href={href}
+      className={`${baseClasses} ${variantClasses[variant]}`}
+      role="button"
+      aria-label={text}
+    >
+      {text}
+    </a>
+  );
+};
+
+export default Button;
