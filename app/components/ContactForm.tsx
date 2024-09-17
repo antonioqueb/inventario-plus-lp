@@ -1,6 +1,7 @@
 'use client';
+
 import React, { useState, useEffect } from "react";
-import { useRouter } from 'next/navigation';  // Importar el hook useRouter de Next.js 14
+import { useRouter } from 'next/navigation';
 import { DateTime } from 'luxon';
 
 interface Slot {
@@ -9,7 +10,7 @@ interface Slot {
 }
 
 const ConsolidatedForm: React.FC = () => {
-  const router = useRouter();  // Inicializar el router
+  const router = useRouter();
   const [selectedSlot, setSelectedSlot] = useState<string>("");
   const [selectedDate, setSelectedDate] = useState<string | null>(getTodayDate());
   const [availableSlots, setAvailableSlots] = useState<string[]>([]);
@@ -148,7 +149,6 @@ const ConsolidatedForm: React.FC = () => {
         console.log("Respuesta JSON de la API:", data);
         setApiMessage("Oportunidad creada exitosamente.");
 
-        // Redirigir a la página de agradecimiento con los datos
         router.push(`/thank-you?name=${encodeURIComponent(formData.name)}&date=${encodeURIComponent(selectedDate ?? '')}&slot=${encodeURIComponent(selectedSlot)}`);
       })
       .catch((error) => {
@@ -158,96 +158,112 @@ const ConsolidatedForm: React.FC = () => {
   };
 
   return (
-    <section id="consultoria-form" className="py-20 bg-gray-800 bg-opacity-90 backdrop-blur-lg shadow-xl rounded-b-xl">
-      <h2 className="text-4xl xl:text-6xl font-extrabold text-white text-center mb-10">Agenda tu Consultoría</h2>
+    <section id="consultoria-form" className="py-20 bg-gradient-to-b from-gray-800 to-gray-900 shadow-2xl rounded-b-3xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white text-center mb-10 leading-tight">Agenda tu Consultoría</h2>
 
-      <form onSubmit={handleSubmit} className="max-w-lg mx-auto bg-gray-700 p-10 rounded-lg shadow-2xl">
-        <div className="mb-6">
-          <label className="block text-white text-xl xl:text-2xl font-medium mb-2">Nombre Completo</label>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
-          />
-        </div>
+        <form onSubmit={handleSubmit} className="max-w-2xl mx-auto bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg p-8 sm:p-10 rounded-2xl shadow-2xl">
+          <div className="space-y-6">
+            <div>
+              <label htmlFor="name" className="block text-white text-lg sm:text-xl font-medium mb-2">Nombre Completo</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
+                required
+                placeholder="Tu nombre completo"
+              />
+            </div>
 
-        <div className="mb-6">
-          <label className="block text-white text-xl xl:text-2xl font-medium mb-2">Correo Electrónico</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
-          />
-        </div>
+            <div>
+              <label htmlFor="email" className="block text-white text-lg sm:text-xl font-medium mb-2">Correo Electrónico</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
+                required
+                placeholder="tu@email.com"
+              />
+            </div>
 
-        <div className="mb-6">
-          <label className="block text-white text-xl xl:text-2xl font-medium mb-2">Teléfono</label>
-          <input
-            type="tel"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
-          />
-        </div>
+            <div>
+              <label htmlFor="phone" className="block text-white text-lg sm:text-xl font-medium mb-2">Teléfono</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
+                required
+                placeholder="Tu número de teléfono"
+              />
+            </div>
 
-        <div className="mb-6">
-          <label className="block text-white text-xl xl:text-2xl font-medium mb-2">Selecciona una Fecha</label>
-          <input
-            type="date"
-            name="date"
-            value={selectedDate ?? ''}
-            onChange={handleDateChange}
-            className="w-full px-4 py-2 border border-gray-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
-            min={getTodayDate() ?? ''}
-            required
-          />
-        </div>
+            <div>
+              <label htmlFor="date" className="block text-white text-lg sm:text-xl font-medium mb-2">Selecciona una Fecha</label>
+              <input
+                type="date"
+                id="date"
+                name="date"
+                value={selectedDate ?? ''}
+                onChange={handleDateChange}
+                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+                min={getTodayDate() ?? ''}
+                required
+              />
+            </div>
 
-        <div className="mb-6 mt-6">
-          <h3 className="text-white text-xl xl:text-2xl font-medium mb-4">Selecciona un Horario Disponible</h3>
+            <div>
+              <h3 className="text-white text-lg sm:text-xl font-medium mb-4">Selecciona un Horario Disponible</h3>
 
-          {availableSlots.length > 0 && (
-            <p className="text-white text-sm mb-2">* Los horarios se muestran en hora centro de México (CDMX).</p>
+              {availableSlots.length > 0 && (
+                <p className="text-gray-300 text-sm mb-2">* Los horarios se muestran en hora centro de México (CDMX).</p>
+              )}
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                {availableSlots.length === 0 ? (
+                  <p className="text-white col-span-2 sm:col-span-3">{apiMessage || "No hay horarios disponibles."}</p>
+                ) : (
+                  availableSlots.map((slot, index) => (
+                    <button
+                      key={index}
+                      type="button"
+                      className={`p-3 border rounded-lg text-white text-sm sm:text-base ${
+                        selectedSlot === slot
+                          ? "bg-blue-600 border-blue-500"
+                          : "bg-gray-700 border-gray-600 hover:bg-gray-600"
+                      } transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                      onClick={() => handleSlotClick(slot)}
+                    >
+                      {slot}
+                    </button>
+                  ))
+                )}
+              </div>
+            </div>
+          </div>
+
+          {apiMessage && !apiMessage.includes("exitosamente") && (
+            <div className="mt-6 p-4 rounded-lg bg-red-500 bg-opacity-80 text-white text-center">
+              {apiMessage}
+            </div>
           )}
 
-          <div className="grid grid-cols-2 gap-4">
-            {availableSlots.length === 0 ? (
-              <p className="text-white">{apiMessage || "No hay horarios disponibles."}</p>
-            ) : (
-              availableSlots.map((slot, index) => (
-                <div
-                  key={index}
-                  className={`p-4 border rounded-lg text-white ${selectedSlot === slot ? "bg-blue-600" : "bg-gray-600"} cursor-pointer hover:bg-blue-500`}
-                  onClick={() => handleSlotClick(slot)}
-                >
-                  {slot}
-                </div>
-              ))
-            )}
-          </div>
-        </div>
-
-        {apiMessage && !apiMessage.includes("exitosamente") && (
-          <div className="mt-4 p-4 rounded-lg bg-red-500 text-white">
-            {apiMessage}
-          </div>
-        )}
-
-        <button
-          type="submit"
-          className="w-full bg-blue-700 text-white px-6 py-3 rounded-full text-lg font-extrabold hover:bg-blue-600 transition-all duration-300 ease-in-out shadow-lg"
-        >
-          Confirmar Reunión
-        </button>
-      </form>
+          <button
+            type="submit"
+            className="w-full mt-8 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-4 rounded-full text-lg sm:text-xl font-bold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 ease-in-out shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+          >
+            Confirmar Reunión
+          </button>
+        </form>
+      </div>
     </section>
   );
 };
