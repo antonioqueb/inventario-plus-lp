@@ -27,8 +27,9 @@ const ConsolidatedForm: React.FC = () => {
   }, [selectedDate]);
 
   const fetchAvailableSlots = async () => {
-    const start_time = `${selectedDate ?? ''}T00:00:00`;
-    const end_time = `${selectedDate ?? ''}T23:59:59`;
+    // Establecemos el rango fijo de 09:00 a 17:00 para la búsqueda
+    const start_time = `${selectedDate ?? ''}T09:00:00`;
+    const end_time = `${selectedDate ?? ''}T17:00:00`;
 
     try {
       const response = await fetch(`https://crm.gestpro.cloud/free_slots?start_time=${start_time}&end_time=${end_time}&company_id=2`);
