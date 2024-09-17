@@ -29,25 +29,35 @@ const ConsolidatedForm: React.FC = () => {
   const fetchAvailableSlots = async () => {
     const start_time = `${selectedDate ?? ''}T00:00:00`;
     const end_time = `${selectedDate ?? ''}T23:59:59`;
-  
+
     try {
       const response = await fetch(`https://crm.gestpro.cloud/free_slots?start_time=${start_time}&end_time=${end_time}&company_id=2`);
       if (!response.ok) {
         throw new Error(`Error al obtener slots: ${response.status}`);
       }
-  
+
       const data = await response.json();
-  
+
       if (data.free_slots.length === 0) {
         setAvailableSlots([]);
         setApiMessage("No hay horarios disponibles para esta fecha.");
       } else {
-        const filteredSlots = data.free_slots.map((slot: Slot) => {
-          const startHour = DateTime.fromISO(slot.start, { zone: 'America/Mexico_City' }).toFormat('HH:mm');
-          const endHour = DateTime.fromISO(slot.stop, { zone: 'America/Mexico_City' }).toFormat('HH:mm');
-          return `${startHour} - ${endHour}`;
-        });
-  
+        // Obtenemos la fecha y hora actual
+        const now = DateTime.now().setZone('America/Mexico_City');
+        const currentDate = now.toISODate();
+        
+        // Filtrar slots si la fecha seleccionada es hoy y el slot es en el pasado
+        const filteredSlots = data.free_slots
+          .filter((slot: Slot) => {
+            const slotStart = DateTime.fromISO(slot.start, { zone: 'America/Mexico_City' });
+            return selectedDate !== currentDate || slotStart > now;
+          })
+          .map((slot: Slot) => {
+            const startHour = DateTime.fromISO(slot.start, { zone: 'America/Mexico_City' }).toFormat('HH:mm');
+            const endHour = DateTime.fromISO(slot.stop, { zone: 'America/Mexico_City' }).toFormat('HH:mm');
+            return `${startHour} - ${endHour}`;
+          });
+
         setApiMessage(null);
         setAvailableSlots(filteredSlots);
       }
