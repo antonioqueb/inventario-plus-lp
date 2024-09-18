@@ -1,13 +1,14 @@
 {
-    "hero": {
-      "title": "Sistematiza y controla tu inventario",
-      "description": "En InventarioPlus te ayudamos a conectar y personalizar soluciones tecnológicas para que optimices cada parte de tus operaciones. Queremos que tu trabajo sea más fácil, eficiente y, sobre todo, sin complicaciones."
-    },
-    "whoWeAre": {
-      "title": "Socios Estratégicos",
-      "description": "Nos enfocamos en darte herramientas hechas a tu medida para que puedas hacer crecer tu negocio sin perder el control. Con nuestra ayuda, tendrás una visibilidad total de todo lo que sucede en tus operaciones, y lo mejor de todo, estarás siempre al mando."
-    },
-    "whatWeDo": {
+  "hero": {
+    "title": "Sistematiza y controla tu inventario",
+    "description": "En InventarioPlus te ayudamos a conectar y personalizar soluciones tecnológicas para que optimices cada parte de tus operaciones. Queremos que tu trabajo sea más fácil, eficiente y, sobre todo, sin complicaciones.",
+    "button": "Obtén tu Consultoría Gratuita"
+  },
+  "whoWeAre": {
+    "title": "Socios Estratégicos",
+    "description": "Nos enfocamos en darte herramientas hechas a tu medida para que puedas hacer crecer tu negocio sin perder el control. Con nuestra ayuda, tendrás una visibilidad total de todo lo que sucede en tus operaciones, y lo mejor de todo, estarás siempre al mando."
+  },
+  "whatWeDo": {
     "title": "Soluciones Personalizadas",
     "services": [
       {
@@ -28,35 +29,34 @@
       }
     ]
   },
-    "ourMission": {
-      "title": "Compromiso Total",
-      "description": "Vamos más allá del software. Diseñamos soluciones alineadas a tus procesos y objetivos, asegurando un control total para tu éxito."
-    },
-    "features": {
-      "title": "Características",
-      "items": [
-        {
-            "title": "Informes",
-            "description": "Accede a informes detallados en tiempo real para reducir costos y optimizar la eficiencia."
-          },
-          {
-            "title": "Personalización",
-            "description": "Nuestras soluciones se adaptan a las necesidades específicas de tu negocio."
-          },
-          {
-            "title": "Automatización",
-            "description": "Automatizamos procesos clave para mejorar la eficiencia y productividad de tu empresa."
-          },
-          {
-            "title": "Integración",
-            "description": "Conectamos múltiples sistemas para que trabajen de manera conjunta, optimizando tu flujo de trabajo."
-          }
-      ]
-    },
-    "cta": {
-      "title": "Transforma Tu Negocio",
-      "description": "Aumenta tu rentabilidad y toma el control total de tu inventario con nuestras soluciones personalizadas. Lleva tu negocio al siguiente nivel de eficiencia.",
-      "button": "Obtén tu Consultoría Gratuita"
-    }
+  "ourMission": {
+    "title": "Compromiso Total",
+    "description": "Vamos más allá del software. Diseñamos soluciones alineadas a tus procesos y objetivos, asegurando un control total para tu éxito."
+  },
+  "features": {
+    "title": "Características",
+    "items": [
+      {
+        "title": "Informes",
+        "description": "Accede a informes detallados en tiempo real para reducir costos y optimizar la eficiencia."
+      },
+      {
+        "title": "Personalización",
+        "description": "Nuestras soluciones se adaptan a las necesidades específicas de tu negocio."
+      },
+      {
+        "title": "Automatización",
+        "description": "Automatizamos procesos clave para mejorar la eficiencia y productividad de tu empresa."
+      },
+      {
+        "title": "Integración",
+        "description": "Conectamos múltiples sistemas para que trabajen de manera conjunta, optimizando tu flujo de trabajo."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Transforma Tu Negocio",
+    "description": "Aumenta tu rentabilidad y toma el control total de tu inventario con nuestras soluciones personalizadas. Lleva tu negocio al siguiente nivel de eficiencia.",
+    "button": "Obtén tu Consultoría Gratuita"
   }
-  
+}
