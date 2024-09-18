@@ -36,7 +36,7 @@ const Home: React.FC = () => {
       </header>
 
       <main className="px-4 py-16 sm:px-6 lg:px-8 space-y-32">
-        {/* Who We Are */}
+        {/* Who We Are - Socios Estratégicos*/}
         <section className="text-center">
           <h2 className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-white mb-8">
             {copy.whoWeAre.title}
