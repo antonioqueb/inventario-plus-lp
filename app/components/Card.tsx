@@ -7,7 +7,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ title, description }) => {
   return (
-    <div className="group bg-gradient-to-br from-gray-800 to-gray-900 bg-opacity-80 backdrop-filter backdrop-blur-lg shadow-lg rounded-2xl overflow-hidden transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-1 flex flex-col h-full">
+    <div className="group my-14 bg-gradient-to-br from-gray-800 to-gray-900 bg-opacity-80 backdrop-filter backdrop-blur-lg shadow-lg rounded-2xl overflow-hidden transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-1 flex flex-col h-full">
       <div className="p-6 flex flex-col justify-between h-full">
         <div>
           <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300">

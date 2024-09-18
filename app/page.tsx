@@ -62,12 +62,11 @@ const Home: React.FC = () => {
 
 
         {/* What We Do */}
-        <section className="text-center h-full py-12">
+        <section className="text-center h-full lg:py-24">
           <h2 className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-white mb-12">
             {copy.whatWeDo.title}
           </h2>
-          <div className="my-12"><CardContainer items={copy.whatWeDo.services} /></div>
-          
+          <CardContainer items={copy.whatWeDo.services} />
           <Button text={copy.hero.button} href="#consultoria-form" />
         </section>
 
@@ -81,14 +80,13 @@ const Home: React.FC = () => {
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
             {copy.ourMission.description}
           </p>
-          <div className="max-w-6xl mx-auto rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-300">
+          <div className="max-w-xl mx-auto rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-300">
             <Image
-              src="/our-mission.webp"
+              src="/compromisotrotal.svg"
               alt="Nuestra misión"
               layout="responsive"
-              width={1000}
-              height={300}
-              className="w-full"
+              width={100}
+              height={100}
             />
           </div>
         </section>
