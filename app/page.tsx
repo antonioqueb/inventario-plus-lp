@@ -36,8 +36,11 @@ const Home: React.FC = () => {
       </header>
 
       <main className="px-4 py-16 sm:px-6 lg:px-8 space-y-32">
+
+
+
         {/* Who We Are - Socios Estratégicos*/}
-        <section className="text-center">
+        <section className="text-center h-full">
           <h2 className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-white mb-8">
             {copy.whoWeAre.title}
           </h2>
@@ -56,17 +59,21 @@ const Home: React.FC = () => {
           </div>
         </section>
 
+
+
         {/* What We Do */}
-        <section className="text-center">
+        <section className="text-center h-full">
           <h2 className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-white mb-8">
             {copy.whatWeDo.title}
           </h2>
           <CardContainer items={copy.whatWeDo.services} />
-          <Button text={copy.hero.button} href="#consultoria-form"  />
+          <Button text={copy.hero.button} href="#consultoria-form" />
         </section>
 
+
+
         {/* Our Mission */}
-        <section className="text-center">
+        <section className="text-center h-full">
           <h2 className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-white mb-8">
             {copy.ourMission.title}
           </h2>
@@ -85,14 +92,18 @@ const Home: React.FC = () => {
           </div>
         </section>
 
+
+
         {/* Features Section */}
-        <section className="text-center">
+        <section className="text-center h-full">
           <h2 className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-white mb-8">
             {copy.features.title}
           </h2>
           <CardContainer items={copy.features.items} />
           <Button text={copy.hero.button} href="#consultoria-form" />
         </section>
+
+
 
         {/* Formulario de Consultoría */}
         <ContactForm />
