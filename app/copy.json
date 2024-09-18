@@ -1,35 +1,33 @@
 {
     "hero": {
-      "title": "InventarioPlus",
-      "description": "Optimiza tu inventario con soluciones precisas y personalizadas, diseñadas para controlar cada aspecto de tus operaciones.",
-      "button": "Obtén tu Consultoría Gratuita"
+      "title": "Sistematiza y controla tu inventario",
+      "description": "En InventarioPlus te ayudamos a conectar y personalizar soluciones tecnológicas para que optimices cada parte de tus operaciones. Queremos que tu trabajo sea más fácil, eficiente y, sobre todo, sin complicaciones."
     },
     "whoWeAre": {
       "title": "Socios Estratégicos",
-      "description": "Impulsa tu crecimiento con herramientas personalizadas que mejoran la eficiencia y te dan control y visibilidad total sobre tus operaciones."
+      "description": "Nos enfocamos en darte herramientas hechas a tu medida para que puedas hacer crecer tu negocio sin perder el control. Con nuestra ayuda, tendrás una visibilidad total de todo lo que sucede en tus operaciones, y lo mejor de todo, estarás siempre al mando."
     },
     "whatWeDo": {
-      "title": "Soluciones Personalizadas",
-      "services": [
-        {
-            "title": "Optimización",
-            "description": "Identificamos oportunidades clave para optimizar costos y aumentar la eficiencia operativa, respetando tus procesos actuales."
-          },
-          {
-            "title": "Visibilidad",
-            "description": "Obtén visibilidad continua y en tiempo real de tu inventario para tomar decisiones estratégicas con confianza."
-          },
-          {
-            "title": "Personalización",
-            "description": "Ajustamos Odoo a tus necesidades exclusivas, optimizando cada flujo de trabajo para que obtengas el máximo rendimiento y eficiencia."
-          },
-          {
-            "title": "Monitoreo",
-            "description": "Supervisamos tus operaciones continuamente para garantizar el cumplimiento de los objetivos y la mejora constante en los procesos."
-          }
-          
-      ]
-    },
+    "title": "Soluciones Personalizadas",
+    "services": [
+      {
+        "title": "Optimización",
+        "description": "Te ayudamos a encontrar formas de reducir costos y hacer tus operaciones más eficientes, siempre respetando la manera en que ya trabajas."
+      },
+      {
+        "title": "Visibilidad",
+        "description": "Queremos que tengas siempre a la vista todo lo que pasa con tu inventario, para que puedas tomar decisiones con seguridad."
+      },
+      {
+        "title": "Personalización",
+        "description": "Adaptamos Odoo a lo que realmente necesitas, para que cada proceso funcione de la mejor manera posible para ti."
+      },
+      {
+        "title": "Monitoreo",
+        "description": "Estamos al pendiente de tus operaciones para asegurarnos de que todo vaya según lo planeado, buscando siempre mejorar cada detalle."
+      }
+    ]
+  },
     "ourMission": {
       "title": "Compromiso Total",
       "description": "Vamos más allá del software. Diseñamos soluciones alineadas a tus procesos y objetivos, asegurando un control total para tu éxito."
