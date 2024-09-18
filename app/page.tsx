@@ -22,7 +22,7 @@ const Home: React.FC = () => {
           />
         </video>
 
-        <div className="relative z-10 flex flex-col justify-center items-center h-full bg-black bg-opacity-60 backdrop-filter backdrop-blur-sm">
+        <div className="relative z-10 flex flex-col justify-center items-center h-full bg-black bg-opacity-60 backdrop-filter backdrop-blur-sm max-w-xl">
           <h1 className="text-3xl md:text-4xl xl:text-5xl font-extrabold text-balance text-white tracking-tight drop-shadow-2xl mb-6">
             {copy.hero.title}
           </h1>
