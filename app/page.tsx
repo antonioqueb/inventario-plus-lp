@@ -54,7 +54,7 @@ const Home: React.FC = () => {
               layout="responsive"
               width={1000}
               height={400}
-              className="w-full"
+              className="w-full "
             />
           </div>
         </section>
