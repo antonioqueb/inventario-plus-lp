@@ -63,10 +63,11 @@ const Home: React.FC = () => {
 
         {/* What We Do */}
         <section className="text-center h-full py-12">
-          <h2 className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-white mb-8">
+          <h2 className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-white mb-12">
             {copy.whatWeDo.title}
           </h2>
-          <CardContainer items={copy.whatWeDo.services} />
+          <div className="my-12"><CardContainer items={copy.whatWeDo.services} /></div>
+          
           <Button text={copy.hero.button} href="#consultoria-form" />
         </section>
 
