@@ -40,7 +40,7 @@ const Home: React.FC = () => {
 
 
         {/* Who We Are - Socios Estratégicos*/}
-        <section className="text-center h-full">
+        <section className="text-center h-full py-8">
           <h2 className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-white mb-8">
             {copy.whoWeAre.title}
           </h2>
@@ -62,7 +62,7 @@ const Home: React.FC = () => {
 
 
         {/* What We Do */}
-        <section className="text-center h-full">
+        <section className="text-center h-full py-12">
           <h2 className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-white mb-8">
             {copy.whatWeDo.title}
           </h2>
