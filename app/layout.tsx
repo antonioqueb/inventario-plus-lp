@@ -14,8 +14,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "InventarioPlus",
-  description: "Impulsa tu crecimiento con herramientas personalizadas que mejoran la eficiencia y te dan control y visibilidad total sobre tus operaciones.",
+  title: "Optimiza tu Inventario con Odoo | Soluciones Personalizadas",
+  description: "Expertos en gestión de inventario con Odoo. Implementamos soluciones a medida para mejorar la eficiencia, reducir costos y aumentar la visibilidad de tu stock. Solicita una demo gratuita.",
 };
 
 export default function RootLayout({
