@@ -1,42 +1,50 @@
+'use client';
 import Image from "next/image";
 import copy from "./copy.json";
 import Button from "./components/Button";
 import CardContainer from "./components/CardContainer";
 import ContactForm from "./components/ContactForm";
+import { motion } from "framer-motion"
 
 const Home: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
+    <div className="min-h-screen bg-gradient-to-b from-gray-950 to-gray-900 text-white">
       {/* Hero Section */}
-      <header className="relative h-screen text-center">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        >
-          <source
-            src="https://videos.pexels.com/video-files/4477603/4477603-hd_1920_1080_30fps.mp4"
-            type="video/mp4"
-          />
-        </video>
+{/* Hero Section */}
+<header className="relative h-screen overflow-hidden">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0 scale-110 transform"
+      >
+        <source src="/4477603-hd_1920_1080_30fps.mp4" type="video/mp4" />
+      </video>
 
-        <div className="relative z-10 flex flex-col justify-center items-center h-full bg-black bg-opacity-60 backdrop-filter backdrop-blur-sm">
-          <h1 className="text-4xl md:text-6xl xl:text-8xl font-extrabold text-balance text-white tracking-tight drop-shadow-2xl mb-4">
+      <div className="relative z-10 flex flex-col justify-center items-center h-full bg-gradient-to-b from-black/30 via-black/50 to-black/70 backdrop-blur-[2px]">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="max-w-5xl w-full px-8 py-16 rounded-[40px] bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-xl shadow-2xl border border-white/20 transition-all duration-300 hover:shadow-blue-500/20 hover:border-blue-500/50"
+        >
+          <h1 className="text-5xl md:text-7xl xl:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-300 to-blue-300 tracking-tight mb-8 animate-text-shimmer">
             {copy.hero.title}
           </h1>
 
-          <p className="mt-6 text-xl md:text-2xl text-gray-200 drop-shadow-lg max-w-4xl mx-auto px-4 leading-relaxed">
+          <p className="mt-8 text-xl md:text-2xl text-gray-200 max-w-3xl leading-relaxed animate-fade-in-up font-light">
             {copy.hero.description}
           </p>
 
-          <Button text={copy.hero.button} href="#consultoria-form" />
-        </div>
-      </header>
+          <Button text={copy.hero.button} href="#consultoria-form" /> 
+        </motion.div>
+      </div>
+    </header>
 
       <main className="px-4 py-16 sm:px-6 lg:px-8 space-y-32">
 
+      {/* <Button text={copy.hero.button} href="#consultoria-form" /> */}
 
 
         {/* Who We Are - Socios Estratégicos*/}
