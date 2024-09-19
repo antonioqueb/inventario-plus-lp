@@ -32,13 +32,13 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="max-w-5xl w-full px-8 py-16 rounded-[40px] bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-xl shadow-2xl border border-white/20 transition-all duration-300 hover:shadow-blue-500/20 hover:border-blue-500/50"
+            className="max-w-5xl w-11/12 xl:w-full px-8 py-16 my-16 rounded-[40px] bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-xl shadow-2xl border border-white/20 transition-all duration-300 hover:shadow-blue-500/20 hover:border-blue-500/50"
           >
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-5xl md:text-7xl xl:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-300 to-blue-300 tracking-tight mb-8 animate-text-shimmer"
+              className="text-4xl md:text-7xl xl:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-300 to-blue-300 tracking-tight mb-8 animate-text-shimmer"
             >
               {copy.hero.title}
             </motion.h1>
