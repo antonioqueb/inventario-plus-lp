@@ -1,5 +1,4 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
 
 interface CardProps {
   title: string;
@@ -22,7 +21,7 @@ const Card: React.FC<CardProps> = ({ title, description }) => {
         </div>
         <div className="mt-auto flex items-center justify-between">
           <div className="w-12 h-1 bg-blue-500 rounded-full transform origin-left group-hover:scale-x-150 transition-transform duration-300 ease-out"></div>
-          <ArrowRight className="w-6 h-6 text-blue-400 transform group-hover:translate-x-1 transition-transform duration-300" />
+    
         </div>
       </div>
     </div>
