@@ -12,57 +12,58 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-b from-gray-950 to-gray-900 text-white">
       {/* Hero Section */}
       <header className="relative h-screen overflow-hidden">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover z-0 scale-110 transform"
-        >
-          <source src="/4477603-hd_1920_1080_30fps.mp4" type="video/mp4" />
-        </video>
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0 scale-110 transform"
+      >
+        <source src="/4477603-hd_1920_1080_30fps.mp4" type="video/mp4" />
+      </video>
 
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="relative z-10 flex flex-col justify-center items-center h-full bg-gradient-to-b from-black/40 via-black/60 to-black/80 backdrop-blur-[2px]"
+      >
         <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-          className="relative z-10 flex flex-col justify-center items-center h-full bg-gradient-to-b from-black/30 via-black/50 to-black/70 backdrop-blur-[2px]"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="max-w-5xl xl:max-w-7xl w-11/12 xl:w-full px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 my-8 sm:my-12 md:my-16 rounded-[20px] sm:rounded-[30px] md:rounded-[40px] bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-xl shadow-2xl border border-white/20 transition-all duration-300 hover:shadow-blue-500/20 hover:border-blue-500/50"
         >
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-5xl w-11/12 xl:w-full px-8 py-16 my-16 rounded-[40px] bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-xl shadow-2xl border border-white/20 transition-all duration-300 hover:shadow-blue-500/20 hover:border-blue-500/50"
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-300 to-blue-300 tracking-tight mb-4 sm:mb-6 md:mb-8 animate-text-shimmer"
           >
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-4xl md:text-7xl xl:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-300 to-blue-300 tracking-tight mb-8 animate-text-shimmer"
-            >
-              {copy.hero.title}
-            </motion.h1>
+            {copy.hero.title}
+          </motion.h1>
 
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-              className="mt-8 text-xl md:text-2xl text-gray-200 max-w-3xl leading-relaxed animate-fade-in-up font-light"
-            >
-              {copy.hero.description}
-            </motion.p>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="mt-4 sm:mt-6 md:mt-8 text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 max-w-3xl leading-relaxed animate-fade-in-up font-light"
+          >
+            {copy.hero.description}
+          </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.6 }}
-            >
-              <Button text={copy.hero.button} href="#consultoria-form" />
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+            className="mt-6 sm:mt-8 md:mt-10"
+          >
+           <Button text={copy.hero.button} href="#consultoria-form" />
           </motion.div>
         </motion.div>
-      </header>
-
+      </motion.div>
+    </header>
+{/* <Button text={copy.hero.button} href="#consultoria-form" /> */}
       <main className="px-4 py-16 sm:px-6 lg:px-8 space-y-32">
         {/* Who We Are - Socios Estratégicos*/}
         <motion.section 
@@ -238,3 +239,6 @@ export default function Home() {
     </div>
   )
 }
+
+
+
