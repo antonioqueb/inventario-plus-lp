@@ -287,7 +287,7 @@ export default function ConsolidatedForm() {
             </p>
             <p className="text-yellow-400 text-sm mt-2">
               <Star className="inline-block mr-1" size={16} />
-              Calificación promedio de 4.7/5 basada en más de 643 encuestas
+              Calificación promedio de 4.7/5 basada en más de 243 encuestas
             </p>
           </div>
         </form>
