@@ -1,12 +1,12 @@
 {
   "hero": {
-    "title": "Inventario a tu medida con InventarioPlus",
-    "description": "En InventarioPlus queremos que tu gestión del inventario sea más fácil, eficiente y, sobre todo, sin complicaciones, permitiéndote ahorrar tiempo y recursos.",
+    "title": "Sistematiza tu inventario con herramientas personalizadas.",
+    "description": "Queremos que tu gestión del inventario sea fluida, eficiente y, sobre todo, sin complicaciones, permitiéndote ahorrar tiempo y recursos.",
     "button": "Obtén tu Consultoría Gratuita"
   },
   "whoWeAre": {
     "title": "Socios Estratégicos",
-    "description": "Nos enfocamos en darte herramientas hechas a tu medida para que puedas tener una visibilidad total de todo lo que sucede en tus operaciones, y lo mejor de todo, estarás siempre al mando, tomando decisiones más rápidas y precisas cada día."
+    "description": "Entregamos las mejores herramientas para que puedas tener una visibilidad total de todo lo que sucede con tu inventario, y estarás siempre al mando."
   },
   "whatWeDo": {
     "title": "Soluciones Personalizadas",
@@ -31,26 +31,26 @@
   },
   "ourMission": {
     "title": "Compromiso Total",
-    "description": "Vamos más allá del software. Diseñamos soluciones alineadas a tus procesos y objetivos, asegurando un control total para tu éxito."
+    "description": "Vamos más allá de la implementación de un software de inventario. Diseñamos soluciones alineadas a tus procesos, asegurando un control total para tu gestión."
   },
   "features": {
     "title": "Características",
     "items": [
       {
         "title": "Informes",
-        "description": "Accede a informes detallados en tiempo real para reducir costos y optimizar la eficiencia."
+        "description": "Obtén acceso instantáneo a informes detallados y actualizados en tiempo real, que te ayudarán a identificar oportunidades de ahorro y maximizar la eficiencia operativa."
       },
       {
         "title": "Personalización",
-        "description": "Nuestras soluciones se adaptan a las necesidades específicas de tu negocio."
+        "description": "Diseñamos soluciones para optimizar los procesos específicos de tu negocio, adaptaciones que cubren desde pequeñas modificaciones hasta desarrollos completos"
       },
       {
         "title": "Automatización",
-        "description": "Automatizamos procesos clave para mejorar la eficiencia y productividad de tu empresa."
+        "description": "ATransformamos los procesos clave de tu empresa mediante soluciones automatizadas que incrementan la eficiencia operativa, reducen errores y optimizan la productividad."
       },
       {
         "title": "Integración",
-        "description": "Conectamos múltiples sistemas para que trabajen de manera conjunta, optimizando tu flujo de trabajo."
+        "description": "Integramos tus sistemas para facilitar la colaboración y el intercambio de datos. Optimiza tu flujo de trabajo, reduce errores y mejora la eficiencia operativa."
       }
     ]
   },
