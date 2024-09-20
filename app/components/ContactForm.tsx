@@ -3,13 +3,14 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from 'next/navigation';
 import { DateTime } from 'luxon';
+import { Clock, Users, Star } from 'lucide-react';
 
 interface Slot {
   start: string;
   stop: string; 
 }
 
-const ConsolidatedForm: React.FC = () => {
+export default function ConsolidatedForm() {
   const router = useRouter();
   const [selectedSlot, setSelectedSlot] = useState<string>("");
   const [selectedDate, setSelectedDate] = useState<string | null>(getTodayDate());
@@ -22,6 +23,7 @@ const ConsolidatedForm: React.FC = () => {
     probability: 33,
   });
   const [apiMessage, setApiMessage] = useState<string | null>(null);
+  const [remainingSlots, setRemainingSlots] = useState<number>(0);
 
   useEffect(() => {
     if (selectedDate) {
@@ -61,6 +63,7 @@ const ConsolidatedForm: React.FC = () => {
 
         setApiMessage(null);
         setAvailableSlots(filteredSlots);
+        setRemainingSlots(filteredSlots.length);
       }
     } catch (error) {
       setAvailableSlots([]);
@@ -160,7 +163,14 @@ const ConsolidatedForm: React.FC = () => {
   return (
     <section id="consultoria-form" className="py-20 bg-gradient-to-b from-gray-800 to-gray-900 shadow-2xl rounded-b-3xl">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white text-center mb-10 leading-tight">Agenda tu Consultoría</h2>
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white text-center mb-10 leading-tight">Agenda tu Consultoría Exclusiva</h2>
+        
+        <div className="max-w-2xl mx-auto mb-8">
+          <div className="bg-blue-600 text-white p-4 rounded-lg shadow-lg text-center">
+            <p className="text-lg font-semibold">¡Oferta por tiempo limitado!</p>
+            <p>Agenda tu consultoría hoy y obtén un 20% de descuento en nuestros servicios.</p>
+          </div>
+        </div>
 
         <form onSubmit={handleSubmit} className="max-w-2xl mx-auto bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg p-8 sm:p-10 rounded-2xl shadow-2xl">
           <div className="space-y-6">
@@ -227,6 +237,13 @@ const ConsolidatedForm: React.FC = () => {
                 <p className="text-gray-300 text-sm mb-2">* Los horarios se muestran en hora centro de México (CDMX).</p>
               )}
 
+              {remainingSlots > 0 && remainingSlots <= 3 && (
+                <p className="text-yellow-400 text-sm mb-2 font-semibold">
+                  <Clock className="inline-block mr-1" size={16} />
+                  ¡Solo quedan {remainingSlots} horarios disponibles para hoy!
+                </p>
+              )}
+
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {availableSlots.length === 0 ? (
                   <p className="text-white col-span-2 sm:col-span-3">{apiMessage || "No hay horarios disponibles."}</p>
@@ -260,12 +277,21 @@ const ConsolidatedForm: React.FC = () => {
             type="submit"
             className="w-full mt-8 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-4 rounded-full text-lg sm:text-xl font-bold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 ease-in-out shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
           >
-            Confirmar Reunión
+            Confirmar Reunión Ahora
           </button>
+
+          <div className="mt-6 text-center">
+            <p className="text-gray-300 text-sm">
+              <Users className="inline-block mr-1" size={16} />
+              Más de 500 empresas ya han mejorado su productividad con nuestras consultorías
+            </p>
+            <p className="text-yellow-400 text-sm mt-2">
+              <Star className="inline-block mr-1" size={16} />
+              Calificación promedio de 4.7/5 basada en más de 643 encuestas
+            </p>
+          </div>
         </form>
       </div>
     </section>
   );
-};
-
-export default ConsolidatedForm;
+}
