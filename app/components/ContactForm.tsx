@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from 'next/navigation';
 import { DateTime } from 'luxon';
-import { Clock, Users, Star } from 'lucide-react';
+import { Clock, Users, Star, Calendar, AlertTriangle } from 'lucide-react';
 
 interface Slot {
   start: string;
@@ -24,6 +24,7 @@ export default function ConsolidatedForm() {
   });
   const [apiMessage, setApiMessage] = useState<string | null>(null);
   const [remainingSlots, setRemainingSlots] = useState<number>(0);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
     if (selectedDate) {
@@ -32,6 +33,7 @@ export default function ConsolidatedForm() {
   }, [selectedDate]);
 
   const fetchAvailableSlots = async () => {
+    setIsLoading(true);
     const start_time = `${selectedDate ?? ''}T09:00:00`;
     const end_time = `${selectedDate ?? ''}T17:00:00`;
 
@@ -46,6 +48,8 @@ export default function ConsolidatedForm() {
       if (data.free_slots.length === 0) {
         setAvailableSlots([]);
         setApiMessage("No hay horarios disponibles para esta fecha.");
+        // Buscar el siguiente día disponible
+        findNextAvailableDate(selectedDate ?? getTodayDate() ?? '');
       } else {
         const now = DateTime.now().setZone('America/Mexico_City');
         const currentDate = now.toISODate();
@@ -68,6 +72,38 @@ export default function ConsolidatedForm() {
     } catch (error) {
       setAvailableSlots([]);
       setApiMessage("Error al obtener los horarios disponibles.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const findNextAvailableDate = async (currentDate: string) => {
+    let nextDate = DateTime.fromISO(currentDate).plus({ days: 1 });
+    let foundSlots = false;
+
+    while (!foundSlots) {
+      const start_time = `${nextDate.toISODate()}T09:00:00`;
+      const end_time = `${nextDate.toISODate()}T17:00:00`;
+
+      try {
+        const response = await fetch(`https://crm.gestpro.cloud/free_slots?start_time=${start_time}&end_time=${end_time}&company_id=2`);
+        if (!response.ok) {
+          throw new Error(`Error al obtener slots: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        if (data.free_slots.length > 0) {
+          foundSlots = true;
+          setSelectedDate(nextDate.toISODate());
+          setApiMessage(`Hemos encontrado horarios disponibles para el ${nextDate.toFormat('dd/MM/yyyy')}. ¡Reserva ahora antes de que se agoten!`);
+        } else {
+          nextDate = nextDate.plus({ days: 1 });
+        }
+      } catch (error) {
+        console.error("Error buscando el siguiente día disponible:", error);
+        break;
+      }
     }
   };
 
@@ -120,6 +156,8 @@ export default function ConsolidatedForm() {
       stage_id: 1
     });
 
+    setIsLoading(true);
+
     fetch("https://crm.gestpro.cloud/create_opportunity", {
       method: "POST",
       headers: {
@@ -157,6 +195,9 @@ export default function ConsolidatedForm() {
       .catch((error) => {
         console.error("Error creando oportunidad:", error);
         setApiMessage("Error creando oportunidad. Inténtalo de nuevo.");
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
 
@@ -218,16 +259,19 @@ export default function ConsolidatedForm() {
 
             <div>
               <label htmlFor="date" className="block text-white text-lg sm:text-xl font-medium mb-2">Selecciona una Fecha</label>
-              <input
-                type="date"
-                id="date"
-                name="date"
-                value={selectedDate ?? ''}
-                onChange={handleDateChange}
-                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
-                min={getTodayDate() ?? ''}
-                required
-              />
+              <div className="relative">
+                <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                <input
+                  type="date"
+                  id="date"
+                  name="date"
+                  value={selectedDate ?? ''}
+                  onChange={handleDateChange}
+                  className="w-full pl-10 pr-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+                  min={getTodayDate() ?? ''}
+                  required
+                />
+              </div>
             </div>
 
             <div>
@@ -239,13 +283,15 @@ export default function ConsolidatedForm() {
 
               {remainingSlots > 0 && remainingSlots <= 3 && (
                 <p className="text-yellow-400 text-sm mb-2 font-semibold">
-                  <Clock className="inline-block mr-1" size={16} />
-                  ¡Solo quedan {remainingSlots} horarios disponibles para hoy!
+                  <AlertTriangle className="inline-block mr-1" size={16} />
+                  ¡Atención! Solo quedan {remainingSlots} horarios disponibles para hoy. ¡Reserva ahora!
                 </p>
               )}
 
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                {availableSlots.length === 0 ? (
+                {isLoading ? (
+                  <p className="text-white col-span-2 sm:col-span-3">Cargando horarios disponibles...</p>
+                ) : availableSlots.length === 0 ? (
                   <p className="text-white col-span-2 sm:col-span-3">{apiMessage || "No hay horarios disponibles."}</p>
                 ) : (
                   availableSlots.map((slot, index) => (
@@ -275,9 +321,12 @@ export default function ConsolidatedForm() {
 
           <button
             type="submit"
-            className="w-full mt-8 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-4 rounded-full text-lg sm:text-xl font-bold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 ease-in-out shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+            className={`w-full mt-8 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-4 rounded-full text-lg sm:text-xl font-bold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 ease-in-out shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 ${
+              isLoading ? 'opacity-50 cursor-not-allowed' : ''
+            }`}
+            disabled={isLoading}
           >
-            Confirmar Reunión Ahora
+            {isLoading ? 'Procesando...' : 'Confirmar Reunión Ahora'}
           </button>
 
           <div className="mt-6 text-center">
