@@ -12,20 +12,36 @@
     "title": "Soluciones Personalizadas",
     "services": [
       {
-        "title": "Optimización",
-        "description": "Te ayudamos a encontrar formas de reducir costos y hacer tus operaciones más eficientes, siempre respetando la manera en que ya trabajas."
+        "title": "Automatización de inventarios",
+        "description": "Desarrollamos soluciones personalizadas que automatizan y optimizan la gestión de tu inventario, adaptadas a tus operaciones para aumentar precisión y agilidad."
       },
       {
-        "title": "Visibilidad",
-        "description": "Queremos que tengas siempre a la vista todo lo que pasa con tu inventario, para que puedas tomar decisiones con seguridad."
+        "title": "Consultoría Odoo especializada",
+        "description": "Analizamos a fondo tus procesos y diseñamos soluciones a medida con Odoo, enfocándonos en cumplir tus objetivos y mejorar la eficiencia operativa."
       },
       {
-        "title": "Personalización",
-        "description": "Adaptamos Odoo a lo que realmente necesitas, para que cada proceso funcione de la mejor manera posible para ti."
+        "title": "Implementación estratégica",
+        "description": "Nos convertimos en tu aliado tecnológico, ofreciendo herramientas avanzadas que te brindan un control total sobre la gestión de tu inventario y operaciones."
       },
       {
-        "title": "Monitoreo",
-        "description": "Estamos al pendiente de tus operaciones para asegurarnos de que todo vaya según lo planeado, buscando siempre mejorar cada detalle."
+        "title": "Soporte técnico integral",
+        "description": "Nuestro equipo especializado brinda soporte continuo, adaptado a las configuraciones personalizadas de tu sistema, anticipando y resolviendo problemas de forma proactiva."
+      },
+      {
+        "title": "Dashboard en tiempo real",
+        "description": "Diseñamos dashboards a medida para que monitorees cada aspecto de tu inventario en tiempo real, permitiéndote tomar decisiones basadas en datos precisos."
+      },
+      {
+        "title": "Optimización de operaciones",
+        "description": "Rediseñamos tus procesos para maximizar la eficiencia, reducir costos y mejorar continuamente las operaciones, siempre respetando tus flujos de trabajo actuales."
+      },
+      {
+        "title": "Personalización Odoo avanzada",
+        "description": "Ajustamos cada módulo de Odoo según tus procesos clave, garantizando una integración perfecta y eficiente en todas tus áreas operativas."
+      },
+      {
+        "title": "Monitoreo y mejora continua",
+        "description": "Monitoreamos de cerca tus operaciones para detectar oportunidades de mejora, asegurándonos de que todo funcione de manera fluida y eficiente en todo momento."
       }
     ]
   },
@@ -37,20 +53,20 @@
     "title": "Características",
     "items": [
       {
-        "title": "Informes",
-        "description": "Obtén acceso instantáneo a informes detallados y actualizados en tiempo real, que te ayudarán a identificar oportunidades de ahorro y maximizar la eficiencia operativa."
+        "title": "Informes dinámicos",
+        "description": "Accede a informes que puedes personalizar según tus métricas clave. Estos reportes te permiten visualizar rápidamente datos críticos, facilitando la toma de decisiones estratégicas."
       },
       {
-        "title": "Personalización",
-        "description": "Diseñamos soluciones para optimizar los procesos específicos de tu negocio, adaptaciones que cubren desde pequeñas modificaciones hasta desarrollos completos"
+        "title": "Escalabilidad operativa",
+        "description": "Nuestras soluciones están diseñadas para crecer junto a tu negocio. A medida que tus operaciones se expanden, las herramientas que implementamos se ajustan sin complicaciones."
       },
       {
-        "title": "Automatización",
-        "description": "ATransformamos los procesos clave de tu empresa mediante soluciones automatizadas que incrementan la eficiencia operativa, reducen errores y optimizan la productividad."
+        "title": "Alertas automáticas",
+        "description": "Configura alertas personalizadas que te notifiquen automáticamente sobre niveles bajos de stock, movimientos importantes o cualquier evento crítico, permitiéndote actuar antes de que surjan problemas."
       },
       {
-        "title": "Integración",
-        "description": "Integramos tus sistemas para facilitar la colaboración y el intercambio de datos. Optimiza tu flujo de trabajo, reduce errores y mejora la eficiencia operativa."
+        "title": "Acceso multi-dispositivo",
+        "description": "Monitorea y gestiona tu inventario desde cualquier lugar con acceso seguro desde múltiples dispositivos. La movilidad es clave para una administración moderna y eficiente."
       }
     ]
   },

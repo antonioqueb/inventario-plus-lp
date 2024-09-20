@@ -10,7 +10,7 @@ const Card: React.FC<CardProps> = ({ title, description }) => {
     <div className="group my-14 bg-gradient-to-br from-gray-800 to-gray-900 bg-opacity-80 backdrop-filter backdrop-blur-lg shadow-lg rounded-2xl overflow-hidden transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-1 flex flex-col h-full">
       <div className="p-6 flex flex-col justify-between h-full">
         <div>
-          <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300">
+          <h3 className="text-xl 2xl:text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300">
             {title}
           </h3>
           <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-6">
