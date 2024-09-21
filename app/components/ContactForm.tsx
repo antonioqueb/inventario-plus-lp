@@ -161,16 +161,17 @@ export default function ConsolidatedForm() {
   };
 
   return (
-    <section id="consultoria-form" className="py-20 bg-gradient-to-b from-gray-800 to-gray-900 shadow-2xl rounded-b-3xl">
+    <section id="consultoria-form" className="py-20 bg-gradient-to-b from-gray-800 to-gray-900 shadow-2xl rounded-3xl">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white text-center mb-10 leading-tight">Agenda tu Consultoría Exclusiva</h2>
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white text-center mb-10 leading-tight">Agenda tu Consultoría Hoy</h2>
         
         <div className="max-w-2xl mx-auto mb-8">
-          <div className="bg-blue-600 text-white p-4 rounded-lg shadow-lg text-center">
-            <p className="text-lg font-semibold">¡Oferta por tiempo limitado!</p>
-            <p>Agenda tu consultoría hoy y obtén un 20% de descuento en nuestros servicios.</p>
+          <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-6 rounded-lg shadow-2xl text-center">
+            <p className="text-2xl font-bold text-yellow-300 mb-2">¡Oferta por tiempo limitado!</p>
+            <p className="text-xl mt-2">Agenda tu consultoría hoy y <span className="text-yellow-300 font-semibold">obtén un 20% de descuento</span> en nuestros servicios de implementación Odoo ERP.</p>
           </div>
         </div>
+
 
         <form onSubmit={handleSubmit} className="max-w-2xl mx-auto bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg p-8 sm:p-10 rounded-2xl shadow-2xl">
           <div className="space-y-6">

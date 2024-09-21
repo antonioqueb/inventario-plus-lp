@@ -8,6 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        fadeInSlideLeft: {
+          '0%': { opacity: '0', transform: 'translateX(-50%)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+      },
+      animation: {
+        fadeInSlideLeft: 'fadeInSlideLeft 1s ease-out',
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
