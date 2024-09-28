@@ -1,78 +1,78 @@
 {
   "hero": {
-    "title": "Sistematiza tu inventario con herramientas personalizadas.",
-    "description": "Queremos que tu gestión del inventario sea fluida, eficiente y, sobre todo, sin complicaciones, permitiéndote ahorrar tiempo y recursos.",
+    "title": "Cumple con regulaciones locales y fiscales con Odoo ERP",
+    "description": "Asegura que tu empresa cumple con todas las normativas locales y fiscales. Implementa un ERP que automatiza y garantiza el cumplimiento, evitando sanciones y simplificando procesos.",
     "button": "Obtén tu Consultoría Gratuita"
   },
   "whoWeAre": {
-    "title": "Socios Estratégicos",
-    "description": "Entregamos las mejores herramientas para que puedas tener una visibilidad total de todo lo que sucede con tu inventario, y estarás siempre al mando."
+    "title": "Socios Estratégicos para el Cumplimiento",
+    "description": "Somos tu aliado en la implementación de soluciones ERP que aseguran el cumplimiento con todas las regulaciones locales y fiscales, brindando control total sobre tus procesos y operaciones."
   },
   "whatWeDo": {
-    "title": "Soluciones Personalizadas",
+    "title": "Soluciones para el Cumplimiento Total",
     "services": [
       {
-        "title": "Automatización de inventarios",
-        "description": "Desarrollamos soluciones personalizadas que automatizan y optimizan la gestión de tu inventario, adaptadas a tus operaciones para aumentar precisión y agilidad."
+        "title": "Automatización del Cumplimiento",
+        "description": "Desarrollamos soluciones personalizadas que garantizan que tu empresa cumpla con todas las normativas fiscales y locales, automatizando procesos clave para evitar sanciones."
       },
       {
-        "title": "Consultoría Odoo especializada",
-        "description": "Analizamos a fondo tus procesos y diseñamos soluciones a medida con Odoo, enfocándonos en cumplir tus objetivos y mejorar la eficiencia operativa."
+        "title": "Consultoría Odoo Especializada en Cumplimiento",
+        "description": "Analizamos tus necesidades de cumplimiento y diseñamos soluciones a medida utilizando Odoo, ayudándote a gestionar eficazmente normativas fiscales y legales."
       },
       {
-        "title": "Implementación estratégica",
-        "description": "Nos convertimos en tu aliado tecnológico, ofreciendo herramientas avanzadas que te brindan un control total sobre la gestión de tu inventario y operaciones."
+        "title": "Implementación ERP Estratégica",
+        "description": "Nos convertimos en tu socio tecnológico, asegurando que tu ERP cumpla con todas las normativas fiscales y locales desde la implementación inicial."
       },
       {
-        "title": "Soporte técnico integral",
-        "description": "Nuestro equipo especializado brinda soporte continuo, adaptado a las configuraciones personalizadas de tu sistema, anticipando y resolviendo problemas de forma proactiva."
+        "title": "Soporte Técnico Continuo",
+        "description": "Proveemos soporte técnico especializado para mantener tu ERP siempre alineado con las últimas regulaciones, evitando riesgos y asegurando la continuidad operativa."
       },
       {
-        "title": "Dashboard en tiempo real",
-        "description": "Diseñamos dashboards a medida para que monitorees cada aspecto de tu inventario en tiempo real, permitiéndote tomar decisiones basadas en datos precisos."
+        "title": "Dashboard en Tiempo Real para Cumplimiento",
+        "description": "Diseñamos dashboards personalizados que monitorean el estado de cumplimiento en tiempo real, permitiendo decisiones basadas en datos actualizados y precisos."
       },
       {
-        "title": "Optimización de operaciones",
-        "description": "Rediseñamos tus procesos para maximizar la eficiencia, reducir costos y mejorar continuamente las operaciones, siempre respetando tus flujos de trabajo actuales."
+        "title": "Optimización de Procesos para Cumplimiento",
+        "description": "Rediseñamos tus procesos para maximizar la eficiencia y garantizar el cumplimiento normativo, reduciendo costos y riesgos potenciales."
       },
       {
-        "title": "Personalización Odoo avanzada",
-        "description": "Ajustamos cada módulo de Odoo según tus procesos clave, garantizando una integración perfecta y eficiente en todas tus áreas operativas."
+        "title": "Personalización Avanzada de Odoo",
+        "description": "Adaptamos cada módulo de Odoo a las regulaciones locales y fiscales, garantizando una integración efectiva y un cumplimiento fluido en todas tus áreas operativas."
       },
       {
-        "title": "Monitoreo y mejora continua",
-        "description": "Monitoreamos de cerca tus operaciones para detectar oportunidades de mejora, asegurándonos de que todo funcione de manera fluida y eficiente en todo momento."
+        "title": "Monitoreo y Actualización Continua",
+        "description": "Monitoreamos de manera proactiva el estado de cumplimiento de tu empresa, asegurando que siempre esté al día con los cambios regulatorios."
       }
     ]
   },
   "ourMission": {
-    "title": "Compromiso Total",
-    "description": "Vamos más allá de la implementación de un software de inventario. Diseñamos soluciones alineadas a tus procesos, asegurando un control total para tu gestión."
+    "title": "Compromiso con el Cumplimiento",
+    "description": "Nuestro compromiso va más allá de la implementación de un ERP. Diseñamos soluciones que aseguran el cumplimiento normativo de tu empresa, evitando sanciones y optimizando tus operaciones."
   },
   "features": {
-    "title": "Características",
+    "title": "Características Clave para el Cumplimiento",
     "items": [
       {
-        "title": "Informes dinámicos",
-        "description": "Accede a informes que puedes personalizar según tus métricas clave. Estos reportes te permiten visualizar rápidamente datos críticos, facilitando la toma de decisiones estratégicas."
+        "title": "Informes Dinámicos y Personalizables",
+        "description": "Accede a informes fiscales y normativos que puedes personalizar según las necesidades de tu empresa, facilitando el seguimiento de datos críticos para asegurar el cumplimiento."
       },
       {
-        "title": "Escalabilidad operativa",
-        "description": "Nuestras soluciones están diseñadas para crecer junto a tu negocio. A medida que tus operaciones se expanden, las herramientas que implementamos se ajustan sin complicaciones."
+        "title": "Escalabilidad para Nuevas Normativas",
+        "description": "Nuestras soluciones están diseñadas para adaptarse a nuevos cambios normativos, garantizando que tu empresa cumpla sin importar la complejidad de las regulaciones futuras."
       },
       {
-        "title": "Alertas automáticas",
-        "description": "Configura alertas personalizadas que te notifiquen automáticamente sobre niveles bajos de stock, movimientos importantes o cualquier evento crítico, permitiéndote actuar antes de que surjan problemas."
+        "title": "Alertas Automáticas de Cumplimiento",
+        "description": "Configura alertas que te notifiquen sobre posibles incumplimientos o cambios normativos, permitiendo que actúes de manera proactiva para evitar sanciones."
       },
       {
-        "title": "Acceso multi-dispositivo",
-        "description": "Monitorea y gestiona tu inventario desde cualquier lugar con acceso seguro desde múltiples dispositivos. La movilidad es clave para una administración moderna y eficiente."
+        "title": "Acceso Seguro Multi-dispositivo",
+        "description": "Monitorea y gestiona el cumplimiento desde cualquier lugar con acceso seguro desde múltiples dispositivos, asegurando que siempre estés al tanto de las normativas vigentes."
       }
     ]
   },
   "cta": {
-    "title": "Transforma Tu Negocio",
-    "description": "Aumenta tu rentabilidad y toma el control total de tu inventario con nuestras soluciones personalizadas. Lleva tu negocio al siguiente nivel de eficiencia.",
+    "title": "Asegura el Cumplimiento de tu Empresa",
+    "description": "Evita sanciones y simplifica la gestión de regulaciones locales y fiscales con nuestras soluciones ERP personalizadas. Lleva tu negocio al siguiente nivel de cumplimiento.",
     "button": "Obtén tu Consultoría Gratuita"
   }
 }
