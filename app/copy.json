@@ -1,78 +1,78 @@
 {
   "hero": {
-    "title": "Sistematiza tu inventario con herramientas personalizadas.",
-    "description": "Queremos que tu gestión del inventario sea fluida, eficiente y, sobre todo, sin complicaciones, permitiéndote ahorrar tiempo y recursos.",
-    "button": "Obtén tu Consultoría Gratuita"
+    "title": "Integración ERP con Plataformas Externas",
+    "description": "Conecta tu ERP con plataformas externas como CRMs y e-commerce, y gestiona todo tu ecosistema empresarial de manera centralizada y eficiente.",
+    "button": "Consulta tu Integración Sin Costo"
   },
   "whoWeAre": {
-    "title": "Socios Estratégicos",
-    "description": "Entregamos las mejores herramientas para que puedas tener una visibilidad total de todo lo que sucede con tu inventario, y estarás siempre al mando."
+    "title": "Expertos en Integración de ERP",
+    "description": "Nos especializamos en integrar tu ERP con diversas plataformas externas, como CRMs, e-commerce, herramientas de marketing y más, para que puedas gestionar tu negocio de manera centralizada y mejorar la eficiencia operativa."
   },
   "whatWeDo": {
-    "title": "Soluciones Personalizadas",
+    "title": "Soluciones de Integración para un Ecosistema Conectado",
     "services": [
       {
-        "title": "Automatización de inventarios",
-        "description": "Desarrollamos soluciones personalizadas que automatizan y optimizan la gestión de tu inventario, adaptadas a tus operaciones para aumentar precisión y agilidad."
+        "title": "Integración Completa con Plataformas Externas",
+        "description": "Facilitamos la integración de tu ERP con plataformas como CRMs, sistemas de e-commerce, y otros servicios externos, asegurando una sincronización fluida y eficiente de datos."
       },
       {
-        "title": "Consultoría Odoo especializada",
-        "description": "Analizamos a fondo tus procesos y diseñamos soluciones a medida con Odoo, enfocándonos en cumplir tus objetivos y mejorar la eficiencia operativa."
+        "title": "Consultoría Especializada en Integraciones",
+        "description": "Te ayudamos a identificar las plataformas clave para tu negocio y diseñamos soluciones de integración personalizadas que optimizan la gestión de tu ecosistema empresarial."
       },
       {
-        "title": "Implementación estratégica",
-        "description": "Nos convertimos en tu aliado tecnológico, ofreciendo herramientas avanzadas que te brindan un control total sobre la gestión de tu inventario y operaciones."
+        "title": "Automatización de Procesos",
+        "description": "Automatizamos la transferencia de datos entre tu ERP y plataformas externas, eliminando la necesidad de tareas manuales y minimizando el riesgo de errores."
       },
       {
-        "title": "Soporte técnico integral",
-        "description": "Nuestro equipo especializado brinda soporte continuo, adaptado a las configuraciones personalizadas de tu sistema, anticipando y resolviendo problemas de forma proactiva."
+        "title": "Soporte Técnico Integral",
+        "description": "Ofrecemos soporte técnico continuo para asegurar que las integraciones funcionen sin problemas y que cualquier inconveniente sea resuelto rápidamente."
       },
       {
-        "title": "Dashboard en tiempo real",
-        "description": "Diseñamos dashboards a medida para que monitorees cada aspecto de tu inventario en tiempo real, permitiéndote tomar decisiones basadas en datos precisos."
+        "title": "Sincronización en Tiempo Real",
+        "description": "Garantizamos que los datos entre tu ERP y plataformas externas se actualicen en tiempo real, brindándote una visión clara y actualizada de todas tus operaciones."
       },
       {
-        "title": "Optimización de operaciones",
-        "description": "Rediseñamos tus procesos para maximizar la eficiencia, reducir costos y mejorar continuamente las operaciones, siempre respetando tus flujos de trabajo actuales."
+        "title": "Integración de E-commerce",
+        "description": "Conectamos tu ERP con plataformas de e-commerce para sincronizar inventarios, pedidos y datos de clientes, permitiéndote gestionar todas las operaciones de ventas desde un único sistema."
       },
       {
-        "title": "Personalización Odoo avanzada",
-        "description": "Ajustamos cada módulo de Odoo según tus procesos clave, garantizando una integración perfecta y eficiente en todas tus áreas operativas."
+        "title": "Integración de CRM",
+        "description": "Integramos tu ERP con sistemas CRM para centralizar la información de clientes, mejorando la eficiencia en la gestión de relaciones y la toma de decisiones basada en datos."
       },
       {
-        "title": "Monitoreo y mejora continua",
-        "description": "Monitoreamos de cerca tus operaciones para detectar oportunidades de mejora, asegurándonos de que todo funcione de manera fluida y eficiente en todo momento."
+        "title": "Monitoreo y Actualización Continua",
+        "description": "Monitoreamos constantemente las integraciones para asegurar que funcionen de manera óptima, ajustando cualquier detalle para mejorar la eficiencia de tu ecosistema empresarial."
       }
     ]
   },
   "ourMission": {
-    "title": "Compromiso Total",
-    "description": "Vamos más allá de la implementación de un software de inventario. Diseñamos soluciones alineadas a tus procesos, asegurando un control total para tu gestión."
+    "title": "Compromiso con la Conectividad Empresarial",
+    "description": "Nuestro objetivo es que tu negocio funcione de manera fluida y eficiente conectando todas las plataformas clave con tu ERP, permitiéndote gestionar todas tus operaciones desde un solo lugar."
   },
   "features": {
-    "title": "Características",
+    "title": "Características Clave para la Integración de Plataformas",
     "items": [
       {
-        "title": "Informes dinámicos",
-        "description": "Accede a informes que puedes personalizar según tus métricas clave. Estos reportes te permiten visualizar rápidamente datos críticos, facilitando la toma de decisiones estratégicas."
+        "title": "Sincronización de Datos en Tiempo Real",
+        "description": "Aseguramos que los datos de todas tus plataformas externas estén sincronizados con tu ERP en tiempo real, mejorando la toma de decisiones y la eficiencia operativa."
       },
       {
-        "title": "Escalabilidad operativa",
-        "description": "Nuestras soluciones están diseñadas para crecer junto a tu negocio. A medida que tus operaciones se expanden, las herramientas que implementamos se ajustan sin complicaciones."
+        "title": "Automatización de Flujos de Trabajo",
+        "description": "Automatizamos flujos de trabajo entre tu ERP y las plataformas conectadas, eliminando tareas manuales y mejorando la productividad de tu equipo."
       },
       {
-        "title": "Alertas automáticas",
-        "description": "Configura alertas personalizadas que te notifiquen automáticamente sobre niveles bajos de stock, movimientos importantes o cualquier evento crítico, permitiéndote actuar antes de que surjan problemas."
+        "title": "Informes y Dashboards Centralizados",
+        "description": "Accede a informes y dashboards personalizados que consolidan información de todas las plataformas externas, brindándote una visión completa y precisa de tu negocio."
       },
       {
-        "title": "Acceso multi-dispositivo",
-        "description": "Monitorea y gestiona tu inventario desde cualquier lugar con acceso seguro desde múltiples dispositivos. La movilidad es clave para una administración moderna y eficiente."
+        "title": "Compatibilidad y Escalabilidad",
+        "description": "Nuestras integraciones están diseñadas para ser compatibles con diversas plataformas y crecer junto a tu negocio, asegurando que puedas añadir nuevas herramientas sin problemas."
       }
     ]
   },
   "cta": {
-    "title": "Transforma Tu Negocio",
-    "description": "Aumenta tu rentabilidad y toma el control total de tu inventario con nuestras soluciones personalizadas. Lleva tu negocio al siguiente nivel de eficiencia.",
-    "button": "Obtén tu Consultoría Gratuita"
+    "title": "Conecta tu ERP y Gestiona tu Ecosistema Empresarial",
+    "description": "Optimiza la gestión de tu negocio conectando tu ERP con CRMs, e-commerce y más, para centralizar tus operaciones y aumentar la eficiencia. Consulta hoy mismo.",
+    "button": "Consulta tu Integración Sin Costo"
   }
 }
