@@ -14,8 +14,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Optimiza tu Inventario con Odoo | Soluciones Personalizadas",
-  description: "Expertos en gestión de inventario con Odoo. Implementamos soluciones a medida para mejorar la eficiencia, reducir costos y aumentar la visibilidad de tu stock. Solicita una demo gratuita.",
+  title: "Cumple con las Regulaciones Locales y Fiscales con un ERP Integrado",
+  description: "Optimiza la gestión de tu empresa asegurando el cumplimiento de las normativas locales y fiscales con un ERP integrado. Automatiza procesos clave, minimiza errores y garantiza que tu negocio esté siempre alineado con las regulaciones vigentes.",
 };
 
 export default function RootLayout({
