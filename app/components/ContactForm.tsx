@@ -31,12 +31,14 @@ export default function ConsolidatedForm() {
     }
   }, [selectedDate]);
 
+  
+
   const fetchAvailableSlots = async () => {
     const start_time = `${selectedDate ?? ''}T09:00:00`;
     const end_time = `${selectedDate ?? ''}T17:00:00`;
 
     try {
-      const response = await fetch(`https://crm.gestpro.cloud/free_slots?start_time=${start_time}&end_time=${end_time}&company_id=2`);
+      const response = await fetch(`https://crm.gestpro.cloud/free_slots?start_time=${start_time}&end_time=${end_time}&company_id=1`);
       if (!response.ok) {
         throw new Error(`Error al obtener slots: ${response.status}`);
       }
