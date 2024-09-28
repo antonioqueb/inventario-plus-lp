@@ -1,78 +1,78 @@
 {
   "hero": {
-    "title": "Sistematiza tu inventario con herramientas personalizadas.",
-    "description": "Queremos que tu gestión del inventario sea fluida, eficiente y, sobre todo, sin complicaciones, permitiéndote ahorrar tiempo y recursos.",
-    "button": "Obtén tu Consultoría Gratuita"
+    "title": "Migración de ERP a la Última Versión",
+    "description": "Mantente actualizado y competitivo. Migra a la última versión de ERP sin complicaciones y asegura un funcionamiento óptimo sin perder datos críticos.",
+    "button": "Consulta Tu Migración Sin Costo"
   },
   "whoWeAre": {
-    "title": "Socios Estratégicos",
-    "description": "Entregamos las mejores herramientas para que puedas tener una visibilidad total de todo lo que sucede con tu inventario, y estarás siempre al mando."
+    "title": "Expertos en Migraciones ERP",
+    "description": "Nos especializamos en realizar migraciones a la última versión de ERP, asegurando que tu empresa esté siempre a la vanguardia tecnológica sin comprometer la integridad de tus datos ni la eficiencia operativa."
   },
   "whatWeDo": {
-    "title": "Soluciones Personalizadas",
+    "title": "Migración Sin Complicaciones",
     "services": [
       {
-        "title": "Automatización de inventarios",
-        "description": "Desarrollamos soluciones personalizadas que automatizan y optimizan la gestión de tu inventario, adaptadas a tus operaciones para aumentar precisión y agilidad."
+        "title": "Migración Completa a la Última Versión",
+        "description": "Te ayudamos a migrar tu ERP a la versión más reciente, asegurando que todos tus procesos y datos críticos se mantengan intactos y operativos."
       },
       {
-        "title": "Consultoría Odoo especializada",
-        "description": "Analizamos a fondo tus procesos y diseñamos soluciones a medida con Odoo, enfocándonos en cumplir tus objetivos y mejorar la eficiencia operativa."
+        "title": "Consultoría Especializada en Migraciones",
+        "description": "Analizamos tu entorno ERP actual y diseñamos un plan de migración adaptado a tus necesidades, garantizando una transición fluida y sin interrupciones en tus operaciones."
       },
       {
-        "title": "Implementación estratégica",
-        "description": "Nos convertimos en tu aliado tecnológico, ofreciendo herramientas avanzadas que te brindan un control total sobre la gestión de tu inventario y operaciones."
+        "title": "Optimización Post-Migración",
+        "description": "Una vez realizada la migración, optimizamos tu ERP para aprovechar las nuevas funcionalidades, mejorando el rendimiento y la eficiencia de tu empresa."
       },
       {
-        "title": "Soporte técnico integral",
-        "description": "Nuestro equipo especializado brinda soporte continuo, adaptado a las configuraciones personalizadas de tu sistema, anticipando y resolviendo problemas de forma proactiva."
+        "title": "Soporte Técnico en la Migración",
+        "description": "Brindamos soporte técnico integral durante todo el proceso de migración, asegurando que cualquier problema potencial sea resuelto antes de que impacte en tus operaciones."
       },
       {
-        "title": "Dashboard en tiempo real",
-        "description": "Diseñamos dashboards a medida para que monitorees cada aspecto de tu inventario en tiempo real, permitiéndote tomar decisiones basadas en datos precisos."
+        "title": "Actualización de Dashboards y Reportes",
+        "description": "Ajustamos y actualizamos tus dashboards y reportes a las nuevas características del ERP, garantizando que sigas tomando decisiones basadas en datos en tiempo real."
       },
       {
-        "title": "Optimización de operaciones",
-        "description": "Rediseñamos tus procesos para maximizar la eficiencia, reducir costos y mejorar continuamente las operaciones, siempre respetando tus flujos de trabajo actuales."
+        "title": "Automatización de Nuevas Funcionalidades",
+        "description": "Te ayudamos a integrar y automatizar las nuevas funcionalidades del ERP más reciente, maximizando los beneficios de la actualización y la automatización de procesos."
       },
       {
-        "title": "Personalización Odoo avanzada",
-        "description": "Ajustamos cada módulo de Odoo según tus procesos clave, garantizando una integración perfecta y eficiente en todas tus áreas operativas."
+        "title": "Personalización de Módulos Migrados",
+        "description": "Adaptamos los módulos de tu ERP a las mejoras de la nueva versión, garantizando que tus personalizaciones sigan funcionando de manera óptima."
       },
       {
-        "title": "Monitoreo y mejora continua",
-        "description": "Monitoreamos de cerca tus operaciones para detectar oportunidades de mejora, asegurándonos de que todo funcione de manera fluida y eficiente en todo momento."
+        "title": "Monitoreo y Ajustes Continuos",
+        "description": "Después de la migración, monitoreamos el rendimiento del ERP y hacemos ajustes continuos para asegurar que tu empresa siga funcionando sin contratiempos."
       }
     ]
   },
   "ourMission": {
-    "title": "Compromiso Total",
-    "description": "Vamos más allá de la implementación de un software de inventario. Diseñamos soluciones alineadas a tus procesos, asegurando un control total para tu gestión."
+    "title": "Compromiso con la Actualización Constante",
+    "description": "Nuestro compromiso es mantener tu ERP siempre actualizado, asegurando que tu empresa se mantenga competitiva y funcionando sin problemas durante y después de cada migración."
   },
   "features": {
-    "title": "Características",
+    "title": "Características de una Migración Exitosa",
     "items": [
       {
-        "title": "Informes dinámicos",
-        "description": "Accede a informes que puedes personalizar según tus métricas clave. Estos reportes te permiten visualizar rápidamente datos críticos, facilitando la toma de decisiones estratégicas."
+        "title": "Migración de Datos Segura",
+        "description": "Nos aseguramos de que todos tus datos críticos se mantengan seguros y se transfieran correctamente a la nueva versión del ERP sin pérdidas ni errores."
       },
       {
-        "title": "Escalabilidad operativa",
-        "description": "Nuestras soluciones están diseñadas para crecer junto a tu negocio. A medida que tus operaciones se expanden, las herramientas que implementamos se ajustan sin complicaciones."
+        "title": "Aprovechamiento de Nuevas Funcionalidades",
+        "description": "Garantizamos que tu empresa aproveche al máximo las nuevas funciones y mejoras de la última versión del ERP, optimizando tus procesos."
       },
       {
-        "title": "Alertas automáticas",
-        "description": "Configura alertas personalizadas que te notifiquen automáticamente sobre niveles bajos de stock, movimientos importantes o cualquier evento crítico, permitiéndote actuar antes de que surjan problemas."
+        "title": "Compatibilidad Total",
+        "description": "Aseguramos que todos los módulos y personalizaciones actuales sean totalmente compatibles con la nueva versión del ERP, evitando problemas de integración."
       },
       {
-        "title": "Acceso multi-dispositivo",
-        "description": "Monitorea y gestiona tu inventario desde cualquier lugar con acceso seguro desde múltiples dispositivos. La movilidad es clave para una administración moderna y eficiente."
+        "title": "Monitoreo Post-Migración",
+        "description": "Ofrecemos un monitoreo continuo después de la migración para garantizar que el sistema funcione sin interrupciones y que cualquier ajuste necesario se realice de inmediato."
       }
     ]
   },
   "cta": {
-    "title": "Transforma Tu Negocio",
-    "description": "Aumenta tu rentabilidad y toma el control total de tu inventario con nuestras soluciones personalizadas. Lleva tu negocio al siguiente nivel de eficiencia.",
-    "button": "Obtén tu Consultoría Gratuita"
+    "title": "Actualiza Tu ERP Sin Complicaciones",
+    "description": "Migra a la última versión de ERP de manera segura y eficiente. Mantén tu empresa competitiva y aprovecha las nuevas funcionalidades con nuestra asistencia experta.",
+    "button": "Consulta Tu Migración Sin Costo"
   }
 }
