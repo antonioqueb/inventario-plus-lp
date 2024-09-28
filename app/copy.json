@@ -1,78 +1,78 @@
 {
   "hero": {
-    "title": "Sistematiza tu inventario con herramientas personalizadas.",
-    "description": "Queremos que tu gestión del inventario sea fluida, eficiente y, sobre todo, sin complicaciones, permitiéndote ahorrar tiempo y recursos.",
-    "button": "Obtén tu Consultoría Gratuita"
+    "title": "Personalización de Módulos Odoo ERP",
+    "description": "Adapta tu ERP Odoo a las necesidades exactas de tu negocio. Personaliza módulos y garantiza que tus procesos funcionen de forma alineada a tus operaciones.",
+    "button": "Consulta tu Personalización Sin Costo"
   },
   "whoWeAre": {
-    "title": "Socios Estratégicos",
-    "description": "Entregamos las mejores herramientas para que puedas tener una visibilidad total de todo lo que sucede con tu inventario, y estarás siempre al mando."
+    "title": "Expertos en Personalización de Odoo",
+    "description": "Nos especializamos en adaptar Odoo ERP a las necesidades específicas de cada negocio, personalizando módulos y funcionalidades para que el sistema opere de acuerdo a tus procesos únicos y garantizando una integración perfecta en todas las áreas operativas."
   },
   "whatWeDo": {
-    "title": "Soluciones Personalizadas",
+    "title": "Soluciones Personalizadas para tu Negocio",
     "services": [
       {
-        "title": "Automatización de inventarios",
-        "description": "Desarrollamos soluciones personalizadas que automatizan y optimizan la gestión de tu inventario, adaptadas a tus operaciones para aumentar precisión y agilidad."
+        "title": "Personalización Completa de Módulos Odoo",
+        "description": "Ajustamos y desarrollamos módulos a medida para que Odoo ERP se alinee perfectamente con los flujos de trabajo y las necesidades de tu empresa."
       },
       {
-        "title": "Consultoría Odoo especializada",
-        "description": "Analizamos a fondo tus procesos y diseñamos soluciones a medida con Odoo, enfocándonos en cumplir tus objetivos y mejorar la eficiencia operativa."
+        "title": "Consultoría Especializada en Personalización",
+        "description": "Analizamos tus procesos empresariales y diseñamos soluciones personalizadas en Odoo que maximizan la eficiencia y mejoran el rendimiento en cada área de tu negocio."
       },
       {
-        "title": "Implementación estratégica",
-        "description": "Nos convertimos en tu aliado tecnológico, ofreciendo herramientas avanzadas que te brindan un control total sobre la gestión de tu inventario y operaciones."
+        "title": "Automatización de Procesos",
+        "description": "Automatizamos tareas clave en Odoo ERP mediante personalizaciones específicas, eliminando procesos manuales y optimizando el uso de recursos."
       },
       {
-        "title": "Soporte técnico integral",
-        "description": "Nuestro equipo especializado brinda soporte continuo, adaptado a las configuraciones personalizadas de tu sistema, anticipando y resolviendo problemas de forma proactiva."
+        "title": "Soporte Técnico Continuo",
+        "description": "Ofrecemos soporte técnico especializado para todas las personalizaciones implementadas, asegurando que Odoo ERP funcione de manera eficiente y sin interrupciones."
       },
       {
-        "title": "Dashboard en tiempo real",
-        "description": "Diseñamos dashboards a medida para que monitorees cada aspecto de tu inventario en tiempo real, permitiéndote tomar decisiones basadas en datos precisos."
+        "title": "Optimización de Módulos Existentes",
+        "description": "Mejoramos y adaptamos los módulos existentes de Odoo para que se ajusten a tus procesos, mejorando la eficiencia y el rendimiento operativo."
       },
       {
-        "title": "Optimización de operaciones",
-        "description": "Rediseñamos tus procesos para maximizar la eficiencia, reducir costos y mejorar continuamente las operaciones, siempre respetando tus flujos de trabajo actuales."
+        "title": "Creación de Módulos a Medida",
+        "description": "Desarrollamos módulos completamente personalizados que resuelven necesidades específicas de tu negocio, garantizando una solución integrada y eficiente."
       },
       {
-        "title": "Personalización Odoo avanzada",
-        "description": "Ajustamos cada módulo de Odoo según tus procesos clave, garantizando una integración perfecta y eficiente en todas tus áreas operativas."
+        "title": "Integración con Terceros",
+        "description": "Personalizamos Odoo ERP para integrarse sin problemas con otras plataformas y herramientas externas, asegurando un ecosistema empresarial conectado y eficiente."
       },
       {
-        "title": "Monitoreo y mejora continua",
-        "description": "Monitoreamos de cerca tus operaciones para detectar oportunidades de mejora, asegurándonos de que todo funcione de manera fluida y eficiente en todo momento."
+        "title": "Monitoreo y Mejora Continua",
+        "description": "Monitoreamos el rendimiento de las personalizaciones y hacemos ajustes continuos para asegurar que tu ERP siempre esté alineado con tus objetivos de negocio."
       }
     ]
   },
   "ourMission": {
-    "title": "Compromiso Total",
-    "description": "Vamos más allá de la implementación de un software de inventario. Diseñamos soluciones alineadas a tus procesos, asegurando un control total para tu gestión."
+    "title": "Compromiso con la Adaptabilidad y Eficiencia",
+    "description": "Nuestro objetivo es ofrecer soluciones personalizadas en Odoo ERP que se adapten completamente a tu empresa, garantizando que tus procesos funcionen de manera fluida y eficiente."
   },
   "features": {
-    "title": "Características",
+    "title": "Características Clave para la Personalización de Odoo",
     "items": [
       {
-        "title": "Informes dinámicos",
-        "description": "Accede a informes que puedes personalizar según tus métricas clave. Estos reportes te permiten visualizar rápidamente datos críticos, facilitando la toma de decisiones estratégicas."
+        "title": "Adaptación Total a tus Procesos",
+        "description": "Nos aseguramos de que cada módulo de Odoo se ajuste a los procesos únicos de tu empresa, creando soluciones que realmente agreguen valor a tu operación."
       },
       {
-        "title": "Escalabilidad operativa",
-        "description": "Nuestras soluciones están diseñadas para crecer junto a tu negocio. A medida que tus operaciones se expanden, las herramientas que implementamos se ajustan sin complicaciones."
+        "title": "Automatización de Flujos de Trabajo",
+        "description": "Automatizamos tareas repetitivas y manuales en Odoo ERP para mejorar la productividad y permitir que tu equipo se enfoque en actividades estratégicas."
       },
       {
-        "title": "Alertas automáticas",
-        "description": "Configura alertas personalizadas que te notifiquen automáticamente sobre niveles bajos de stock, movimientos importantes o cualquier evento crítico, permitiéndote actuar antes de que surjan problemas."
+        "title": "Compatibilidad y Escalabilidad",
+        "description": "Nuestras personalizaciones están diseñadas para ser escalables, permitiendo que tu ERP crezca junto a tu negocio sin necesidad de complejas reconfiguraciones."
       },
       {
-        "title": "Acceso multi-dispositivo",
-        "description": "Monitorea y gestiona tu inventario desde cualquier lugar con acceso seguro desde múltiples dispositivos. La movilidad es clave para una administración moderna y eficiente."
+        "title": "Informes Personalizados",
+        "description": "Creamos informes a medida que te brindan visibilidad total sobre tus operaciones, facilitando la toma de decisiones basadas en datos clave."
       }
     ]
   },
   "cta": {
-    "title": "Transforma Tu Negocio",
-    "description": "Aumenta tu rentabilidad y toma el control total de tu inventario con nuestras soluciones personalizadas. Lleva tu negocio al siguiente nivel de eficiencia.",
-    "button": "Obtén tu Consultoría Gratuita"
+    "title": "Adapta tu ERP Odoo a tu Negocio",
+    "description": "Personaliza Odoo ERP según las necesidades exactas de tu empresa y asegúrate de que tus procesos operen de forma alineada a tus objetivos. Consulta hoy mismo.",
+    "button": "Consulta tu Personalización Sin Costo"
   }
 }
