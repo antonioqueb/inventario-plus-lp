@@ -1,8 +1,6 @@
-version: '3.9'
-
 services:
   inventarioplus:
     container_name: inventarioplus
     build: .
     ports:
-      - "3000:3000"
+      - "3001:3000"
