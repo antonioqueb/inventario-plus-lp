@@ -1,6 +1,6 @@
 services:
-  inventarioplus:
-    container_name: inventarioplus
+  inventarioplus_implementacion_erp:
+    container_name: inventarioplus_implementacion_erp
     build: .
     ports:
-      - "3001:3000"
+      - "3002:3002"
