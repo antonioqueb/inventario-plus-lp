@@ -1,78 +1,78 @@
 {
   "hero": {
-    "title": "Sistematiza tu inventario con herramientas personalizadas.",
-    "description": "Queremos que tu gestión del inventario sea fluida, eficiente y, sobre todo, sin complicaciones, permitiéndote ahorrar tiempo y recursos.",
-    "button": "Obtén tu Consultoría Gratuita"
+    "title": "Implementación de Manufactura ERP",
+    "description": "Mejora la eficiencia de tu producción con un módulo de manufactura ERP que gestiona órdenes de trabajo, inventarios y calidad en tiempo real.",
+    "button": "Consulta tu Implementación Sin Costo"
   },
   "whoWeAre": {
-    "title": "Socios Estratégicos",
-    "description": "Entregamos las mejores herramientas para que puedas tener una visibilidad total de todo lo que sucede con tu inventario, y estarás siempre al mando."
+    "title": "Expertos en ERP para Manufactura",
+    "description": "Somos especialistas en implementar soluciones ERP para la manufactura, ayudando a las empresas a optimizar sus procesos de producción, gestionando inventarios, órdenes de trabajo y asegurando la calidad en tiempo real."
   },
   "whatWeDo": {
-    "title": "Soluciones Personalizadas",
+    "title": "Soluciones ERP para la Industria Manufacturera",
     "services": [
       {
-        "title": "Automatización de inventarios",
-        "description": "Desarrollamos soluciones personalizadas que automatizan y optimizan la gestión de tu inventario, adaptadas a tus operaciones para aumentar precisión y agilidad."
+        "title": "Implementación Completa del Módulo de Manufactura",
+        "description": "Nos encargamos de la implementación de un módulo de manufactura ERP que abarca desde la planificación de producción hasta el control de calidad, optimizando cada etapa del proceso."
       },
       {
-        "title": "Consultoría Odoo especializada",
-        "description": "Analizamos a fondo tus procesos y diseñamos soluciones a medida con Odoo, enfocándonos en cumplir tus objetivos y mejorar la eficiencia operativa."
+        "title": "Consultoría Especializada en Manufactura",
+        "description": "Analizamos tus procesos productivos y diseñamos soluciones ERP que mejoran la eficiencia operativa y garantizan el control total sobre tus órdenes de trabajo y recursos."
       },
       {
-        "title": "Implementación estratégica",
-        "description": "Nos convertimos en tu aliado tecnológico, ofreciendo herramientas avanzadas que te brindan un control total sobre la gestión de tu inventario y operaciones."
+        "title": "Optimización de la Producción en Tiempo Real",
+        "description": "Implementamos herramientas que te permiten monitorear y ajustar tu producción en tiempo real, mejorando la agilidad y la capacidad de respuesta ante cambios en la demanda o en el inventario."
       },
       {
-        "title": "Soporte técnico integral",
-        "description": "Nuestro equipo especializado brinda soporte continuo, adaptado a las configuraciones personalizadas de tu sistema, anticipando y resolviendo problemas de forma proactiva."
+        "title": "Soporte Técnico Continuo",
+        "description": "Ofrecemos soporte técnico especializado para mantener tu ERP de manufactura funcionando de manera óptima, resolviendo problemas antes de que afecten tu producción."
       },
       {
-        "title": "Dashboard en tiempo real",
-        "description": "Diseñamos dashboards a medida para que monitorees cada aspecto de tu inventario en tiempo real, permitiéndote tomar decisiones basadas en datos precisos."
+        "title": "Gestión Integral de Inventarios",
+        "description": "Automatizamos la gestión de inventarios para sincronizarla con tu producción, garantizando que siempre tengas los materiales necesarios en el momento adecuado, evitando sobrecostos y retrasos."
       },
       {
-        "title": "Optimización de operaciones",
-        "description": "Rediseñamos tus procesos para maximizar la eficiencia, reducir costos y mejorar continuamente las operaciones, siempre respetando tus flujos de trabajo actuales."
+        "title": "Control de Calidad Automatizado",
+        "description": "Integramos sistemas de control de calidad en el ERP para que puedas monitorear cada etapa de la producción, asegurando que los productos cumplan con los estándares requeridos."
       },
       {
-        "title": "Personalización Odoo avanzada",
-        "description": "Ajustamos cada módulo de Odoo según tus procesos clave, garantizando una integración perfecta y eficiente en todas tus áreas operativas."
+        "title": "Personalización del Módulo de Manufactura",
+        "description": "Ajustamos el módulo de manufactura de acuerdo con los procesos únicos de tu empresa, garantizando que cada funcionalidad se alinee con tus objetivos de producción y gestión."
       },
       {
-        "title": "Monitoreo y mejora continua",
-        "description": "Monitoreamos de cerca tus operaciones para detectar oportunidades de mejora, asegurándonos de que todo funcione de manera fluida y eficiente en todo momento."
+        "title": "Monitoreo y Mejora Continua",
+        "description": "Monitoreamos continuamente el desempeño de tu sistema ERP para identificar áreas de mejora y asegurar que tu producción sea siempre eficiente y competitiva."
       }
     ]
   },
   "ourMission": {
-    "title": "Compromiso Total",
-    "description": "Vamos más allá de la implementación de un software de inventario. Diseñamos soluciones alineadas a tus procesos, asegurando un control total para tu gestión."
+    "title": "Compromiso con la Eficiencia Productiva",
+    "description": "Nos enfocamos en ayudarte a lograr una producción eficiente y rentable, implementando soluciones ERP que optimizan tus procesos de manufactura desde la planificación hasta la entrega."
   },
   "features": {
-    "title": "Características",
+    "title": "Características Clave para la Manufactura",
     "items": [
       {
-        "title": "Informes dinámicos",
-        "description": "Accede a informes que puedes personalizar según tus métricas clave. Estos reportes te permiten visualizar rápidamente datos críticos, facilitando la toma de decisiones estratégicas."
+        "title": "Gestión de Órdenes de Trabajo en Tiempo Real",
+        "description": "Monitorea y gestiona tus órdenes de trabajo en tiempo real, permitiéndote ajustar la producción según la demanda y mejorar la eficiencia operativa."
       },
       {
-        "title": "Escalabilidad operativa",
-        "description": "Nuestras soluciones están diseñadas para crecer junto a tu negocio. A medida que tus operaciones se expanden, las herramientas que implementamos se ajustan sin complicaciones."
+        "title": "Sincronización de Inventarios y Producción",
+        "description": "Automatiza la sincronización entre tus inventarios y la producción para asegurarte de que siempre tengas los materiales necesarios, evitando interrupciones en el flujo de trabajo."
       },
       {
-        "title": "Alertas automáticas",
-        "description": "Configura alertas personalizadas que te notifiquen automáticamente sobre niveles bajos de stock, movimientos importantes o cualquier evento crítico, permitiéndote actuar antes de que surjan problemas."
+        "title": "Control de Calidad Integrado",
+        "description": "Asegura la calidad en cada etapa del proceso productivo con sistemas de control de calidad integrados, que te permiten realizar inspecciones y ajustes en tiempo real."
       },
       {
-        "title": "Acceso multi-dispositivo",
-        "description": "Monitorea y gestiona tu inventario desde cualquier lugar con acceso seguro desde múltiples dispositivos. La movilidad es clave para una administración moderna y eficiente."
+        "title": "Informes y Dashboards Personalizados",
+        "description": "Accede a informes y dashboards personalizables que te proporcionan visibilidad completa de tus operaciones, facilitando la toma de decisiones estratégicas en la manufactura."
       }
     ]
   },
   "cta": {
-    "title": "Transforma Tu Negocio",
-    "description": "Aumenta tu rentabilidad y toma el control total de tu inventario con nuestras soluciones personalizadas. Lleva tu negocio al siguiente nivel de eficiencia.",
-    "button": "Obtén tu Consultoría Gratuita"
+    "title": "Optimiza tu Producción con un ERP de Manufactura",
+    "description": "Mejora la eficiencia de tu producción y toma el control de tus procesos con una implementación ERP diseñada específicamente para la industria manufacturera. Consulta hoy mismo.",
+    "button": "Consulta tu Implementación Sin Costo"
   }
 }

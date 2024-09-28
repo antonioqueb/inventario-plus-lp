@@ -1,6 +1,6 @@
 services:
-  inventarioplus:
-    container_name: inventarioplus
+  inventarioplus_manufactura:
+    container_name: inventarioplus_manufactura
     build: .
     ports:
-      - "3001:3000"
+      - "3004:3004"
