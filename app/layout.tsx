@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Optimiza tu Inventario con Odoo | Soluciones Personalizadas",
+  title: "Automatización de Procesos con Odoo ERP",
   description: "Expertos en gestión de inventario con Odoo. Implementamos soluciones a medida para mejorar la eficiencia, reducir costos y aumentar la visibilidad de tu stock. Solicita una demo gratuita.",
 };
 
