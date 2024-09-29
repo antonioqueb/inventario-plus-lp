@@ -47,7 +47,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="mt-4 sm:mt-6 md:mt-8 text-base sm:text-lg md:text-xl lg:text-2xl text-zinc-200 max-w-6xl leading-relaxed animate-fade-in-up font-light"
+            className="mt-4 sm:mt-6 md:mt-8 text-base sm:text-lg md:text-xl lg:text-2xl text-zinc-200 max-w-7xl leading-relaxed animate-fade-in-up font-light"
           >
             {copy.hero.description}
           </motion.p>
@@ -87,7 +87,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-xl md:text-2xl text-zinc-300 max-w-6xl mx-auto mb-12 leading-relaxed"
+            className="text-xl md:text-2xl text-zinc-300 max-w-7xl mx-auto mb-12 leading-relaxed"
           >
             {copy.whoWeAre.description}
           </motion.p>
@@ -166,7 +166,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-xl md:text-2xl text-zinc-300 max-w-6xl mx-auto mb-12 leading-relaxed"
+            className="text-xl md:text-2xl text-zinc-300 max-w-7xl mx-auto mb-12 leading-relaxed"
           >
             {copy.ourMission.description}
           </motion.p>
@@ -182,7 +182,7 @@ export default function Home() {
               alt="Nuestra misión"
               layout="responsive"
               width={100}
-              height={100}
+              height={400}
             />
           </motion.div>
         </motion.section>
