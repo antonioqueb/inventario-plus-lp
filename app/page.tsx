@@ -178,7 +178,7 @@ export default function Home() {
             className="max-w-xl mx-auto rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-300"
           >
             <Image
-              src="/compromisotrotal.svg"
+              src="/compromisotrotal.jpg"
               alt="Nuestra misión"
               layout="responsive"
               width={100}
