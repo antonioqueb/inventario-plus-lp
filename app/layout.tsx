@@ -14,8 +14,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Optimiza tu Inventario con Odoo | Soluciones Personalizadas",
-  description: "Expertos en gestión de inventario con Odoo. Implementamos soluciones a medida para mejorar la eficiencia, reducir costos y aumentar la visibilidad de tu stock. Solicita una demo gratuita.",
+  title: "Servicios de Implementación ERP a Medida para tu Empresa",
+  description: "Optimiza tus procesos empresariales con nuestros servicios de implementación ERP a medida. Diseñamos soluciones personalizadas que integran tecnología avanzada, mejorando la eficiencia operativa y facilitando la toma de decisiones. Confía en nuestros expertos para una transición fluida y un soporte continuo, adaptando el ERP a las necesidades específicas de tu negocio.",
 };
 
 export default function RootLayout({
