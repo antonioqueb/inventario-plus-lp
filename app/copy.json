@@ -1,78 +1,78 @@
 {
   "hero": {
     "title": "Servicios de Implementación ERP a Medida para tu Empresa",
-    "description": "Optimiza la gestión de tus procesos empresariales desde el primer día con una implementación ERP completa y personalizada que impulsa la eficiencia y el crecimiento.",
-    "button": "Obtén tu Consultoría Gratuita"
+    "description": "Transforma la manera en que gestionas tu negocio desde el primer día. Con nuestra implementación ERP, personalizada para ti, verás cómo tus procesos se vuelven más ágiles, eficientes y alineados con tus objetivos de crecimiento.",
+    "button": "Agenda tu Consulta Gratuita"
   },
   "whoWeAre": {
-    "title": "Socios Estratégicos para la Transformación Digital",
-    "description": "Nos especializamos en convertir tus procesos empresariales mediante una implementación ERP personalizada, diseñando soluciones que te permiten tener un control total de todas tus operaciones desde el primer día."
+    "title": "Tu Aliado Estratégico en la Transformación Digital",
+    "description": "Nos apasiona acompañarte en cada paso del camino hacia la digitalización, creando soluciones ERP que encajan perfectamente con tu manera de trabajar. Con nosotros, tienes el control absoluto de tu empresa desde el primer día."
   },
   "whatWeDo": {
-    "title": "Soluciones ERP para una Gestión Empresarial Óptima",
+    "title": "Soluciones ERP para una Gestión Empresarial sin Complicaciones",
     "services": [
       {
-        "title": "Implementación ERP a Medida",
-        "description": "Nos encargamos de una implementación ERP adaptada a las necesidades específicas de tu negocio, garantizando una integración perfecta y una optimización desde el primer momento."
+        "title": "Implementación ERP a tu Medida",
+        "description": "Diseñamos e implementamos sistemas ERP completamente adaptados a las necesidades únicas de tu empresa. Desde el primer momento, te aseguramos una integración fluida que optimiza tus procesos clave."
       },
       {
-        "title": "Consultoría Especializada en Odoo",
-        "description": "Analizamos tus procesos empresariales y diseñamos soluciones personalizadas utilizando Odoo ERP para mejorar la eficiencia y el rendimiento de tu empresa."
+        "title": "Consultoría Experta en Odoo",
+        "description": "Escuchamos y entendemos cómo funcionan tus operaciones para implementar Odoo ERP de la manera más eficiente, asegurando que tu empresa logre más con menos esfuerzo."
       },
       {
-        "title": "Optimización de Procesos",
-        "description": "Rediseñamos y optimizamos tus flujos de trabajo mediante la integración de un ERP que asegura una mayor eficiencia en todas las áreas de tu negocio."
+        "title": "Optimización de Procesos Empresariales",
+        "description": "Te ayudamos a descubrir nuevas formas de mejorar la eficiencia de tus flujos de trabajo, eliminando los cuellos de botella y asegurando que cada área de tu negocio funcione con precisión."
       },
       {
-        "title": "Soporte Técnico Integral",
-        "description": "Proveemos soporte continuo y especializado, asegurando que el ERP implementado funcione siempre de manera óptima, anticipándonos a tus necesidades y resolviendo problemas de forma proactiva."
+        "title": "Soporte Técnico Cercano y Eficaz",
+        "description": "No solo implementamos tu ERP, también estamos contigo a cada paso. Nuestro equipo está disponible para resolver problemas rápidamente y garantizar que todo siga funcionando como debe."
       },
       {
-        "title": "Dashboards en Tiempo Real",
-        "description": "Creamos dashboards personalizados que te permiten monitorear en tiempo real todas las operaciones de tu empresa, facilitando la toma de decisiones basadas en datos confiables y actualizados."
+        "title": "Dashboards Personalizados en Tiempo Real",
+        "description": "Desarrollamos dashboards que te brindan una vista clara y precisa de lo que ocurre en tu negocio, para que tomes decisiones informadas basadas en datos confiables y siempre actualizados."
       },
       {
-        "title": "Automatización de Procesos",
-        "description": "Automatizamos tus procesos clave, eliminando tareas repetitivas y manuales, permitiendo que tu equipo se enfoque en actividades estratégicas que impulsan el crecimiento de tu empresa."
+        "title": "Automatización Inteligente de Procesos",
+        "description": "Liberamos a tu equipo de tareas repetitivas para que puedan enfocarse en lo que realmente importa. Con la automatización de procesos, ganarás tiempo y eficiencia para hacer crecer tu negocio."
       },
       {
-        "title": "Personalización Avanzada de Odoo",
-        "description": "Personalizamos Odoo ERP según los requerimientos de tus operaciones, asegurando que cada módulo se ajuste a tus procesos clave y contribuya al éxito de tu negocio."
+        "title": "Personalización de Odoo a tu Medida",
+        "description": "Ajustamos cada módulo de Odoo para que se alinee con tus flujos de trabajo específicos, asegurando que tu ERP sea una herramienta clave para alcanzar el éxito."
       },
       {
-        "title": "Monitoreo y Mejora Continua",
-        "description": "Monitoreamos tus operaciones para detectar oportunidades de mejora, asegurando una implementación ERP que evoluciona junto con tu empresa."
+        "title": "Mejora Continua y Monitoreo Constante",
+        "description": "Nos enfocamos en asegurar que tu ERP siga mejorando con el tiempo, adaptándose a las nuevas necesidades de tu negocio para que siempre estés un paso adelante."
       }
     ]
   },
   "ourMission": {
-    "title": "Compromiso con la Transformación Empresarial",
-    "description": "Más allá de implementar un ERP, nos enfocamos en transformar digitalmente tu empresa mediante soluciones a medida que optimizan todos tus procesos empresariales."
+    "title": "Comprometidos con tu Éxito Empresarial",
+    "description": "Nuestro objetivo no es solo implementar un sistema, sino ayudarte a transformar tu empresa, optimizando cada proceso para que alcances nuevos niveles de eficiencia y crecimiento."
   },
   "features": {
-    "title": "Características Clave para la Transformación Digital",
+    "title": "Funcionalidades Clave para Impulsar tu Negocio",
     "items": [
       {
-        "title": "Informes Dinámicos",
-        "description": "Accede a informes detallados y personalizables que te permiten visualizar el estado de tus operaciones y medir el impacto de la transformación digital en tiempo real."
+        "title": "Informes Personalizados y Dinámicos",
+        "description": "Obtén acceso a informes que te permiten visualizar en detalle cada aspecto de tu empresa, brindándote información clave para tomar decisiones estratégicas."
       },
       {
-        "title": "Escalabilidad Operativa",
-        "description": "Nuestras soluciones ERP están diseñadas para crecer junto a tu negocio, adaptándose a nuevas necesidades y permitiendo una expansión sin complicaciones."
+        "title": "Crecimiento sin Límites",
+        "description": "Nuestras soluciones ERP crecen contigo. Ya sea que estés ampliando tu equipo o tus operaciones, el sistema se adapta a tus necesidades de expansión sin interrupciones."
       },
       {
-        "title": "Alertas Automáticas",
-        "description": "Configura alertas inteligentes para que tu equipo esté siempre al tanto de cambios críticos en los procesos, facilitando una gestión proactiva y ágil."
+        "title": "Alertas Inteligentes",
+        "description": "Mantén a tu equipo informado de los eventos más importantes en tiempo real. Con nuestras alertas automáticas, puedes adelantarte a cualquier cambio en tus procesos."
       },
       {
-        "title": "Acceso Multi-dispositivo",
-        "description": "Gestiona y monitorea todas las operaciones de tu empresa desde cualquier lugar con acceso seguro y eficiente desde múltiples dispositivos."
+        "title": "Acceso desde Cualquier Lugar",
+        "description": "Conéctate a tu negocio en cualquier momento, desde cualquier dispositivo. Mantén el control, sin importar dónde estés."
       }
     ]
   },
   "cta": {
-    "title": "Transforma Digitalmente tu Negocio",
-    "description": "Optimiza la gestión de tus procesos empresariales y lleva tu empresa al siguiente nivel con una implementación ERP completa y personalizada. Comienza hoy mismo.",
-    "button": "Obtén tu Consultoría Gratuita"
+    "title": "Digitaliza tu Empresa Hoy Mismo",
+    "description": "No esperes más para optimizar la gestión de tus procesos empresariales. Lleva tu negocio al siguiente nivel con una implementación ERP diseñada específicamente para ti.",
+    "button": "Agenda tu Consulta Gratuita"
   }
 }
