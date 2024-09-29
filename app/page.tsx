@@ -9,7 +9,7 @@ import { motion } from "framer-motion"
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-950 to-gray-900 text-white">
+    <div className="min-h-screen bg-gradient-to-b from-zinc-950 to-zinc-900 text-white">
       {/* Hero Section */}
       <header className="relative h-screen overflow-hidden">
       <video
@@ -47,7 +47,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="mt-4 sm:mt-6 md:mt-8 text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 max-w-3xl leading-relaxed animate-fade-in-up font-light"
+            className="mt-4 sm:mt-6 md:mt-8 text-base sm:text-lg md:text-xl lg:text-2xl text-zinc-200 max-w-5xl leading-relaxed animate-fade-in-up font-light"
           >
             {copy.hero.description}
           </motion.p>
@@ -87,7 +87,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed"
+            className="text-xl md:text-2xl text-zinc-300 max-w-4xl mx-auto mb-12 leading-relaxed"
           >
             {copy.whoWeAre.description}
           </motion.p>
@@ -166,7 +166,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed"
+            className="text-xl md:text-2xl text-zinc-300 max-w-4xl mx-auto mb-12 leading-relaxed"
           >
             {copy.ourMission.description}
           </motion.p>
@@ -233,7 +233,7 @@ export default function Home() {
         </motion.div>
       </main>
 
-      <footer className="bg-gray-800 py-8 text-center text-white">
+      <footer className="bg-zinc-800 py-8 text-center text-white">
         <p className="text-lg">© 2024 InventarioPlus - Soluciones en Inventarios</p>
       </footer>
     </div>
