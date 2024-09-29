@@ -234,7 +234,7 @@ export default function Home() {
       </main>
 
       <footer className="bg-zinc-800 py-8 text-center text-white">
-        <p className="text-lg">© 2024 InventarioPlus - Soluciones en Inventarios</p>
+        <p className="text-lg">© 2024 GestPro - Soluciones en Inventarios</p>
       </footer>
     </div>
   )
