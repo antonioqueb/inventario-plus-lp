@@ -168,7 +168,7 @@ export default function ConsolidatedForm() {
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white text-center mb-10 leading-tight">Agenda tu Consultoría Hoy</h2>
         
         <div className="max-w-2xl mx-auto mb-8">
-          <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-6 rounded-lg shadow-2xl text-center">
+          <div className="bg-gradient-to-r from-orange-600 to-orange-800 text-white p-6 rounded-lg shadow-2xl text-center">
             <p className="text-2xl font-bold text-yellow-300 mb-2">¡Oferta por tiempo limitado!</p>
             <p className="text-xl mt-2">Agenda tu consultoría hoy y <span className="text-yellow-300 font-semibold">obtén un 20% de descuento</span> en nuestros servicios de implementación Odoo ERP.</p>
           </div>
@@ -185,7 +185,7 @@ export default function ConsolidatedForm() {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
+                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-white placeholder-gray-400"
                 required
                 placeholder="Tu nombre completo"
               />
@@ -199,7 +199,7 @@ export default function ConsolidatedForm() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
+                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-white placeholder-gray-400"
                 required
                 placeholder="tu@email.com"
               />
@@ -213,7 +213,7 @@ export default function ConsolidatedForm() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
+                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-white placeholder-gray-400"
                 required
                 placeholder="Tu número de teléfono"
               />
@@ -227,7 +227,7 @@ export default function ConsolidatedForm() {
                 name="date"
                 value={selectedDate ?? ''}
                 onChange={handleDateChange}
-                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-white"
                 min={getTodayDate() ?? ''}
                 required
               />
@@ -257,9 +257,9 @@ export default function ConsolidatedForm() {
                       type="button"
                       className={`p-3 border rounded-lg text-white text-sm sm:text-base ${
                         selectedSlot === slot
-                          ? "bg-blue-600 border-blue-500"
+                          ? "bg-orange-600 border-orange-500"
                           : "bg-gray-700 border-gray-600 hover:bg-gray-600"
-                      } transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                      } transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500`}
                       onClick={() => handleSlotClick(slot)}
                     >
                       {slot}
@@ -278,7 +278,7 @@ export default function ConsolidatedForm() {
 
           <button
             type="submit"
-            className="w-full mt-8 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-4 rounded-full text-lg sm:text-xl font-bold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 ease-in-out shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+            className="w-full mt-8 bg-gradient-to-r from-orange-600 to-orange-700 text-white px-6 py-4 rounded-full text-lg sm:text-xl font-bold hover:from-orange-700 hover:to-orange-800 transition-all duration-300 ease-in-out shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-gray-900"
           >
             Confirmar Reunión Ahora
           </button>

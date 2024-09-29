@@ -22,7 +22,7 @@ const ThankYouPageContent: React.FC = () => {
   const formattedDate = formatDate(date);
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-blue-900 to-gray-900 py-20 px-4 sm:px-6 lg:px-8">
+    <section className="min-h-screen bg-gradient-to-b from-orange-900 to-gray-900 py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-3xl shadow-2xl overflow-hidden">
           <div className="px-6 py-8 sm:p-10 sm:pb-6">
@@ -39,16 +39,16 @@ const ThankYouPageContent: React.FC = () => {
           <div className="px-6 pt-6 pb-8 bg-white bg-opacity-5 sm:px-10 sm:py-8">
             <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 mb-8">
               <div className="flex items-center space-x-2">
-                <CalendarIcon className="h-6 w-6 text-blue-400" />
+                <CalendarIcon className="h-6 w-6 text-orange-400" />
                 <span className="text-lg font-medium text-gray-200">{formattedDate || 'Fecha no especificada'}</span>
               </div>
               <div className="flex items-center space-x-2">
-                <ClockIcon className="h-6 w-6 text-blue-400" />
+                <ClockIcon className="h-6 w-6 text-orange-400" />
                 <span className="text-lg font-medium text-gray-200">{slot}</span>
               </div>
             </div>
             <div className="space-y-6">
-              <div className="bg-blue-600 bg-opacity-20 rounded-xl p-6">
+              <div className="bg-orange-600 bg-opacity-20 rounded-xl p-6">
                 <h3 className="text-xl font-semibold text-white mb-2">¿Qué sigue?</h3>
                 <p className="text-gray-300">
                   Durante la sesión, identificaremos juntos las áreas clave para optimizar tu inventario,
@@ -75,7 +75,7 @@ const ThankYouPageContent: React.FC = () => {
                 Si tienes alguna pregunta o necesitas ajustar tu cita, no dudes en contactarnos soporte@gestpro.cloud.
               </p>
               <div className="mt-8">
-                <Link href="/" className="block w-full bg-blue-600 text-white text-center px-5 py-3 rounded-lg text-base font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+                <Link href="/" className="block w-full bg-orange-600 text-white text-center px-5 py-3 rounded-lg text-base font-medium hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 transition duration-150 ease-in-out">
                   Volver al Inicio
                 </Link>
               </div>
