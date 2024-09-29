@@ -47,7 +47,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="mt-4 sm:mt-6 md:mt-8 text-base sm:text-lg md:text-xl lg:text-2xl text-zinc-200 max-w-5xl leading-relaxed animate-fade-in-up font-light"
+            className="mt-4 sm:mt-6 md:mt-8 text-base sm:text-lg md:text-xl lg:text-2xl text-zinc-200 max-w-6xl leading-relaxed animate-fade-in-up font-light"
           >
             {copy.hero.description}
           </motion.p>
@@ -78,7 +78,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl xl:text-6xl max-w-4xl font-extrabold text-white mb-8"
+            className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-white mb-8"
           >
             {copy.whoWeAre.title}
           </motion.h2>
@@ -87,7 +87,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-xl md:text-2xl text-zinc-300 max-w-4xl mx-auto mb-12 leading-relaxed"
+            className="text-xl md:text-2xl text-zinc-300 max-w-6xl mx-auto mb-12 leading-relaxed"
           >
             {copy.whoWeAre.description}
           </motion.p>
@@ -122,7 +122,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl xl:text-6xl max-w-4xl font-extrabold text-white mb-12"
+            className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-white mb-12"
           >
             {copy.whatWeDo.title}
           </motion.h2>
@@ -157,7 +157,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl xl:text-6xl max-w-4xl font-extrabold text-white mb-8"
+            className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-white mb-8"
           >
             {copy.ourMission.title}
           </motion.h2>
@@ -166,7 +166,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-xl md:text-2xl text-zinc-300 max-w-4xl mx-auto mb-12 leading-relaxed"
+            className="text-xl md:text-2xl text-zinc-300 max-w-6xl mx-auto mb-12 leading-relaxed"
           >
             {copy.ourMission.description}
           </motion.p>
@@ -178,7 +178,7 @@ export default function Home() {
             className="max-w-xl mx-auto rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-300"
           >
             <Image
-              src="/compromisotrotal.jpg"
+              src="/compromisotrotal.svg"
               alt="Nuestra misión"
               layout="responsive"
               width={100}
@@ -200,7 +200,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl xl:text-6xl max-w-4xl font-extrabold text-white mb-8"
+            className="text-4xl md:text-5xl xl:text-6xl font-extrabold text-white mb-8"
           >
             {copy.features.title}
           </motion.h2>
