@@ -87,7 +87,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-xl md:text-2xl text-zinc-300 max-w-4xl mx-auto mb-12 leading-relaxed"
+            className="text-xl md:text-2xl text-zinc-300 max-w-5xl mx-auto mb-12 leading-relaxed"
           >
             {copy.whoWeAre.description}
           </motion.p>
@@ -166,7 +166,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-xl md:text-2xl text-zinc-300 max-w-4xl mx-auto mb-12 leading-relaxed"
+            className="text-xl md:text-2xl text-zinc-300 max-w-5xl mx-auto mb-12 leading-relaxed"
           >
             {copy.ourMission.description}
           </motion.p>
