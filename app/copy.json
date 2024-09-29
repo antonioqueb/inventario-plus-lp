@@ -1,78 +1,78 @@
 {
   "hero": {
-    "title": "Sistematiza tu inventario con herramientas personalizadas.",
-    "description": "Queremos que tu gestión del inventario sea fluida, eficiente y, sobre todo, sin complicaciones, permitiéndote ahorrar tiempo y recursos.",
-    "button": "Obtén tu Consultoría Gratuita"
+    "title": "Automatización de Procesos con Odoo ERP",
+    "description": "Aumenta la eficiencia operativa de tu empresa al automatizar tareas manuales y repetitivas con nuestro ERP, liberando tiempo para lo que realmente importa.",
+    "button": "Consulta tu Automatización Sin Costo"
   },
   "whoWeAre": {
-    "title": "Socios Estratégicos",
-    "description": "Entregamos las mejores herramientas para que puedas tener una visibilidad total de todo lo que sucede con tu inventario, y estarás siempre al mando."
+    "title": "Expertos en Automatización de Procesos",
+    "description": "Nos especializamos en implementar Odoo ERP para automatizar las tareas más tediosas de tu empresa, permitiendo que tu equipo se enfoque en actividades estratégicas que impulsan el crecimiento."
   },
   "whatWeDo": {
-    "title": "Soluciones Personalizadas",
+    "title": "Soluciones de Automatización para una Gestión Eficiente",
     "services": [
       {
-        "title": "Automatización de inventarios",
-        "description": "Desarrollamos soluciones personalizadas que automatizan y optimizan la gestión de tu inventario, adaptadas a tus operaciones para aumentar precisión y agilidad."
+        "title": "Automatización de Tareas Repetitivas",
+        "description": "Automatizamos las tareas manuales y repetitivas dentro de tu ERP, optimizando el tiempo de tu equipo y eliminando errores humanos."
       },
       {
-        "title": "Consultoría Odoo especializada",
-        "description": "Analizamos a fondo tus procesos y diseñamos soluciones a medida con Odoo, enfocándonos en cumplir tus objetivos y mejorar la eficiencia operativa."
+        "title": "Consultoría Especializada en Automatización",
+        "description": "Analizamos tus procesos actuales y diseñamos una estrategia de automatización personalizada en Odoo ERP que aumente la productividad y mejore la eficiencia operativa."
       },
       {
-        "title": "Implementación estratégica",
-        "description": "Nos convertimos en tu aliado tecnológico, ofreciendo herramientas avanzadas que te brindan un control total sobre la gestión de tu inventario y operaciones."
+        "title": "Optimización de Flujos de Trabajo",
+        "description": "Reestructuramos y automatizamos los flujos de trabajo clave dentro de Odoo ERP para asegurar una mayor eficiencia y agilidad en todas las áreas de tu negocio."
       },
       {
-        "title": "Soporte técnico integral",
-        "description": "Nuestro equipo especializado brinda soporte continuo, adaptado a las configuraciones personalizadas de tu sistema, anticipando y resolviendo problemas de forma proactiva."
+        "title": "Soporte Técnico Continuo",
+        "description": "Proveemos soporte técnico especializado para asegurarnos de que las automatizaciones implementadas funcionen de manera fluida y eficiente en todo momento."
       },
       {
-        "title": "Dashboard en tiempo real",
-        "description": "Diseñamos dashboards a medida para que monitorees cada aspecto de tu inventario en tiempo real, permitiéndote tomar decisiones basadas en datos precisos."
+        "title": "Automatización de Procesos Financieros",
+        "description": "Simplifica la gestión financiera automatizando procesos como facturación, pagos y reportes financieros, asegurando una administración más ágil y precisa."
       },
       {
-        "title": "Optimización de operaciones",
-        "description": "Rediseñamos tus procesos para maximizar la eficiencia, reducir costos y mejorar continuamente las operaciones, siempre respetando tus flujos de trabajo actuales."
+        "title": "Integración de Automatizaciones con Terceros",
+        "description": "Automatizamos la sincronización de datos y procesos entre Odoo ERP y otras plataformas externas, optimizando la gestión de tu ecosistema empresarial."
       },
       {
-        "title": "Personalización Odoo avanzada",
-        "description": "Ajustamos cada módulo de Odoo según tus procesos clave, garantizando una integración perfecta y eficiente en todas tus áreas operativas."
+        "title": "Automatización de Gestión de Inventarios",
+        "description": "Mejora el control de inventarios con automatizaciones que ajustan niveles de stock, generan pedidos automáticamente y optimizan el abastecimiento."
       },
       {
-        "title": "Monitoreo y mejora continua",
-        "description": "Monitoreamos de cerca tus operaciones para detectar oportunidades de mejora, asegurándonos de que todo funcione de manera fluida y eficiente en todo momento."
+        "title": "Monitoreo y Mejora Continua",
+        "description": "Monitoreamos de manera proactiva las automatizaciones implementadas para identificar mejoras continuas y asegurar una operación eficiente en todo momento."
       }
     ]
   },
   "ourMission": {
-    "title": "Compromiso Total",
-    "description": "Vamos más allá de la implementación de un software de inventario. Diseñamos soluciones alineadas a tus procesos, asegurando un control total para tu gestión."
+    "title": "Compromiso con la Eficiencia Operativa",
+    "description": "Nuestro compromiso es liberar a tu equipo de tareas manuales y repetitivas mediante la automatización de procesos, permitiendo que se enfoquen en lo que realmente importa para el crecimiento de tu empresa."
   },
   "features": {
-    "title": "Características",
+    "title": "Características Clave de la Automatización en Odoo ERP",
     "items": [
       {
-        "title": "Informes dinámicos",
-        "description": "Accede a informes que puedes personalizar según tus métricas clave. Estos reportes te permiten visualizar rápidamente datos críticos, facilitando la toma de decisiones estratégicas."
+        "title": "Automatización Personalizada",
+        "description": "Adaptamos las automatizaciones de Odoo ERP a las necesidades específicas de tu negocio, garantizando que todos los procesos críticos funcionen de manera fluida y eficiente."
       },
       {
-        "title": "Escalabilidad operativa",
-        "description": "Nuestras soluciones están diseñadas para crecer junto a tu negocio. A medida que tus operaciones se expanden, las herramientas que implementamos se ajustan sin complicaciones."
+        "title": "Reducción de Errores Humanos",
+        "description": "Elimina errores comunes en procesos manuales mediante la automatización, asegurando que tus operaciones se realicen con precisión y consistencia."
       },
       {
-        "title": "Alertas automáticas",
-        "description": "Configura alertas personalizadas que te notifiquen automáticamente sobre niveles bajos de stock, movimientos importantes o cualquier evento crítico, permitiéndote actuar antes de que surjan problemas."
+        "title": "Mejora en la Productividad",
+        "description": "Aumenta la productividad de tu equipo al liberar tiempo de tareas repetitivas y permitirles enfocarse en actividades estratégicas que generan valor."
       },
       {
-        "title": "Acceso multi-dispositivo",
-        "description": "Monitorea y gestiona tu inventario desde cualquier lugar con acceso seguro desde múltiples dispositivos. La movilidad es clave para una administración moderna y eficiente."
+        "title": "Informes Automatizados",
+        "description": "Genera informes automáticamente en tiempo real, permitiéndote acceder a datos actualizados y tomar decisiones más rápidas e informadas."
       }
     ]
   },
   "cta": {
-    "title": "Transforma Tu Negocio",
-    "description": "Aumenta tu rentabilidad y toma el control total de tu inventario con nuestras soluciones personalizadas. Lleva tu negocio al siguiente nivel de eficiencia.",
-    "button": "Obtén tu Consultoría Gratuita"
+    "title": "Automatiza tus Procesos con Odoo ERP",
+    "description": "Aumenta la eficiencia operativa de tu empresa al automatizar tareas manuales y repetitivas, y libera a tu equipo para que se concentre en lo que realmente importa. Consulta hoy mismo.",
+    "button": "Consulta tu Automatización Sin Costo"
   }
 }
