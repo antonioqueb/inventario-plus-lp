@@ -14,8 +14,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Optimiza tu Inventario con Odoo | Soluciones Personalizadas",
-  description: "Expertos en gestión de inventario con Odoo. Implementamos soluciones a medida para mejorar la eficiencia, reducir costos y aumentar la visibilidad de tu stock. Solicita una demo gratuita.",
+  title: "Impulsa tu Producción con Odoo ERP para Manufactura",
+  description: "Optimiza cada aspecto de tu operación manufacturera con una solución ERP diseñada para integrar todas las áreas clave de producción. Desde la planificación y control de inventarios hasta la gestión de maquinaria y seguimiento de tiempos, Odoo ERP te ofrece una plataforma flexible y personalizable que te permite reducir costos, aumentar la eficiencia y adaptarte rápidamente a los cambios en la demanda del mercado. Mejora la visibilidad de tus procesos y toma decisiones más inteligentes en tiempo real.",
 };
 
 export default function RootLayout({
