@@ -288,10 +288,6 @@ export default function ConsolidatedForm() {
               <Users className="inline-block mr-1" size={16} />
               Más de 170 inventarios ya han mejorado su productividad con nuestras consultorías
             </p>
-            <p className="text-yellow-400 text-sm mt-2">
-              <Star className="inline-block mr-1" size={16} />
-              Calificación promedio de 4.8/5 basada en más de 103 encuestas internas
-            </p>
           </div>
         </form>
       </div>
