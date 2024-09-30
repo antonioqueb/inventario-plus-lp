@@ -22,7 +22,7 @@ const ThankYouPageContent: React.FC = () => {
   const formattedDate = formatDate(date);
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-blue-900 to-gray-900 py-20 px-4 sm:px-6 lg:px-8">
+    <section className="min-h-screen bg-gradient-to-b from-yellow-900 to-zinc-900 py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-3xl shadow-2xl overflow-hidden">
           <div className="px-6 py-8 sm:p-10 sm:pb-6">
@@ -32,32 +32,32 @@ const ThankYouPageContent: React.FC = () => {
             <h2 className="mt-6 text-center text-3xl font-extrabold text-white sm:text-4xl">
               ¡Gracias por Agendar tu Consultoría, {name}!
             </h2>
-            <p className="mt-4 text-xl text-gray-300 text-center">
+            <p className="mt-4 text-xl text-zinc-300 text-center">
               Nos alegra que hayas dado el primer paso hacia una mejor gestión de tu inventario.
             </p>
           </div>
           <div className="px-6 pt-6 pb-8 bg-white bg-opacity-5 sm:px-10 sm:py-8">
             <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8 mb-8">
               <div className="flex items-center space-x-2">
-                <CalendarIcon className="h-6 w-6 text-blue-400" />
-                <span className="text-lg font-medium text-gray-200">{formattedDate || 'Fecha no especificada'}</span>
+                <CalendarIcon className="h-6 w-6 text-yellow-400" />
+                <span className="text-lg font-medium text-zinc-200">{formattedDate || 'Fecha no especificada'}</span>
               </div>
               <div className="flex items-center space-x-2">
-                <ClockIcon className="h-6 w-6 text-blue-400" />
-                <span className="text-lg font-medium text-gray-200">{slot}</span>
+                <ClockIcon className="h-6 w-6 text-yellow-400" />
+                <span className="text-lg font-medium text-zinc-200">{slot}</span>
               </div>
             </div>
             <div className="space-y-6">
-              <div className="bg-blue-600 bg-opacity-20 rounded-xl p-6">
+              <div className="bg-yellow-600 bg-opacity-20 rounded-xl p-6">
                 <h3 className="text-xl font-semibold text-white mb-2">¿Qué sigue?</h3>
-                <p className="text-gray-300">
+                <p className="text-zinc-300">
                   Durante la sesión, identificaremos juntos las áreas clave para optimizar tu inventario,
                   y te mostraremos cómo nuestras soluciones personalizadas pueden ayudarte a mejorar la eficiencia de tus operaciones.
                 </p>
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-white mb-4">Ventajas de InventarioPlus</h3>
-                <ul className="space-y-2 text-gray-300">
+                <ul className="space-y-2 text-zinc-300">
                   {[
                     "Optimización en tiempo real para decisiones estratégicas confiables.",
                     "Soluciones personalizadas que se adaptan a tus necesidades específicas.",
@@ -71,11 +71,11 @@ const ThankYouPageContent: React.FC = () => {
                   ))}
                 </ul>
               </div>
-              <p className="text-gray-300">
+              <p className="text-zinc-300">
                 Si tienes alguna pregunta o necesitas ajustar tu cita, no dudes en contactarnos soporte@gestpro.cloud.
               </p>
               <div className="mt-8">
-                <Link href="/" className="block w-full bg-blue-600 text-white text-center px-5 py-3 rounded-lg text-base font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+                <Link href="/" className="block w-full bg-yellow-600 text-white text-center px-5 py-3 rounded-lg text-base font-medium hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 transition duration-150 ease-in-out">
                   Volver al Inicio
                 </Link>
               </div>
@@ -89,7 +89,7 @@ const ThankYouPageContent: React.FC = () => {
 
 const ThankYouPage: React.FC = () => {
   return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-gray-900 text-white text-2xl">Cargando...</div>}>
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-zinc-900 text-white text-2xl">Cargando...</div>}>
       <ThankYouPageContent />
     </Suspense>
   );
