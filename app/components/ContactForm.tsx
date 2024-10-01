@@ -163,12 +163,12 @@ export default function ConsolidatedForm() {
   };
 
   return (
-    <section id="consultoria-form" className="py-20 bg-gradient-to-b from-gray-800 to-gray-900 shadow-2xl rounded-3xl">
+    <section id="consultoria-form" className="py-20 bg-gradient-to-b from-zinc-800 to-zinc-900 shadow-2xl rounded-3xl">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white text-center mb-10 leading-tight">Agenda tu Consultoría Hoy</h2>
         
         <div className="max-w-2xl mx-auto mb-8">
-          <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-6 rounded-lg shadow-2xl text-center">
+          <div className="bg-gradient-to-r from-green-600 to-green-800 text-white p-6 rounded-lg shadow-2xl text-center">
             <p className="text-2xl font-bold text-yellow-300 mb-2">¡Oferta por tiempo limitado!</p>
             <p className="text-xl mt-2">Agenda tu consultoría hoy y <span className="text-yellow-300 font-semibold">obtén un 20% de descuento</span> en nuestros servicios de implementación Odoo ERP.</p>
           </div>
@@ -185,7 +185,7 @@ export default function ConsolidatedForm() {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
+                className="w-full px-4 py-3 bg-zinc-700 border border-zinc-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-white placeholder-zinc-400"
                 required
                 placeholder="Tu nombre completo"
               />
@@ -199,7 +199,7 @@ export default function ConsolidatedForm() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
+                className="w-full px-4 py-3 bg-zinc-700 border border-zinc-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-white placeholder-zinc-400"
                 required
                 placeholder="tu@email.com"
               />
@@ -213,7 +213,7 @@ export default function ConsolidatedForm() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
+                className="w-full px-4 py-3 bg-zinc-700 border border-zinc-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-white placeholder-zinc-400"
                 required
                 placeholder="Tu número de teléfono"
               />
@@ -227,7 +227,7 @@ export default function ConsolidatedForm() {
                 name="date"
                 value={selectedDate ?? ''}
                 onChange={handleDateChange}
-                className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+                className="w-full px-4 py-3 bg-zinc-700 border border-zinc-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-white"
                 min={getTodayDate() ?? ''}
                 required
               />
@@ -237,7 +237,7 @@ export default function ConsolidatedForm() {
               <h3 className="text-white text-lg sm:text-xl font-medium mb-4">Selecciona un Horario Disponible</h3>
 
               {availableSlots.length > 0 && (
-                <p className="text-gray-300 text-sm mb-2">* Los horarios se muestran en hora centro de México (CDMX).</p>
+                <p className="text-zinc-300 text-sm mb-2">* Los horarios se muestran en hora centro de México (CDMX).</p>
               )}
 
               {remainingSlots > 0 && remainingSlots <= 3 && (
@@ -257,9 +257,9 @@ export default function ConsolidatedForm() {
                       type="button"
                       className={`p-3 border rounded-lg text-white text-sm sm:text-base ${
                         selectedSlot === slot
-                          ? "bg-blue-600 border-blue-500"
-                          : "bg-gray-700 border-gray-600 hover:bg-gray-600"
-                      } transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                          ? "bg-green-600 border-green-500"
+                          : "bg-zinc-700 border-zinc-600 hover:bg-zinc-600"
+                      } transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-green-500`}
                       onClick={() => handleSlotClick(slot)}
                     >
                       {slot}
@@ -278,13 +278,13 @@ export default function ConsolidatedForm() {
 
           <button
             type="submit"
-            className="w-full mt-8 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-4 rounded-full text-lg sm:text-xl font-bold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 ease-in-out shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+            className="w-full mt-8 bg-gradient-to-r from-green-600 to-green-700 text-white px-6 py-4 rounded-full text-lg sm:text-xl font-bold hover:from-green-700 hover:to-green-800 transition-all duration-300 ease-in-out shadow-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-zinc-900"
           >
             Confirmar Reunión Ahora
           </button>
 
           <div className="mt-6 text-center">
-            <p className="text-gray-300 text-sm">
+            <p className="text-zinc-300 text-sm">
               <Users className="inline-block mr-1" size={16} />
               Más de 170 inventarios ya han mejorado su productividad con nuestras consultorías
             </p>
