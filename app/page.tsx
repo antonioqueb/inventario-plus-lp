@@ -38,7 +38,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-300 to-green-300 tracking-tight mb-4 sm:mb-6 md:mb-8 animate-text-shimmer"
+            className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-yellow-300 to-green-300 tracking-tight mb-4 sm:mb-6 md:mb-8 animate-text-shimmer"
           >
             {copy.hero.title}
           </motion.h1>
