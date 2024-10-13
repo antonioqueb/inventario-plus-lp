@@ -32,13 +32,13 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="max-w-5xl xl:max-w-7xl w-11/12 xl:w-full px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 my-8 sm:my-12 md:my-16 rounded-[20px] sm:rounded-[30px] md:rounded-[40px] bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-xl shadow-2xl border border-white/20 transition-all duration-300 hover:shadow-green-500/20 hover:border-green-500/50"
+          className="max-w-5xl xl:max-w-7xl w-11/12 xl:w-full px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 my-8 sm:my-12 md:my-16 rounded-[20px] sm:rounded-[30px] md:rounded-[40px] bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-xl shadow-2xl border border-white/20 transition-all duration-300 hover:shadow-sky-500/20 hover:border-sky-500/50"
         >
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-yellow-300 to-green-300 tracking-tight mb-4 sm:mb-6 md:mb-8 animate-text-shimmer"
+            className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-300 to-sky-300 tracking-tight mb-4 sm:mb-6 md:mb-8 animate-text-shimmer"
           >
             {copy.hero.title}
           </motion.h1>
@@ -99,7 +99,7 @@ export default function Home() {
             className="max-w-6xl mx-auto rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-300"
           >
             <Image
-              src="/inventario.png"
+              src="/inventario.jpg"
               alt="Equipo de soporte"
               layout="responsive"
               width={1000}
@@ -178,7 +178,7 @@ export default function Home() {
             className="max-w-xl mx-auto rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-300"
           >
             <Image
-              src="/compromisotrotal.svg"
+              src="/compromisotrotal.png"
               alt="Nuestra misión"
               layout="responsive"
               width={100}
@@ -234,7 +234,7 @@ export default function Home() {
       </main>
 
       <footer className="bg-zinc-800 py-8 text-center text-white">
-        <p className="text-lg">© 2024 InventarioPlus - Soluciones en Inventarios</p>
+        <p className="text-lg">© GEC - Gestiones Empresariales de Campeche, S.C.</p>
       </footer>
     </div>
   )

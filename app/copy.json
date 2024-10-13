@@ -1,78 +1,94 @@
 {
   "hero": {
-    "title": "Sistematiza tu inventario con herramientas a tu medida.",
-    "description": "Nuestro objetivo es hacer que tu gestión de inventarios sea simple, eficiente y libre de complicaciones, ayudándote a ahorrar tiempo y recursos. Nos encargamos de que todo fluya, para que tú te enfoques en lo que realmente importa.",
-    "button": "Agenda tu Consultoría Gratuita"
+    "title": "GEC - Gestiones Empresariales de Campeche, S.C.",
+    "description": "Nos especializamos en transformar emprendedores en empresarios exitosos. Ofrecemos servicios de contabilidad, consultoría empresarial, control interno y auditorías para impulsar el crecimiento y rentabilidad de tu negocio.",
+    "button": "Agenda tu Consultoría Especializada"
   },
   "whoWeAre": {
-    "title": "Tu Socio Estratégico",
-    "description": "Más que proveedores, somos tus aliados. Te damos las herramientas para que tengas un control total sobre tu inventario y sepas exactamente qué está ocurriendo en cada momento. Tú siempre tendrás el control."
+    "title": "Tu socio estratégico en gestión empresarial",
+    "description": "En GEC, somos más que un despacho contable. Somos tu aliado en el camino de convertirte de emprendedor a empresario, brindando soluciones integrales adaptadas a tus necesidades."
   },
   "whatWeDo": {
-    "title": "Soluciones hechas para ti",
+    "title": "Nuestros servicios",
     "services": [
       {
-        "title": "Automatización de inventarios",
-        "description": "Desarrollamos soluciones que automatizan y optimizan la gestión de tu inventario, adaptándose a tus necesidades para que todo sea más preciso y rápido."
+        "title": "Contabilidad",
+        "description": "Servicio completo de contabilidad para asegurar el cumplimiento fiscal y financiero de tu empresa."
       },
       {
-        "title": "Consultoría especializada en Odoo",
-        "description": "Nos sumergimos en tus procesos para entenderlos a fondo y crear soluciones con Odoo que te ayuden a alcanzar tus metas mientras haces más eficientes tus operaciones."
+        "title": "Consultoría Empresarial",
+        "description": "Asesoría en el diseño de modelos de negocio y estrategias para potenciar el crecimiento de tu empresa."
       },
       {
-        "title": "Implementación estratégica",
-        "description": "Te apoyamos como socios tecnológicos, brindándote herramientas avanzadas para que tengas el control total sobre tu inventario y operaciones."
+        "title": "Control Interno",
+        "description": "Implementación de sistemas de control interno para mejorar la eficiencia y prevenir riesgos."
       },
       {
-        "title": "Soporte técnico siempre disponible",
-        "description": "Nuestro equipo está aquí para ti. Ofrecemos soporte continuo, anticipándonos a los problemas para que todo funcione sin interrupciones."
+        "title": "Peritaje Contable",
+        "description": "Realizamos peritajes contables para casos legales y toma de decisiones informada."
       },
       {
-        "title": "Dashboards en tiempo real",
-        "description": "Creamos dashboards personalizados para que monitorees tu inventario en tiempo real. Toma decisiones informadas basadas en datos actualizados."
+        "title": "Manuales de Cumplimiento",
+        "description": "Elaboración de manuales, organigramas y políticas para asegurar el cumplimiento normativo."
       },
       {
-        "title": "Optimización de operaciones",
-        "description": "Analizamos y rediseñamos tus procesos para hacerlos más eficientes, reducir costos y garantizar que tus operaciones fluyan sin problemas."
+        "title": "Análisis de Estados Financieros",
+        "description": "Análisis detallado de tus estados financieros para facilitar la toma de decisiones estratégicas."
       },
       {
-        "title": "Personalización avanzada de Odoo",
-        "description": "Ajustamos cada módulo de Odoo a tus procesos específicos, asegurando que todo funcione de manera integrada y eficiente en tu negocio."
+        "title": "Proyectos de Inversión",
+        "description": "Planificación y gestión de proyectos de inversión para expandir tu negocio."
       },
       {
-        "title": "Monitoreo y mejora continua",
-        "description": "No solo implementamos. Monitoreamos tu sistema para detectar oportunidades de mejora y asegurar que siempre esté funcionando al máximo rendimiento."
+        "title": "Auditorías de Diferentes Áreas",
+        "description": "Auditorías en diversas áreas para evaluar y mejorar tus procesos internos."
+      },
+      {
+        "title": "Gestiones Empresariales",
+        "description": "Apoyo en diversas gestiones que tu negocio requiera ante entidades gubernamentales y privadas."
+      },
+      {
+        "title": "Asesoría Financiera en el Sector Primario",
+        "description": "Fuentes de financiamiento y proyectos de inversión para potencializar actividades económicas en el sector primario."
+      },
+      {
+        "title": "Trámites de Transporte Federal",
+        "description": "Gestión de trámites para placas de transporte de carga federal ante las dependencias correspondientes."
+      },
+      {
+        "title": "Capacitación y Desarrollo Profesional",
+        "description": "Organización de talleres y eventos para mantener a tu equipo actualizado en las últimas tendencias y normativas."
       }
     ]
   },
   "ourMission": {
-    "title": "Compromiso con tu éxito",
-    "description": "No solo implementamos software. Creamos soluciones que se alinean a tus procesos y te dan el control total para gestionar tu inventario de manera efectiva."
+    "title": "De emprendedor a empresario",
+    "description": "Nuestra misión es acompañarte en el camino hacia el éxito empresarial, brindando herramientas y asesoría especializada para que tu negocio crezca de manera sostenible."
   },
   "features": {
-    "title": "Características que marcan la diferencia",
+    "title": "¿Por qué elegir GEC?",
     "items": [
       {
-        "title": "Informes personalizables",
-        "description": "Obtén informes a la medida de tus necesidades, mostrando los datos clave que te ayudan a tomar decisiones estratégicas rápidamente."
+        "title": "Experiencia y Profesionalismo",
+        "description": "Contamos con un equipo liderado por el L.C. Sergio Antonio Pérez Puerto, con amplia experiencia en el sector."
       },
       {
-        "title": "Escalabilidad a tu ritmo",
-        "description": "Nuestras soluciones crecen contigo. A medida que tu negocio se expande, nuestras herramientas se ajustan sin complicaciones."
+        "title": "Enfoque Personalizado",
+        "description": "Adaptamos nuestras soluciones a las necesidades específicas de tu negocio."
       },
       {
-        "title": "Alertas proactivas",
-        "description": "Configura alertas automáticas que te notifiquen cuando el stock esté bajo o sucedan eventos críticos, para que siempre estés un paso adelante."
+        "title": "Participación Activa en la Comunidad",
+        "description": "Estamos involucrados en eventos y asociaciones que nos permiten ofrecerte oportunidades de crecimiento."
       },
       {
-        "title": "Acceso desde cualquier dispositivo",
-        "description": "Controla tu inventario desde donde estés. Con acceso seguro desde cualquier dispositivo, tienes la flexibilidad de gestionar tu negocio en todo momento."
+        "title": "Servicios Integrales",
+        "description": "Ofrecemos una amplia gama de servicios para cubrir todas las áreas de tu negocio."
       }
     ]
   },
   "cta": {
-    "title": "Transforma tu manera de trabajar",
-    "description": "Toma el control de tu inventario y mejora tu rentabilidad con nuestras soluciones personalizadas. Estamos listos para ayudarte a llevar tu negocio al siguiente nivel.",
-    "button": "Agenda tu Consultoría Gratuita"
+    "title": "Haz crecer tu negocio con nosotros",
+    "description": "No esperes más para llevar tu empresa al siguiente nivel. Agenda una consultoría especializada y descubre cómo podemos ayudarte a alcanzar tus metas.",
+    "button": "Agenda tu Consultoría Especializada"
   }
 }
