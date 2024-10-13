@@ -1,6 +1,6 @@
 services:
-  inventarioplus:
-    container_name: inventarioplus
+  gec:
+    container_name: gecContainer
     build: .
     ports:
-      - "3001:3000"
+      - "3000:3000"

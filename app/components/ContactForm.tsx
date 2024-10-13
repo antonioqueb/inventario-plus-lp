@@ -114,7 +114,7 @@ export default function ConsolidatedForm() {
       partner_email: formData.email,
       phone: formData.phone,
       expected_revenue: formData.expected_revenue,
-      probability: formData.probability,
+      probability: formData.probability,  
       company_id: 2,
       start_time: startDateTime,
       end_time: endDateTime,
@@ -289,12 +289,9 @@ export default function ConsolidatedForm() {
           <div className="mt-6 text-center">
             <p className="text-zinc-300 text-sm">
               <Users className="inline-block mr-1" size={16} />
-              Más de 170 inventarios ya han mejorado su productividad con nuestras consultorías
+              Más de 113 empresas siendo acompañadas en el camino hacia el éxito empresarial,
             </p>
-            <p className="text-blue-400 text-sm mt-2">
-              <Star className="inline-block mr-1" size={16} />
-              Calificación promedio de 4.8/5 basada en más de 103 encuestas internas
-            </p>
+            
           </div>
         </form>
       </div>
