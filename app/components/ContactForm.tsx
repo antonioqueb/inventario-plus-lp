@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from 'next/navigation';
 import { DateTime } from 'luxon';
-import { Clock, Users, Star } from 'lucide-react';
+import { Clock, Users } from 'lucide-react';
 
 interface Slot {
   start: string;
@@ -13,7 +13,7 @@ interface Slot {
 export default function ConsolidatedForm() {
   const router = useRouter();
   const [selectedSlot, setSelectedSlot] = useState<string>("");
-  const [selectedDate, setSelectedDate] = useState<string | null>(getTodayDate());
+  const [selectedDate, setSelectedDate] = useState<string>(getTodayDate());
   const [availableSlots, setAvailableSlots] = useState<string[]>([]);
   const [formData, setFormData] = useState({
     name: "",
@@ -26,14 +26,40 @@ export default function ConsolidatedForm() {
   const [remainingSlots, setRemainingSlots] = useState<number>(0);
 
   useEffect(() => {
-    if (selectedDate) {
-      fetchAvailableSlots();
-    }
-  }, [selectedDate]);
+    const initializeDate = async () => {
+      await findNextAvailableDate();
+    };
+    initializeDate();
+  }, []);
 
-  const fetchAvailableSlots = async () => {
-    const start_time = `${selectedDate ?? ''}T09:00:00`;
-    const end_time = `${selectedDate ?? ''}T17:00:00`;
+  const findNextAvailableDate = async () => {
+    let dateToCheck = DateTime.now().setZone('America/Mexico_City');
+    const maxDaysToCheck = 30; // Limitar para evitar bucle infinito
+    let daysChecked = 0;
+
+    while (daysChecked < maxDaysToCheck) {
+      const dateStr = dateToCheck.toISODate()!;
+      const slots = await fetchAvailableSlots(dateStr);
+
+      if (slots && slots.length > 0) {
+        setSelectedDate(dateStr);
+        setAvailableSlots(slots);
+        setRemainingSlots(slots.length);
+        setApiMessage(null);
+        return; // Encontró fecha con slots disponibles
+      } else {
+        // No hay slots disponibles, incrementar fecha
+        dateToCheck = dateToCheck.plus({ days: 1 });
+        daysChecked++;
+      }
+    }
+    // Si no se encontraron fechas con slots disponibles en los próximos días
+    setApiMessage("No hay horarios disponibles en los próximos días.");
+  };
+
+  const fetchAvailableSlots = async (date: string): Promise<string[] | null> => {
+    const start_time = `${date}T09:00:00`;
+    const end_time = `${date}T17:00:00`;
 
     try {
       const response = await fetch(`https://crm.gestiones-empresariales-campeche.online/free_slots?start_time=${start_time}&end_time=${end_time}&company_id=1`);
@@ -44,16 +70,15 @@ export default function ConsolidatedForm() {
       const data = await response.json();
 
       if (data.free_slots.length === 0) {
-        setAvailableSlots([]);
-        setApiMessage("No hay horarios disponibles para esta fecha.");
+        return [];
       } else {
         const now = DateTime.now().setZone('America/Mexico_City');
         const currentDate = now.toISODate();
-        
+
         const filteredSlots = data.free_slots
           .filter((slot: Slot) => {
             const slotStart = DateTime.fromISO(slot.start, { zone: 'America/Mexico_City' });
-            return selectedDate !== currentDate || slotStart > now;
+            return date !== currentDate || slotStart > now;
           })
           .map((slot: Slot) => {
             const startHour = DateTime.fromISO(slot.start, { zone: 'America/Mexico_City' }).toFormat('HH:mm');
@@ -61,32 +86,39 @@ export default function ConsolidatedForm() {
             return `${startHour} - ${endHour}`;
           });
 
-        setAvailableSlots(filteredSlots);
-        setRemainingSlots(filteredSlots.length);
-
-        if (filteredSlots.length === 0) {
-          setApiMessage("No hay horarios disponibles para esta fecha.");
-        } else {
-          setApiMessage(null);
-        }
+        return filteredSlots;
       }
     } catch (error) {
-      setAvailableSlots([]);
-      setApiMessage("Error al obtener los horarios disponibles.");
+      console.error('Error fetching available slots:', error);
+      return null;
     }
   };
 
-  function getTodayDate(): string | null {
-    const now = DateTime.now().setZone('America/Mexico_City');
-    return now ? now.toISODate() : null;
+  function getTodayDate(): string {
+    return DateTime.now().setZone('America/Mexico_City').toISODate()!;
   }
 
   const handleSlotClick = (slot: string) => {
     setSelectedSlot(slot);
   };
 
-  const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSelectedDate(e.target.value);
+  const handleDateChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newDate = e.target.value;
+    setSelectedDate(newDate);
+
+    const slots = await fetchAvailableSlots(newDate);
+    if (slots) {
+      setAvailableSlots(slots);
+      setRemainingSlots(slots.length);
+      if (slots.length === 0) {
+        setApiMessage("No hay horarios disponibles para esta fecha.");
+      } else {
+        setApiMessage(null);
+      }
+    } else {
+      setAvailableSlots([]);
+      setApiMessage("Error al obtener los horarios disponibles.");
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -157,7 +189,7 @@ export default function ConsolidatedForm() {
         console.log("Respuesta JSON de la API:", data);
         setApiMessage("Oportunidad creada exitosamente.");
 
-        router.push(`/thank-you?name=${encodeURIComponent(formData.name)}&date=${encodeURIComponent(selectedDate ?? '')}&slot=${encodeURIComponent(selectedSlot)}`);
+        router.push(`/thank-you?name=${encodeURIComponent(formData.name)}&date=${encodeURIComponent(selectedDate)}&slot=${encodeURIComponent(selectedSlot)}`);
       })
       .catch((error) => {
         console.error("Error creando oportunidad:", error);
@@ -229,10 +261,10 @@ export default function ConsolidatedForm() {
                 type="date"
                 id="date"
                 name="date"
-                value={selectedDate ?? ''}
+                value={selectedDate}
                 onChange={handleDateChange}
                 className="w-full px-4 py-3 bg-zinc-700 border border-zinc-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
-                min={getTodayDate() ?? ''}
+                min={DateTime.now().setZone('America/Mexico_City').toISODate()!}
                 required
               />
             </div>
