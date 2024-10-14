@@ -38,7 +38,7 @@ export default function ConsolidatedForm() {
     const end_time = `${selectedDate ?? ''}T17:00:00`;
 
     try {
-      const response = await fetch(`https://crm.gestiones-empresariales-campeche.cloud/free_slots?start_time=${start_time}&end_time=${end_time}&company_id=2`);
+      const response = await fetch(`https://crm.gestiones-empresariales-campeche.cloud/free_slots?start_time=${start_time}&end_time=${end_time}&company_id=1`);
       if (!response.ok) {
         throw new Error(`Error al obtener slots: ${response.status}`);
       }
@@ -115,7 +115,7 @@ export default function ConsolidatedForm() {
       phone: formData.phone,
       expected_revenue: formData.expected_revenue,
       probability: formData.probability,  
-      company_id: 2,
+      company_id: 1,
       start_time: startDateTime,
       end_time: endDateTime,
       user_id: 2,
@@ -134,7 +134,7 @@ export default function ConsolidatedForm() {
         phone: formData.phone,
         expected_revenue: formData.expected_revenue,
         probability: formData.probability,
-        company_id: 2,
+        company_id: 1,
         start_time: startDateTime,
         end_time: endDateTime,
         user_id: 2,
