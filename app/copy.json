@@ -2,7 +2,7 @@
   "hero": {
     "title": "GEC - Gestiones Empresariales de Campeche, S.C.",
     "description": "¿Listo para llevar tu negocio al siguiente nivel? En GEC, convertimos emprendedores como tú en empresarios exitosos. Ofrecemos servicios de contabilidad, consultoría empresarial, control interno y auditorías para impulsar el crecimiento y la rentabilidad de tu empresa.",
-    "button": "Agenda tu Consultoría Especializada"
+    "button": "Agenda tu Consultoría"
   },
   "whoWeAre": {
     "title": "Tu socio estratégico en gestión empresarial",
@@ -89,6 +89,6 @@
   "cta": {
     "title": "Haz crecer tu negocio con nosotros",
     "description": "¿Listo para hacer crecer tu negocio? No lo pienses más. Agenda una consultoría especializada y descubre cómo podemos ayudarte a alcanzar tus metas.",
-    "button": "Agenda tu Consultoría Especializada"
+    "button": "Agenda tu Consultoría"
   }
 }
