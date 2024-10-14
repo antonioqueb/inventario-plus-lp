@@ -31,8 +31,6 @@ export default function ConsolidatedForm() {
     }
   }, [selectedDate]);
 
-  
-
   const fetchAvailableSlots = async () => {
     const start_time = `${selectedDate ?? ''}T09:00:00`;
     const end_time = `${selectedDate ?? ''}T17:00:00`;
@@ -63,9 +61,14 @@ export default function ConsolidatedForm() {
             return `${startHour} - ${endHour}`;
           });
 
-        setApiMessage(null);
         setAvailableSlots(filteredSlots);
         setRemainingSlots(filteredSlots.length);
+
+        if (filteredSlots.length === 0) {
+          setApiMessage("No hay horarios disponibles para esta fecha.");
+        } else {
+          setApiMessage(null);
+        }
       }
     } catch (error) {
       setAvailableSlots([]);
@@ -176,8 +179,6 @@ export default function ConsolidatedForm() {
           </div>
         </div>
 
-
-
         <form onSubmit={handleSubmit} className="max-w-2xl mx-auto bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg p-8 sm:p-10 rounded-2xl shadow-2xl">
           <div className="space-y-6">
             <div>
@@ -274,7 +275,7 @@ export default function ConsolidatedForm() {
           </div>
 
           {apiMessage && !apiMessage.includes("exitosamente") && (
-            <div className="mt-6 p-4 rounded-lg bg-red-500 bg-opacity-80 text-white text-center">
+            <div className="mt-6 p-4 rounded-lg bg-yellow-500 bg-opacity-80 text-white text-center">
               {apiMessage}
             </div>
           )}
@@ -291,7 +292,6 @@ export default function ConsolidatedForm() {
               <Users className="inline-block mr-1" size={16} />
               Más de 113 empresas siendo acompañadas en el camino hacia el éxito empresarial,
             </p>
-            
           </div>
         </form>
       </div>
