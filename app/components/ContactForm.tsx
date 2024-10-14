@@ -38,7 +38,7 @@ export default function ConsolidatedForm() {
     const end_time = `${selectedDate ?? ''}T17:00:00`;
 
     try {
-      const response = await fetch(`https://crm.gestiones-empresariales-campeche.cloud/free_slots?start_time=${start_time}&end_time=${end_time}&company_id=1`);
+      const response = await fetch(`https://crm.gestiones-empresariales-campeche.online/free_slots?start_time=${start_time}&end_time=${end_time}&company_id=1`);
       if (!response.ok) {
         throw new Error(`Error al obtener slots: ${response.status}`);
       }
@@ -122,7 +122,7 @@ export default function ConsolidatedForm() {
       stage_id: 1
     });
 
-    fetch("https://crm.gestiones-empresariales-campeche.cloud/create_opportunity", {
+    fetch("https://crm.gestiones-empresariales-campeche.online/create_opportunity", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
