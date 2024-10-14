@@ -15,7 +15,7 @@ const CalendarSelector: React.FC<{ onSlotSelect: (slot: string) => void }> = ({ 
 
   useEffect(() => {
     // Llamada a la API para obtener bloques de tiempo disponibles
-    fetch("https://crm.gestpro.cloud/available_slots?start_time=2024-09-01T00:00:00&end_time=2024-09-30T23:59:59&company_id=2&user_id=2")
+    fetch("https://crm.gestiones-empresariales-campeche.cloud/available_slots?start_time=2024-09-01T00:00:00&end_time=2024-09-30T23:59:59&company_id=2&user_id=2")
       .then((response) => response.json())
       .then((data) => setSlots(data.available_slots))
       .catch((error) => console.error("Error fetching slots:", error));
