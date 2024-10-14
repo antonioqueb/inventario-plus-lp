@@ -30,10 +30,10 @@ const ThankYouPageContent: React.FC = () => {
               <CheckCircleIcon className="h-20 w-20 text-sky-400" />
             </div>
             <h2 className="mt-6 text-center text-3xl font-extrabold text-white sm:text-4xl">
-              ¡Gracias por Agendar tu Consultoría, {name}!
+              ¡Gracias por Agendar tu Consultoría con GEC, {name}!
             </h2>
             <p className="mt-4 text-xl text-zinc-300 text-center">
-              Nos alegra que hayas dado el primer paso hacia una mejor gestión de tu inventario.
+              Estamos listos para acompañarte en tu camino hacia una gestión empresarial eficiente y exitosa.
             </p>
           </div>
           <div className="px-6 pt-6 pb-8 bg-white bg-opacity-5 sm:px-10 sm:py-8">
@@ -49,20 +49,20 @@ const ThankYouPageContent: React.FC = () => {
             </div>
             <div className="space-y-6">
               <div className="bg-sky-600 bg-opacity-20 rounded-xl p-6">
-                <h3 className="text-xl font-semibold text-white mb-2">¿Qué sigue?</h3>
+                <h3 className="text-xl font-semibold text-white mb-2">Próximos pasos</h3>
                 <p className="text-zinc-300">
-                  Durante la sesión, identificaremos juntos las áreas clave para optimizar tu inventario,
-                  y te mostraremos cómo nuestras soluciones personalizadas pueden ayudarte a mejorar la eficiencia de tus operaciones.
+                  En nuestra consultoría, identificaremos áreas clave de mejora para tu empresa, desde la contabilidad hasta la gestión operativa.
+                  Te mostraremos cómo nuestras soluciones integrales pueden llevar tu negocio al siguiente nivel.
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-white mb-4">Ventajas de InventarioPlus</h3>
+                <h3 className="text-xl font-semibold text-white mb-4">Nuestros Servicios Principales</h3>
                 <ul className="space-y-2 text-zinc-300">
                   {[
-                    "Optimización en tiempo real para decisiones estratégicas confiables.",
-                    "Soluciones personalizadas que se adaptan a tus necesidades específicas.",
-                    "Automatización inteligente para reducir errores y mejorar la eficiencia.",
-                    "Integración fluida con múltiples sistemas y herramientas."
+                    "Contabilidad sin complicaciones para cumplir tus obligaciones fiscales.",
+                    "Consultoría empresarial para desarrollar estrategias de crecimiento.",
+                    "Control interno para mejorar eficiencia y minimizar riesgos.",
+                    "Auditorías en múltiples áreas para optimizar tus procesos."
                   ].map((item, index) => (
                     <li key={index} className="flex items-start">
                       <CheckCircleIcon className="h-6 w-6 text-sky-400 mr-2 flex-shrink-0" />
@@ -72,7 +72,8 @@ const ThankYouPageContent: React.FC = () => {
                 </ul>
               </div>
               <p className="text-zinc-300">
-                Si tienes alguna pregunta o necesitas ajustar tu cita, no dudes en contactarnos soporte@gestiones-empresariales-campeche.online.
+                ¿Tienes alguna duda o necesitas modificar tu cita? Escríbenos a 
+                <a href="mailto:soporte@gestiones-empresariales-campeche.online" className="text-sky-400"> soporte@gestiones-empresariales-campeche.online</a>.
               </p>
               <div className="mt-8">
                 <Link href="/" className="block w-full bg-sky-600 text-white text-center px-5 py-3 rounded-lg text-base font-medium hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500 transition duration-150 ease-in-out">
