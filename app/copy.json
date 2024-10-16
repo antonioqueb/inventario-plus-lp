@@ -1,94 +1,70 @@
 {
   "hero": {
-    "title": "GEC - Gestiones Empresariales de Campeche, S.C.",
-    "description": "¿Listo para llevar tu negocio al siguiente nivel? En GEC, convertimos emprendedores como tú en empresarios exitosos. Ofrecemos servicios de contabilidad, consultoría empresarial, control interno y auditorías para impulsar el crecimiento y la rentabilidad de tu empresa.",
+    "title": "GestPro Cloud - Soluciones Empresariales a tu Alcance",
+    "description": "¿Listo para llevar tu empresa al siguiente nivel? En GestPro Cloud, personalizamos la implementación de Odoo Community para optimizar la gestión de tu negocio. Transformamos sistemas y procesos para mejorar la eficiencia y aumentar la rentabilidad, brindándote control total en un entorno moderno y escalable.",
     "button": "Agenda tu Consultoría"
   },
   "whoWeAre": {
-    "title": "Tu socio estratégico en gestión empresarial",
-    "description": "En GEC, somos más que un despacho contable; somos tu aliado estratégico. Te acompañamos en cada paso para que pases de ser un emprendedor a un empresario consolidado, brindando soluciones integrales adaptadas a tus necesidades."
+    "title": "Tu socio estratégico en transformación digital",
+    "description": "En GestPro Cloud, vamos más allá de la consultoría tradicional. Somos expertos en Odoo Community, ayudando a las empresas a automatizar procesos críticos, integrar operaciones y tomar decisiones basadas en datos. Te acompañamos en cada paso, brindando soluciones adaptadas a tus necesidades y asegurando una transformación digital efectiva y sin fricciones."
   },
   "whatWeDo": {
     "title": "Nuestros servicios",
     "services": [
       {
-        "title": "Contabilidad",
-        "description": "Nos encargamos de toda tu contabilidad para que cumplas con tus obligaciones fiscales y financieras sin complicaciones."
+        "title": "Implementación de Odoo Community",
+        "description": "Implementamos y personalizamos Odoo Community para que gestiones compras, ventas, inventario, y más, desde una única plataforma."
       },
       {
-        "title": "Consultoría Empresarial",
-        "description": "Te asesoramos en diseñar modelos de negocio y estrategias que impulsen el crecimiento de tu empresa."
+        "title": "Consultoría en Gestión Empresarial",
+        "description": "Diseñamos estrategias digitales para que tu empresa sea más competitiva y eficiente."
       },
       {
-        "title": "Control Interno",
-        "description": "Implementamos sistemas de control interno que mejoran la eficiencia y previenen riesgos en tu empresa."
+        "title": "Automatización de Procesos",
+        "description": "Digitalizamos procesos manuales, eliminando tareas repetitivas para que tu equipo se concentre en lo que importa."
       },
       {
-        "title": "Peritaje Contable",
-        "description": "Ofrecemos peritajes contables para apoyar en casos legales y facilitar decisiones informadas."
+        "title": "Integración de Sistemas",
+        "description": "Conectamos Odoo con plataformas externas mediante API para un flujo de trabajo sin interrupciones."
       },
       {
-        "title": "Manuales de Cumplimiento",
-        "description": "Elaboramos manuales, organigramas y políticas para asegurar que tu empresa cumpla con todas las normativas."
+        "title": "Capacitación y Soporte Técnico",
+        "description": "Capacita a tu equipo con nuestros expertos para aprovechar todo el potencial de Odoo."
       },
       {
-        "title": "Análisis de Estados Financieros",
-        "description": "Analizamos detalladamente tus estados financieros para que tomes decisiones estratégicas con confianza."
-      },
-      {
-        "title": "Proyectos de Inversión",
-        "description": "Te ayudamos a planificar y gestionar proyectos de inversión para expandir tu negocio."
-      },
-      {
-        "title": "Auditorías de Diferentes Áreas",
-        "description": "Realizamos auditorías en diversas áreas para evaluar y mejorar tus procesos internos."
-      },
-      {
-        "title": "Gestiones Empresariales",
-        "description": "Te apoyamos en diversas gestiones ante entidades gubernamentales y privadas que tu negocio requiera."
-      },
-      {
-        "title": "Asesoría Financiera en el Sector Primario",
-        "description": "Te conectamos con fuentes de financiamiento y proyectos de inversión para potenciar actividades en el sector primario."
-      },
-      {
-        "title": "Trámites de Transporte Federal",
-        "description": "Gestionamos trámites para placas de transporte de carga federal ante las dependencias correspondientes."
-      },
-      {
-        "title": "Capacitación y Desarrollo Profesional",
-        "description": "Organizamos talleres y eventos para mantener a tu equipo actualizado en las últimas tendencias y normativas."
+        "title": "Auditoría de Sistemas y Procesos",
+        "description": "Evaluamos la eficiencia de tus procesos y sistemas, identificando oportunidades de mejora continua."
       }
     ]
   },
   "ourMission": {
-    "title": "De emprendedor a empresario",
-    "description": "Nuestra misión es estar a tu lado en cada paso hacia el éxito empresarial, proporcionándote herramientas y asesoría especializada para que tu negocio crezca de forma sostenible."
+    "title": "Impulsamos tu crecimiento con tecnología",
+    "description": "Nuestra misión es empoderar a las empresas con herramientas digitales avanzadas como Odoo Community, ayudando a cada cliente a alcanzar sus metas y optimizar su crecimiento mediante soluciones eficientes y personalizadas."
   },
   "features": {
-    "title": "¿Por qué elegir GEC?",
+    "title": "¿Por qué elegir GestPro Cloud?",
     "items": [
       {
-        "title": "Experiencia y Profesionalismo",
-        "description": "Nuestro equipo, liderado por el L.C. Sergio Antonio Pérez Puerto, aporta años de experiencia y profesionalismo al servicio de tu empresa."
+        "title": "Especialistas en Odoo Community",
+        "description": "Contamos con experiencia en la implementación y personalización del sistema para adaptarlo a las necesidades específicas de cada negocio."
       },
       {
-        "title": "Enfoque Personalizado",
-        "description": "Sabemos que cada negocio es único. Por eso, adaptamos nuestras soluciones a tus necesidades específicas."
+        "title": "Enfoque en Eficiencia y Rentabilidad",
+        "description": "Nos enfocamos en automatizar y optimizar procesos para aumentar tu rentabilidad."
       },
       {
-        "title": "Participación Activa en la Comunidad",
-        "description": "Participamos activamente en la comunidad, abriéndote puertas a eventos y asociaciones que potencian tu crecimiento."
+        "title": "Atención Personalizada",
+        "description": "Trabajamos mano a mano contigo, asegurando que cada solución se adapte a tus necesidades."
       },
       {
-        "title": "Servicios Integrales",
-        "description": "Con nuestros servicios integrales, cubrimos todas las áreas de tu negocio para que no te preocupes por nada."
+        "title": "Transformación Digital Sin Fricciones",
+        "description": "Facilitamos la transición a plataformas digitales con implementaciones rápidas y efectivas."
       }
     ]
   },
   "cta": {
-    "title": "Haz crecer tu negocio con nosotros",
-    "description": "¿Listo para hacer crecer tu negocio? No lo pienses más. Agenda una consultoría especializada y descubre cómo podemos ayudarte a alcanzar tus metas.",
+    "title": "Transforma tu empresa con GestPro Cloud",
+    "description": "¿Listo para llevar tu negocio al siguiente nivel? Agenda una consultoría gratuita y descubre cómo GestPro Cloud puede transformar tu gestión empresarial con Odoo Community.",
     "button": "Agenda tu Consultoría"
   }
 }
