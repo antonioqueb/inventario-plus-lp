@@ -1,93 +1,87 @@
-'use client'
+'use client';
 
-import { motion, useReducedMotion } from 'framer-motion';
-import copy from '../copy.json';
-import Button from "./Button"; // Asegurándome de usar tu botón personalizado
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import  Button  from "./Button";
+import { ChevronRight, BarChart2, Clock, Database } from 'lucide-react';
+import copy from "./../copy.json";
 
-export default function Header() {
-  const prefersReducedMotion = useReducedMotion();
+export default function HeroModerno() {
+  const [isVisible, setIsVisible] = useState(false);
 
-  // Variantes para animaciones, respetando la preferencia de movimiento reducido
-  const containerVariants = prefersReducedMotion
-    ? {}
-    : {
-        initial: { opacity: 0, y: 50 },
-        animate: { opacity: 1, y: 0 },
-        transition: { duration: 1, ease: 'easeOut' },
-      };
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
 
-  const titleVariants = prefersReducedMotion
-    ? {}
-    : {
-        initial: { opacity: 0, scale: 0.8 },
-        animate: { opacity: 1, scale: 1 },
-        transition: { delay: 0.2, duration: 0.8, ease: 'easeOut' },
-      };
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
 
-  const descriptionVariants = prefersReducedMotion
-    ? {}
-    : {
-        initial: { opacity: 0, y: 20 },
-        animate: { opacity: 1, y: 0 },
-        transition: { delay: 0.4, duration: 0.8, ease: 'easeOut' },
-      };
-
-  const buttonVariants = prefersReducedMotion
-    ? {}
-    : {
-        initial: { opacity: 0, scale: 0.8 },
-        animate: { opacity: 1, scale: 1 },
-        transition: { delay: 0.6, duration: 0.8, ease: 'easeOut' },
-      };
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { type: 'spring', stiffness: 100 },
+    },
+  };
 
   return (
-    <header className="relative h-screen flex items-center justify-center" role="banner">
-      {/* Fondo de video */}
-      <video
-        className="absolute inset-0 w-full h-full object-cover z-0"
-        src="/pos.mp4"
-        autoPlay
-        loop
-        muted
-        aria-hidden="true"
-      />
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
+      <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent" />
 
-      {/* Filtro oscuro para mejorar el contraste */}
-      <div className="absolute inset-0 bg-black opacity-70 z-1" aria-hidden="true"></div>
-      
-      {/* Contenido */}
-      <motion.div 
-        className="relative z-10 w-full max-w-6xl px-6 py-20 text-center"
-        initial={containerVariants.initial}
-        animate={containerVariants.animate}
-        transition={containerVariants.transition}
+      <motion.div
+        className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto"
+        variants={containerVariants}
+        initial="hidden"
+        animate={isVisible ? "visible" : "hidden"}
       >
-        <motion.h1 
-          className="text-7xl font-extrabold text-white mb-7"
-          initial={titleVariants.initial}
-          animate={titleVariants.animate}
-          transition={titleVariants.transition}
+        <motion.h1
+          className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 mb-6"
+          variants={itemVariants}
         >
-          {copy.hero.title}
+          Soluciones de Software Especializadas para el Control de Inventarios en México
         </motion.h1>
-        
-        <motion.p 
-          className="text-3xl text-white mb-10"
-          initial={descriptionVariants.initial}
-          animate={descriptionVariants.animate}
-          transition={descriptionVariants.transition}
+        <motion.p
+          className="mt-3 text-lg sm:text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto"
+          variants={itemVariants}
         >
-          {copy.hero.description}
+          ¿Tu empresa enfrenta problemas con el control de inventarios y la gestión de operaciones?
         </motion.p>
-
         <motion.div
-          initial={buttonVariants.initial}
-          animate={buttonVariants.animate}
-          transition={buttonVariants.transition}
+          className="mt-8 flex flex-wrap justify-center gap-4"
+          variants={itemVariants}
         >
-           <Button variant="hero" text={copy.hero.button} href="#consultoria-form" />
+          <div className="flex items-center bg-gray-800 bg-opacity-50 backdrop-blur-sm rounded-full px-4 py-2">
+            <BarChart2 className="w-5 h-5 text-blue-400 mr-2" />
+            <span className="text-gray-300">Optimización de inventarios</span>
+          </div>
+          <div className="flex items-center bg-gray-800 bg-opacity-50 backdrop-blur-sm rounded-full px-4 py-2">
+            <Clock className="w-5 h-5 text-purple-400 mr-2" />
+            <span className="text-gray-300">Gestión en tiempo real</span>
+          </div>
+          <div className="flex items-center bg-gray-800 bg-opacity-50 backdrop-blur-sm rounded-full px-4 py-2">
+            <Database className="w-5 h-5 text-green-400 mr-2" />
+            <span className="text-gray-300">Control de stock eficiente</span>
+          </div>
         </motion.div>
+        <motion.div className="mt-10" variants={itemVariants}>
+        <Button variant="hero" text={copy.hero.button} href="#consultoria-form" />
+        </motion.div>
+        <motion.p className="mt-6 text-sm text-gray-400" variants={itemVariants}>
+          Mejora la eficiencia y reduce errores con nuestras soluciones adaptadas a tu negocio
+        </motion.p>
       </motion.div>
-    </header>
+
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-500 to-transparent" />
+    </div>
   );
 }
