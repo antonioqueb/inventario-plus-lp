@@ -1,6 +1,8 @@
+'use client'
+
 import { motion, useReducedMotion } from 'framer-motion';
 import copy from '../copy.json';
-import Button from './Button';
+import Button from "./Button"; // Asegurándome de usar tu botón personalizado
 
 export default function Header() {
   const prefersReducedMotion = useReducedMotion();
@@ -83,7 +85,7 @@ export default function Header() {
           animate={buttonVariants.animate}
           transition={buttonVariants.transition}
         >
-          <Button variant="hero" text={copy.hero.button} href="#consultoria-form" />
+           <Button variant="hero" text={copy.hero.button} href="#consultoria-form" />
         </motion.div>
       </motion.div>
     </header>
