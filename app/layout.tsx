@@ -14,9 +14,10 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "GEC - Gestiones Empresariales de Campeche, S.C.",
-  description: "GEC - Gestiones Empresariales de Campeche, S.C. es una empresa con sede en el estado de Campeche, México, que se dedica a proporcionar soluciones integrales de gestión administrativa y empresarial. Desde su fundación, GEC se ha posicionado como un aliado estratégico para empresas, emprendedores y organizaciones que buscan optimizar sus operaciones y alcanzar el éxito en un entorno competitivo. La misión de GEC es apoyar el crecimiento sostenible de las empresas campechanas mediante servicios personalizados que abarcan desde la consultoría administrativa hasta la implementación de soluciones contables, fiscales y legales. La empresa tiene como objetivo facilitar la toma de decisiones estratégicas y mejorar la eficiencia operativa de sus clientes, permitiendo que se concentren en su actividad principal mientras GEC se encarga de la gestión técnica y operativa.",
+  title: "Gestpro Cloud - Soluciones en Punto de Venta (POS) en Campeche",
+  description: "Gestpro Cloud ofrece soluciones personalizadas de Punto de Venta (POS) para negocios en Campeche. Nos especializamos en la implementación y personalización de sistemas que simplifican la gestión de inventarios, ventas y clientes, mejorando la eficiencia operativa de las empresas. Con nuestras soluciones, los comercios locales pueden tomar control de sus operaciones en tiempo real, optimizar procesos y aumentar la rentabilidad. Desde la integración con métodos de pago hasta la generación de reportes detallados, en Gestpro Cloud acompañamos a nuestros clientes con soporte continuo y mantenimiento especializado.",
 };
+
 
 export default function RootLayout({
   children,

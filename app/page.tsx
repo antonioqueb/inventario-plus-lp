@@ -194,7 +194,9 @@ export default function Home() {
       </main>
 
       <footer className="bg-zinc-800 py-8 text-center text-white">
-        <p className="text-lg">© Gestpro Cloud Campeche México</p>
+      <p className="text-lg font-semibold">© 2024 Gestpro Cloud | Campeche, México</p>
+        <p className="text-sm text-gray-400">Soluciones personalizadas en Punto de Venta (POS)</p>
+     
       </footer>
     </div>
   )
