@@ -6,74 +6,34 @@ import Button from "./components/Button"
 import CardContainer from "./components/CardContainer"
 import ContactForm from "./components/ContactForm"
 import { motion } from "framer-motion"
+import Header from './components/Header';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-zinc-950 to-zinc-900 text-white">
       {/* Hero Section */}
-      <header className="relative h-screen overflow-hidden">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0 scale-110 transform"
-      >
-        <source src="/4477603-hd_1920_1080_30fps.mp4" type="video/mp4" />
-      </video>
 
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="relative z-10 flex flex-col justify-center items-center h-full bg-gradient-to-b from-black/40 via-black/60 to-black/80 backdrop-blur-[2px]"
-      >
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="max-w-5xl xl:max-w-7xl w-11/12 xl:w-full px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 my-8 sm:my-12 md:my-16 rounded-[20px] sm:rounded-[30px] md:rounded-[40px] bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-xl shadow-2xl border border-white/20 transition-all duration-300 hover:shadow-sky-500/20 hover:border-sky-500/50"
-        >
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-300 to-sky-300 tracking-tight mb-4 sm:mb-6 md:mb-8 animate-text-shimmer"
-          >
-            {copy.hero.title}
-          </motion.h1>
 
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="mt-4 sm:mt-6 md:mt-8 text-base sm:text-lg md:text-xl lg:text-2xl text-zinc-200 max-w-6xl leading-relaxed animate-fade-in-up font-light"
-          >
-            {copy.hero.description}
-          </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.6 }}
-            className="mt-6 sm:mt-8 md:mt-10"
-          >
-           <Button text={copy.hero.button} href="#consultoria-form" />
-          </motion.div>
-        </motion.div>
-      </motion.div>
-    </header>
-{/* <Button text={copy.hero.button} href="#consultoria-form" /> */}
+      <Header />
+
+
+
+
+
+
+
+      {/* <Button text={copy.hero.button} href="#consultoria-form" /> */}
       <main className="px-4 py-16 sm:px-6 lg:px-8 space-y-32">
         {/* Who We Are - Socios Estratégicos*/}
-        <motion.section 
+        <motion.section
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="text-center h-full py-8"
         >
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -82,7 +42,7 @@ export default function Home() {
           >
             {copy.whoWeAre.title}
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -91,7 +51,7 @@ export default function Home() {
           >
             {copy.whoWeAre.description}
           </motion.p>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -110,14 +70,14 @@ export default function Home() {
         </motion.section>
 
         {/* What We Do */}
-        <motion.section 
+        <motion.section
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="text-center h-full lg:py-24"
         >
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -145,14 +105,14 @@ export default function Home() {
         </motion.section>
 
         {/* Our Mission */}
-        <motion.section 
+        <motion.section
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="text-center h-full"
         >
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -161,7 +121,7 @@ export default function Home() {
           >
             {copy.ourMission.title}
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -170,7 +130,7 @@ export default function Home() {
           >
             {copy.ourMission.description}
           </motion.p>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -188,14 +148,14 @@ export default function Home() {
         </motion.section>
 
         {/* Features Section */}
-        <motion.section 
+        <motion.section
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="text-center h-full"
         >
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -223,7 +183,7 @@ export default function Home() {
         </motion.section>
 
         {/* Formulario de Consultoría */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
