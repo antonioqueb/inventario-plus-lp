@@ -1,80 +1,78 @@
 {
   "hero": {
-    "title": "Soluciones en Punto de Venta (POS) a la Medida en Campeche",
-    "description": "¿Buscas simplificar la gestión de tu tienda y aumentar la eficiencia de tus ventas? En Gestpro Cloud, somos expertos en implementar y personalizar sistemas de Punto de Venta (POS) que se adaptan a las reglas y necesidades de tu negocio. Con nuestras soluciones, llevarás el control de inventarios, ventas y clientes.",
+    "title": "Soluciones de Software Especializadas para el Control de Inventarios en Campeche",
+    "description": "¿Tu empresa enfrenta problemas con el control de inventarios y la gestión de operaciones? En Gestpro Cloud, somos expertos en implementar soluciones de software que optimizan cada aspecto del control de inventarios y gestión operativa, adaptadas a las necesidades de tu negocio. Con nuestras herramientas, podrás gestionar tus inventarios, operaciones y stock en tiempo real, mejorando la eficiencia y reduciendo errores.",
     "button": "¡Solicita tu Asesoría Gratis Hoy!"
   },
   "whoWeAre": {
-    "title": "Somos Especialistas en Puntos de Venta (POS)",
-    "description": "En Gestpro Cloud, nuestro enfoque es ayudarte a mejorar la operación de tu negocio con sistemas de Punto de Venta (POS) diseñados especialmente para ti. Sabemos que cada negocio es diferente, por eso personalizamos cada sistema para que se ajuste perfectamente a la manera en que trabajas. Ya sea que tengas una pequeña tienda o una operación más grande, nuestras soluciones en POS te ayudarán a gestionar tu negocio de manera más eficiente y rentable."
+    "title": "Somos Especialistas en Implementación de Soluciones de Control de Inventarios",
+    "description": "En Gestpro Cloud, nuestro objetivo es ayudarte a mejorar la eficiencia de tu empresa con sistemas de control de inventarios diseñados a la medida. Sabemos que cada negocio es único, por eso personalizamos nuestras soluciones para que se ajusten a la forma en que trabajas. Ya sea que tengas una pequeña empresa o una operación más compleja, nuestras soluciones de software te ayudarán a mantener un control preciso y eficiente de tu inventario."
   },
   "whatWeDo": {
-    "title": "¿Qué Hacemos? Soluciones Eficientes para tu Punto de Venta",
-  "services": [
-  {
-    "title": "Implementación Completa de Sistemas de Punto de Venta (POS)",
-    "description": "Desarrollamos soluciones de punto de venta que simplifican el manejo de inventarios, ventas y pagos en tiempo real."
-  },
-  {
-    "title": "Automatización Eficiente de Procesos en el Punto de Venta",
-    "description": "Deja que la tecnología se encargue de las tareas repetitivas, mientras tú te concentras en hacer crecer tu negocio."
-  },
-  {
-    "title": "Acompañamiento Integral y Soporte Continuo Personalizado",
-    "description": "Nos aseguramos de que todo tu equipo esté listo para aprovechar al máximo el sistema POS, y siempre estamos disponibles para darte soporte cuando lo necesites."
-  },
-  {
-    "title": "Integración Total con Métodos de Pago y Facturación Electrónica",
-    "description": "Conectamos tu Punto de Venta (POS) con los principales métodos de pago y sistemas de facturación electrónica para que todo funcione sin interrupciones."
-  },
-  {
-    "title": "Soluciones Completamente Personalizadas para tu Negocio",
-    "description": "Personalizamos cada funcionalidad del sistema POS para adaptarlo a las reglas específicas de tu tienda y operación."
-  },
-  {
-    "title": "Control Avanzado y Gestión de Inventarios en Tiempo Real",
-    "description": "Gestiona y controla tus inventarios de manera eficiente con actualizaciones en tiempo real, evitando errores de stock y mejorando el control de tus productos."
-  },
-  {
-    "title": "Reportes Detallados y Análisis Estratégico de Ventas",
-    "description": "Genera reportes detallados sobre el rendimiento de tu negocio, ventas e inventarios, para que tomes decisiones estratégicas basadas en datos precisos."
-  },
-  {
-    "title": "Actualización Constante y Mantenimiento de Sistemas POS",
-    "description": "Nos encargamos de mantener tu sistema POS actualizado y funcionando sin interrupciones, asegurando que siempre esté optimizado para tu operación."
-  }
-]
-
+    "title": "¿Qué Hacemos? Soluciones Eficientes para el Control de Inventarios",
+    "services": [
+      {
+        "title": "Implementación Completa de Sistemas de Control de Inventarios",
+        "description": "Desarrollamos soluciones de software que te permiten gestionar inventarios de manera precisa, actualizada y eficiente, eliminando errores y maximizando el rendimiento operativo."
+      },
+      {
+        "title": "Automatización de Procesos Operativos",
+        "description": "Automatiza tareas repetitivas y administrativas, permitiendo que te enfoques en lo más importante: el crecimiento de tu negocio."
+      },
+      {
+        "title": "Acompañamiento Integral y Soporte Continuo",
+        "description": "Nos aseguramos de que todo tu equipo esté capacitado para sacar el máximo provecho del sistema, con soporte técnico disponible siempre que lo necesites."
+      },
+      {
+        "title": "Integración con Sistemas de Facturación Electrónica",
+        "description": "Conectamos tu sistema de control de inventarios con métodos de pago y facturación electrónica para que todo fluya de manera continua y sin complicaciones."
+      },
+      {
+        "title": "Soluciones Completamente Personalizadas",
+        "description": "Adaptamos cada función del sistema a las necesidades específicas de tu empresa, para que el control de inventarios sea preciso y acorde a tus operaciones."
+      },
+      {
+        "title": "Control Avanzado de Inventarios en Tiempo Real",
+        "description": "Gestiona y actualiza tu inventario en tiempo real para evitar faltantes o excesos de stock, optimizando tu flujo de trabajo."
+      },
+      {
+        "title": "Reportes Detallados y Análisis Estratégico",
+        "description": "Genera informes detallados para analizar la rotación de productos, el rendimiento de tus operaciones y tomar decisiones estratégicas basadas en datos reales."
+      },
+      {
+        "title": "Actualización y Mantenimiento Constante",
+        "description": "Nos encargamos de que tu sistema siempre esté actualizado y en funcionamiento óptimo, para que te enfoques en tu negocio sin interrupciones."
+      }
+    ]
   },
   "ourMission": {
-    "title": "Impulsando tu Negocio con Tecnología de Punto de Venta",
-    "description": "En Gestpro Cloud, nuestro objetivo es ofrecerte soluciones de Punto de Venta (POS) avanzadas, personalizadas y eficientes. Te ayudamos a optimizar la operación de tu tienda para que puedas ofrecer una mejor experiencia a tus clientes y, al mismo tiempo, aumentar tus ingresos."
+    "title": "Impulsando tu Empresa con Tecnología de Gestión de Inventarios",
+    "description": "En Gestpro Cloud, nuestro objetivo es ofrecerte soluciones tecnológicas que optimicen el control de inventarios y la operación de tu empresa. Te ayudamos a mejorar la eficiencia y la rentabilidad de tu negocio mediante la implementación de herramientas avanzadas, personalizadas y totalmente integradas con tus procesos."
   },
   "features": {
-  "title": "¿Por Qué Elegir Gestpro Cloud?",
-  "items": [
-    {
-      "title": "Especialistas en Sistemas de Punto de Venta (POS)",
-      "description": "Nos enfocamos en desarrollar sistemas de Punto de Venta (POS) que se adapten a las necesidades únicas de tu negocio. Con Gestpro Cloud, no solo tienes un software, sino una herramienta estratégica para mejorar la experiencia de compra de tus clientes y optimizar cada operación de venta."
-    },
-    {
-      "title": "Visibilidad, Control Integral y Gestión en Tiempo Real",
-      "description": "Gestiona tus inventarios y ventas en tiempo real para tomar decisiones rápidas y efectivas. Con datos actualizados al instante, podrás ajustar precios, reponer stock y supervisar el rendimiento de tu negocio sin demoras, garantizando así que nunca pierdas una oportunidad."
-    },
-    {
-      "title": "Soluciones Completamente Personalizadas para Tu Negocio",
-      "description": "Cada tienda es diferente. Adaptamos nuestras soluciones para que se ajusten a la manera en que operas. Ya sea que tengas una cadena de comercios o un solo punto de venta, nuestras configuraciones flexibles aseguran que el sistema se integre perfectamente en tus procesos actuales, sin interrupciones."
-    },
-    {
-      "title": "Implementación Rápida, Segura y Altamente Eficiente",
-      "description": "Nos aseguramos de que tu sistema POS esté listo para funcionar de manera ágil, para que comiences a ver resultados desde el primer día. Nuestro equipo experto te acompaña en cada paso, minimizando tiempos de inactividad y maximizando la eficiencia operativa desde el primer momento."
-    }
-  ]
-}
-,
+    "title": "¿Por Qué Elegir Gestpro Cloud?",
+    "items": [
+      {
+        "title": "Especialistas en Control de Inventarios",
+        "description": "Nos enfocamos en desarrollar soluciones de software para el control de inventarios, diseñadas para las necesidades particulares de tu negocio. Con Gestpro Cloud, no solo obtienes un software, sino una herramienta estratégica para mejorar tu gestión operativa."
+      },
+      {
+        "title": "Visibilidad y Gestión en Tiempo Real",
+        "description": "Supervisa y controla tu inventario en tiempo real para tomar decisiones rápidas y efectivas. Con datos precisos al instante, podrás ajustar tu stock y monitorear el desempeño de tus operaciones sin demora."
+      },
+      {
+        "title": "Soluciones Completamente Personalizadas",
+        "description": "Cada empresa es diferente. Adaptamos nuestras soluciones para que se ajusten a la manera en que trabajas, asegurando que el sistema se integre perfectamente con tus procesos actuales, sin afectar la continuidad de tus operaciones."
+      },
+      {
+        "title": "Implementación Rápida y Eficiente",
+        "description": "Nos aseguramos de que tu sistema esté listo para operar en el menor tiempo posible, con acompañamiento en cada paso para maximizar la eficiencia desde el primer día."
+      }
+    ]
+  },
   "cta": {
-    "title": "Optimiza tu Punto de Venta Hoy",
-    "description": "No esperes más para mejorar la operación de tu negocio. Agenda una asesoría gratuita con nuestros expertos en sistemas de Punto de Venta (POS) y descubre cómo podemos ayudarte a incrementar tus ventas y optimizar cada aspecto de tu tienda.",
+    "title": "Optimiza el Control de Inventarios Hoy",
+    "description": "No dejes pasar más tiempo sin optimizar el control de tu inventario. Agenda una asesoría gratuita con nuestros expertos en soluciones de software y descubre cómo podemos ayudarte a mejorar la eficiencia y control de tu empresa.",
     "button": "¡Solicita tu Asesoría Gratis!"
   }
 }
