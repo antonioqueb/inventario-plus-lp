@@ -47,7 +47,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-xl md:text-2xl text-zinc-300 max-w-4xl mx-auto mb-12 leading-relaxed"
+            className="text-xl md:text-2xl text-zinc-300 max-w-7xl mx-auto mb-12 leading-relaxed"
           >
             {copy.whoWeAre.description}
           </motion.p>
@@ -60,10 +60,10 @@ export default function Home() {
           >
             <Image
               src="/inventario.jpg"
-              alt="Equipo de soporte"
+              alt="POS"
               layout="responsive"
-              width={1000}
-              height={400}
+              width={4000}
+              height={200}
               className="w-full"
             />
           </motion.div>
@@ -126,7 +126,7 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-xl md:text-2xl text-zinc-300 max-w-4xl mx-auto mb-12 leading-relaxed"
+            className="text-xl md:text-2xl text-zinc-300 max-w-7xl mx-auto mb-12 leading-relaxed"
           >
             {copy.ourMission.description}
           </motion.p>
@@ -135,14 +135,14 @@ export default function Home() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
-            className="max-w-xl mx-auto rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-300"
+            className="max-w-2xl mx-auto rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-300"
           >
             <Image
-              src="/compromisotrotal.png"
+              src="/inventario.png"
               alt="Nuestra misión"
               layout="responsive"
-              width={100}
-              height={100}
+              width={90}
+              height={90}
             />
           </motion.div>
         </motion.section>

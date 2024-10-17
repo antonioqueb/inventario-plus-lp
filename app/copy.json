@@ -10,66 +10,68 @@
   },
   "whatWeDo": {
     "title": "¿Qué Hacemos? Soluciones Eficientes para tu Punto de Venta",
-    "services": [
-      {
-        "title": "Implementación de Sistemas de Punto de Venta (POS)",
-        "description": "Desarrollamos soluciones de punto de venta que simplifican el manejo de inventarios, ventas y pagos en tiempo real."
-      },
-      {
-        "title": "Automatización de Procesos en el Punto de Venta",
-        "description": "Deja que la tecnología se encargue de las tareas repetitivas, mientras tú te concentras en hacer crecer tu negocio."
-      },
-      {
-        "title": "Capacitación y Soporte Continuo",
-        "description": "Nos aseguramos de que todo tu equipo esté listo para aprovechar al máximo el sistema POS, y siempre estamos disponibles para darte soporte cuando lo necesites."
-      },
-      {
-        "title": "Integración con Métodos de Pago y Facturación Electrónica",
-        "description": "Conectamos tu Punto de Venta (POS) con los principales métodos de pago y sistemas de facturación electrónica para que todo funcione sin interrupciones."
-      },
-      {
-        "title": "Soluciones Personalizadas para tu Negocio",
-        "description": "Personalizamos cada funcionalidad del sistema POS para adaptarlo a las reglas específicas de tu tienda y operación."
-      },
-      {
-        "title": "Control y Gestión de Inventarios en Tiempo Real",
-        "description": "Gestiona y controla tus inventarios de manera eficiente con actualizaciones en tiempo real, evitando errores de stock y mejorando el control de tus productos."
-      },
-      {
-        "title": "Reportes Personalizados y Análisis de Ventas",
-        "description": "Genera reportes detallados sobre el rendimiento de tu negocio, ventas e inventarios, para que tomes decisiones estratégicas basadas en datos precisos."
-      },
-      {
-        "title": "Actualización y Mantenimiento de Sistemas POS",
-        "description": "Nos encargamos de mantener tu sistema POS actualizado y funcionando sin interrupciones, asegurando que siempre esté optimizado para tu operación."
-      }
-    ]
+  "services": [
+  {
+    "title": "Implementación Completa de Sistemas de Punto de Venta (POS)",
+    "description": "Desarrollamos soluciones de punto de venta que simplifican el manejo de inventarios, ventas y pagos en tiempo real."
+  },
+  {
+    "title": "Automatización Eficiente de Procesos en el Punto de Venta",
+    "description": "Deja que la tecnología se encargue de las tareas repetitivas, mientras tú te concentras en hacer crecer tu negocio."
+  },
+  {
+    "title": "Acompañamiento Integral y Soporte Continuo Personalizado",
+    "description": "Nos aseguramos de que todo tu equipo esté listo para aprovechar al máximo el sistema POS, y siempre estamos disponibles para darte soporte cuando lo necesites."
+  },
+  {
+    "title": "Integración Total con Métodos de Pago y Facturación Electrónica",
+    "description": "Conectamos tu Punto de Venta (POS) con los principales métodos de pago y sistemas de facturación electrónica para que todo funcione sin interrupciones."
+  },
+  {
+    "title": "Soluciones Completamente Personalizadas para tu Negocio",
+    "description": "Personalizamos cada funcionalidad del sistema POS para adaptarlo a las reglas específicas de tu tienda y operación."
+  },
+  {
+    "title": "Control Avanzado y Gestión de Inventarios en Tiempo Real",
+    "description": "Gestiona y controla tus inventarios de manera eficiente con actualizaciones en tiempo real, evitando errores de stock y mejorando el control de tus productos."
+  },
+  {
+    "title": "Reportes Detallados y Análisis Estratégico de Ventas",
+    "description": "Genera reportes detallados sobre el rendimiento de tu negocio, ventas e inventarios, para que tomes decisiones estratégicas basadas en datos precisos."
+  },
+  {
+    "title": "Actualización Constante y Mantenimiento de Sistemas POS",
+    "description": "Nos encargamos de mantener tu sistema POS actualizado y funcionando sin interrupciones, asegurando que siempre esté optimizado para tu operación."
+  }
+]
+
   },
   "ourMission": {
     "title": "Impulsando tu Negocio con Tecnología de Punto de Venta",
     "description": "En Gestpro Cloud, nuestro objetivo es ofrecerte soluciones de Punto de Venta (POS) avanzadas, personalizadas y eficientes. Te ayudamos a optimizar la operación de tu tienda para que puedas ofrecer una mejor experiencia a tus clientes y, al mismo tiempo, aumentar tus ingresos."
   },
   "features": {
-    "title": "¿Por Qué Elegir Gestpro Cloud?",
-    "items": [
-      {
-        "title": "Especialistas en Punto de Venta (POS)",
-        "description": "Nos enfocamos en desarrollar sistemas de Punto de Venta (POS) que se adapten a las necesidades únicas de tu negocio."
-      },
-      {
-        "title": "Visibilidad y Control en Tiempo Real",
-        "description": "Gestiona tus inventarios y ventas en tiempo real para tomar decisiones rápidas y efectivas."
-      },
-      {
-        "title": "Soluciones Personalizadas",
-        "description": "Cada tienda es diferente. Adaptamos nuestras soluciones para que se ajusten a la manera en que operas."
-      },
-      {
-        "title": "Implementación Rápida y Eficiente",
-        "description": "Nos aseguramos de que tu sistema POS esté listo para funcionar de manera ágil, para que comiences a ver resultados desde el primer día."
-      }
-    ]
-  },
+  "title": "¿Por Qué Elegir Gestpro Cloud?",
+  "items": [
+    {
+      "title": "Especialistas en Sistemas de Punto de Venta (POS)",
+      "description": "Nos enfocamos en desarrollar sistemas de Punto de Venta (POS) que se adapten a las necesidades únicas de tu negocio. Con Gestpro Cloud, no solo tienes un software, sino una herramienta estratégica para mejorar la experiencia de compra de tus clientes y optimizar cada operación de venta."
+    },
+    {
+      "title": "Visibilidad, Control Integral y Gestión en Tiempo Real",
+      "description": "Gestiona tus inventarios y ventas en tiempo real para tomar decisiones rápidas y efectivas. Con datos actualizados al instante, podrás ajustar precios, reponer stock y supervisar el rendimiento de tu negocio sin demoras, garantizando así que nunca pierdas una oportunidad."
+    },
+    {
+      "title": "Soluciones Completamente Personalizadas para Tu Negocio",
+      "description": "Cada tienda es diferente. Adaptamos nuestras soluciones para que se ajusten a la manera en que operas. Ya sea que tengas una cadena de comercios o un solo punto de venta, nuestras configuraciones flexibles aseguran que el sistema se integre perfectamente en tus procesos actuales, sin interrupciones."
+    },
+    {
+      "title": "Implementación Rápida, Segura y Altamente Eficiente",
+      "description": "Nos aseguramos de que tu sistema POS esté listo para funcionar de manera ágil, para que comiences a ver resultados desde el primer día. Nuestro equipo experto te acompaña en cada paso, minimizando tiempos de inactividad y maximizando la eficiencia operativa desde el primer momento."
+    }
+  ]
+}
+,
   "cta": {
     "title": "Optimiza tu Punto de Venta Hoy",
     "description": "No esperes más para mejorar la operación de tu negocio. Agenda una asesoría gratuita con nuestros expertos en sistemas de Punto de Venta (POS) y descubre cómo podemos ayudarte a incrementar tus ventas y optimizar cada aspecto de tu tienda.",
