@@ -16,7 +16,7 @@ const Button: React.FC<ButtonProps> = ({ text, href, variant = 'default' }) => {
     white:
       'bg-white text-orange-500 border-2 border-orange-700 hover:bg-orange-50 focus:ring-orange-700 my-4 text-sm sm:text-lg',
     dark:
-      'bg-gray-800 text-white hover:bg-gray-900 focus:ring-gray-600 my-4 text-sm sm:text-lg',
+      'bg-zinc-800 text-white hover:bg-zinc-900 focus:ring-zinc-600 my-4 text-sm sm:text-lg',
     hero:
       'relative text-white border-4 border-white focus:ring-orange-600 my-6 text-lg sm:text-xl xl:text-2xl px-6 sm:px-8 py-4 sm:py-5 rounded-xl shadow-lg transform hover:scale-110',
   };
